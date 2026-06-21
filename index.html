@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya Pratap | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for high-tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Matrix Gradients & Nodes -->
+    <div id="bg-animation-container">
+        <div class="node node-1"></div>
+        <div class="node node-2"></div>
+        <div class="node node-3"></div>
+    </div>
+
+    <!-- Main Scannable Layout -->
+    <main class="portfolio-container">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="glass-card">
+            <div class="hero-info">
+                <h1>Surya Pratap</h1>
+                <p class="tagline"><span id="typing-text"></span><span class="cursor">|</span></p>
+                
+                <!-- Complete Integrated Contact Matrix -->
+                <div class="hero-cta-group">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:suryapratapsingh.420786@gmail.com" class="contact-icon" title="Email Me">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/surya-pratap-270b35153/" target="_blank" class="contact-icon" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.github.com/killindodo" target="_blank" class="contact-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="tel:+917004185301" class="contact-icon" title="Call Me">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PROFILE SECTION -->
+        <section id="profile" class="glass-card">
+            <h2><i class="fas fa-user-astronaut"></i> Professional Profile</h2>
+            <p class="profile-desc">A highly motivated and enthusiastic computer science graduate with a deep passion for technology and codes. Eager to begin a career where I can apply my problem-solving skills, continuously learn new technologies, and contribute meaningfully to innovative projects.</p>
+        </section>
+
+        <!-- 3. FUTURE-PROOF SKILLS SECTION -->
+        <section id="skills" class="glass-card">
+            <h2><i class="fas fa-code-branch"></i> Tech Stack & Expertise</h2>
+            <div class="skills-grid">
+                
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-item">
+                        <span>Python & JavaScript</span>
+                        <div class="progress-circle p85">85%</div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Java, C++, Kotlin & C</span>
+                        <div class="progress-circle p75">75%</div>
+                    </div>
+                </div>
+
+                <!-- Databases, Engineering & Systems -->
+                <div class="skill-category">
+                    <h3>Databases & Systems</h3>
+                    <div class="skill-item">
+                        <span>SQL, Oracle, DBMS & RDBMS</span>
+                        <div class="progress-circle p80">80%</div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Linux, Databricks & PySpark</span>
+                        <div class="progress-circle p75">75%</div>
+                    </div>
+                </div>
+
+                <!-- Hardware & Layouts -->
+                <div class="skill-category">
+                    <h3>Hardware & Web</h3>
+                    <div class="skill-item">
+                        <span>HTML, XML & Android Dev</span>
+                        <div class="progress-circle p80">80%</div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Arduino Prototyping</span>
+                        <div class="progress-circle p70">70%</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. PROJECTS & EXPERIENCE SECTION -->
+        <section id="projects" class="glass-card">
+            <h2><i class="fas fa-cubes"></i> Projects & Experience</h2>
+            <div class="projects-grid">
+
+                <!-- Data Engineering (Featured Project) -->
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <h3>Automated Data Engineering Pipeline</h3>
+                        <div class="tags-wrapper">
+                            <span class="tech-tag">Databricks</span>
+                            <span class="tech-tag">PySpark</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">Built and optimized a Medallion Architecture data pipeline using Databricks, mapping complex SQL operations into high-performance PySpark transformations. Automated pipeline orchestration via Databricks Workflows and managed the codebase using Git/GitHub for collaborative development.</p>
+                </div>
+
+                <!-- Android Custom Systems -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Android Custom ROMs & Recovery</h3>
+                        <div class="tags-wrapper">
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">TWRP</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">Developed, tested, and flashed custom Android ROMs and recoveries (like TWRP) to optimize device performance, enhance management capabilities, and enable advanced modifications.</p>
+                </div>
+
+                <!-- Hardware Prototyping -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Voice-Controlled Switches</h3>
+                        <div class="tags-wrapper">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Electronics</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">Developed a voice-activated switch system using Arduino and basic electronic components to control appliances seamlessly.</p>
+                </div>
+
+                <!-- Utilities -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Local Media Organizer & Password Manager</h3>
+                        <div class="tags-wrapper">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">C++</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">Created a web-based media organizer to manage local files through a browser interface alongside a console-based secure password manager utilizing file handling techniques.</p>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="project-card business-card">
+                    <div class="project-header">
+                        <h3>Proprietor | Surya Jyoti Enterprises</h3>
+                        <span class="date-tag">2021 - 2025</span>
+                    </div>
+                    <p class="project-desc">Managed operations and execution for a business firm involved in Government contract work and general order works.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
