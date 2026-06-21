@@ -353,3 +353,25 @@ h2 i {
         align-items: flex-start;
     }
 }
+/* ==========================================================================
+   8. FOOTER ELEMENTS
+   ========================================================================== */
+.portfolio-footer {
+    text-align: center;
+    padding: 20px 0 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 20px;
+}
+
+.portfolio-footer p {
+    font-size: 0.9rem !important;
+    color: var(--text-secondary) !important;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+.portfolio-footer p span {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
