@@ -48,7 +48,7 @@ html {
 }
 
 body {
-    background-color: var(--bg-deep);
+    background-color: transparent;
     color: var(--text-main);
     font-family: var(--font-ui);
     font-size: var(--fs-body);
@@ -66,7 +66,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -2;
+    z-index: 0;
     background-color: var(--bg-deep);
     pointer-events: none;
     display: block;
@@ -76,24 +76,24 @@ body {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: -1;
+    z-index: 1;
     overflow: hidden;
 }
 
 .scanlines {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
     background-size: 100% 4px;
-    opacity: 0.35;
+    opacity: 0.3;
 }
 
 .dot-grid {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(0, 242, 254, 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(0, 242, 254, 0.08) 1px, transparent 1px);
     background-size: 28px 28px;
-    opacity: 0.3;
+    opacity: 0.25;
 }
 
 /* ==========================================================================
@@ -235,6 +235,8 @@ body {
    4. CONSOLE SHELL & CARDS
    ========================================================================== */
 .console-shell {
+    position: relative;
+    z-index: 10;
     max-width: 1120px;
     margin: 2.5rem auto 4rem;
     padding: 0 1.25rem;

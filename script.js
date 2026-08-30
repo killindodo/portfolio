@@ -23,23 +23,32 @@ document.addEventListener("DOMContentLoaded", () => {
         const fontSize = 16;
 
         function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            columns = Math.floor(width / fontSize);
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            width = canvas.width = window.innerWidth * dpr;
+            height = canvas.height = window.innerHeight * dpr;
+            canvas.style.width = window.innerWidth + "px";
+            canvas.style.height = window.innerHeight + "px";
+            ctx.scale(dpr, dpr);
+
+            const displayWidth = window.innerWidth;
+            const displayHeight = window.innerHeight;
+            columns = Math.ceil(displayWidth / fontSize);
             drops = [];
             speeds = [];
-            dropLengths = [];
 
             for (let i = 0; i < columns; i++) {
-                // Staggered starting vertical positions for natural cascading rain
-                drops[i] = Math.floor(Math.random() * -120);
-                speeds[i] = 1 + Math.random() * 0.9;
-                dropLengths[i] = 10 + Math.floor(Math.random() * 25);
+                // Initialize across the ENTIRE viewport height so rain is immediately active everywhere
+                drops[i] = Math.floor(Math.random() * (displayHeight / fontSize));
+                speeds[i] = 1 + Math.random() * 0.8;
             }
+
+            // Fill solid black on init/resize
+            ctx.fillStyle = "#03060c";
+            ctx.fillRect(0, 0, displayWidth, displayHeight);
         }
 
         resize();
-        window.addEventListener("resize", debounce(resize, 120));
+        window.addEventListener("resize", debounce(resize, 100));
 
         let isVisible = true;
         document.addEventListener("visibilitychange", () => {
@@ -49,14 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // Respect system accessibility setting
         const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (prefersReducedMotion) {
-            // Draw single static frame
             ctx.fillStyle = "#03060c";
-            ctx.fillRect(0, 0, width, height);
+            ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
             return;
         }
 
         let lastTime = 0;
-        const fps = 33; // ~30-33 FPS provides smooth flow with very low CPU consumption
+        const fps = 33; // 30-33 FPS provides smooth flow with low CPU consumption
         const fpsInterval = 1000 / fps;
 
         function renderStream(timestamp) {
@@ -68,14 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
             if (elapsed < fpsInterval) return;
             lastTime = timestamp - (elapsed % fpsInterval);
 
-            // Trailing darkness fade layer (creates glowing phosphor trails)
-            ctx.fillStyle = "rgba(3, 6, 12, 0.14)";
-            ctx.fillRect(0, 0, width, height);
+            const displayWidth = window.innerWidth;
+            const displayHeight = window.innerHeight;
+
+            // Trailing darkness fade layer
+            ctx.fillStyle = "rgba(3, 6, 12, 0.15)";
+            ctx.fillRect(0, 0, displayWidth, displayHeight);
 
             ctx.font = `bold ${fontSize}px 'Fira Code', monospace`;
 
             for (let i = 0; i < columns; i++) {
-                // Random glyph
                 const char = charArray[Math.floor(Math.random() * charArray.length)];
                 const x = i * fontSize;
                 const y = drops[i] * fontSize;
@@ -100,10 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 ctx.fillText(char, x, y);
                 ctx.shadowBlur = 0;
 
-                // Reset drop when past bottom with randomized respawn trigger
-                if (y > height && Math.random() > 0.975) {
+                // Reset drop when past bottom
+                if (y > displayHeight && Math.random() > 0.975) {
                     drops[i] = 0;
-                    speeds[i] = 1 + Math.random() * 0.9;
+                    speeds[i] = 1 + Math.random() * 0.8;
                 }
 
                 drops[i] += speeds[i];
