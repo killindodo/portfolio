@@ -137,10 +137,12 @@ document.addEventListener("DOMContentLoaded", () => {
        2. RETRO TYPING COMMAND LINE ENGINE
        ------------------------------------------------------------- */
     const roles = [
-        "Data Engineer & PySpark Lakehouse Specialist.",
-        "Founder & Tech Lead @ SJ Digitals Co.",
-        "ESP32 & CC1101 Sub-GHz RF Transceiver Builder.",
-        "Linux Kernel 4.x/6.x & Android GKI v4 Developer."
+        "Full-Stack Web Architect & Founder @ SJ Digitals Co.",
+        "Author of NitroSense Linux (Kernel EC Driver & PyQt6 GUI).",
+        "Creator of Linux Continuity (AirDrop & PTY Shell for Linux/Android).",
+        "Android Systems & Kernel Engineer (Zezes ISO Deployer, GKI 6.1).",
+        "Data Engineer & Enterprise PySpark Lakehouse Specialist.",
+        "ESP32 & CC1101 Sub-GHz RF Transceiver Builder."
     ];
 
     const targetElement = document.getElementById("typing-text");
@@ -182,30 +184,39 @@ document.addEventListener("DOMContentLoaded", () => {
        3. INTERACTIVE DYNAMIC SKILLS GRAPH ENGINE
        ------------------------------------------------------------- */
     const skillsData = {
-        data: [
-            { name: "Databricks & PySpark Transformations", score: 92 },
-            { name: "Medallion Lakehouse (Bronze -> Silver -> Gold)", score: 90 },
-            { name: "SQL Query Optimization & Data Warehousing", score: 88 },
-            { name: "ETL Orchestration & Databricks Workflows", score: 85 }
+        web: [
+            { name: "Semantic HTML5 & Responsive CSS3 Design Systems", score: 95 },
+            { name: "Vanilla JavaScript (ES6+, DOM, Asynchronous I/O)", score: 92 },
+            { name: "Client Web Portals & Vercel Global Edge Deployments", score: 90 },
+            { name: "REST APIs, WebSockets & Real-Time Event Streams", score: 88 },
+            { name: "Performance Optimization (Lighthouse 99+, Zero-Build)", score: 92 }
+        ],
+        systems: [
+            { name: "Linux Continuity Daemon (IPC, D-Bus, PTY Terminal Mirrors)", score: 92 },
+            { name: "Android GKI Header v4/6.1 & Kernel Driver Compilation", score: 88 },
+            { name: "Zezes Mobile ISO Engine (USB OTG Raw Block I/O)", score: 88 },
+            { name: "Acer Nitro ACPI EC Register Fan Control & Telemetry", score: 86 },
+            { name: "TWRP 3.7.1 / Custom Recovery Bringup (MT6897)", score: 88 }
         ],
         embedded: [
             { name: "ESP32 Firmware & Embedded C++", score: 90 },
             { name: "TI CC1101 Sub-GHz Demodulation (315/433/868/915 MHz)", score: 88 },
-            { name: "Zero-CDN Embedded WebServers (PROGMEM)", score: 85 },
-            { name: "Hardware SPI / I2C Bus & Pinout Design", score: 82 }
+            { name: "Zero-CDN Embedded WebServers (PROGMEM Flash)", score: 86 },
+            { name: "Hardware SPI / I2C Bus & Pinout Engineering", score: 82 }
         ],
-        kernel: [
-            { name: "Android GKI v4 & vendor_boot Integration", score: 88 },
-            { name: "Linux 4.14 / 6.x Kernel Driver Compilation", score: 85 },
-            { name: "TWRP / OrangeFox Custom Recovery Bringup", score: 85 },
-            { name: "Dynamic EROFS / F2FS Partition Super Structures", score: 80 }
+        data: [
+            { name: "Databricks & PySpark Distributed Transformations", score: 92 },
+            { name: "Medallion Lakehouse Architecture (Bronze -> Silver -> Gold)", score: 90 },
+            { name: "SQL Query Optimization & Delta Lake Management", score: 88 },
+            { name: "ETL Orchestration & Databricks Workflows CI/CD", score: 85 }
         ],
         languages: [
-            { name: "Python (Data Pipelines & Scripts)", score: 92 },
-            { name: "C / Embedded C++", score: 88 },
-            { name: "SQL (DDL / DML Queries)", score: 88 },
-            { name: "Bash & Linux Shell Scripting", score: 84 },
-            { name: "JavaScript & HTML5 APIs", score: 80 }
+            { name: "Python (Systems, Data Pipelines, Daemons, REST)", score: 94 },
+            { name: "JavaScript & Modern Web APIs", score: 91 },
+            { name: "Kotlin (Android Native & Block Storage APIs)", score: 86 },
+            { name: "C / Embedded C++ (Firmware & Kernel Drivers)", score: 88 },
+            { name: "Bash & Linux Shell Scripting", score: 88 },
+            { name: "SQL (DDL, DML, Distributed Spark SQL)", score: 87 }
         ]
     };
 
@@ -254,7 +265,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    renderDomainGraph("data");
+    // Default to Web & Client Systems telemetry
+    renderDomainGraph("web");
 
     /* -------------------------------------------------------------
        4. INTERACTIVE FOLDING PROJECT ACCORDION
@@ -318,8 +330,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const selectedFilter = btn.getAttribute("data-filter");
 
             drawers.forEach(drawer => {
-                const category = drawer.getAttribute("data-category");
-                if (selectedFilter === "all" || category === selectedFilter) {
+                const category = drawer.getAttribute("data-category") || "";
+                const categories = category.split(/\s+/);
+                if (selectedFilter === "all" || categories.includes(selectedFilter)) {
                     drawer.style.display = "block";
                 } else {
                     drawer.style.display = "none";

@@ -647,10 +647,11 @@ body {
 .project-filter-tabs {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
-    padding: 0.2rem 0.65rem;
+    padding: 0.25rem 0.75rem;
     background: transparent;
     border: 1px solid var(--border-dim);
     border-radius: 4px;
@@ -731,6 +732,21 @@ body {
     padding: 0.25rem 0.65rem;
     border-radius: 4px;
     border: 1px solid rgba(251, 191, 36, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.meta-chip.chip-live {
+    color: var(--cyber-emerald);
+    background: rgba(5, 255, 161, 0.1);
+    border-color: rgba(5, 255, 161, 0.3);
+}
+
+.meta-chip.chip-cyan {
+    color: var(--cyber-cyan);
+    background: rgba(0, 242, 254, 0.1);
+    border-color: rgba(0, 242, 254, 0.3);
 }
 
 .drawer-symbol {
@@ -750,7 +766,7 @@ body {
 }
 
 .project-console-drawer.is-open .drawer-expandable {
-    max-height: 800px;
+    max-height: 1400px;
 }
 
 .drawer-content-pane {
@@ -852,6 +868,39 @@ body {
     background: rgba(255, 255, 255, 0.05);
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
+}
+
+.drawer-actions {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-demo {
+    background: rgba(5, 255, 161, 0.12);
+    border: 1px solid var(--cyber-emerald);
+    color: var(--cyber-emerald);
+}
+
+.btn-demo:hover {
+    background: var(--cyber-emerald);
+    color: #03060c;
+    box-shadow: 0 0 16px rgba(5, 255, 161, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-repo {
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid var(--border-glow);
+    color: var(--cyber-cyan);
+}
+
+.btn-repo:hover {
+    background: var(--cyber-cyan);
+    color: #03060c;
+    box-shadow: 0 0 14px var(--cyber-cyan);
+    transform: translateY(-1px);
 }
 
 /* ==========================================================================
