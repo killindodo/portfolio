@@ -1,0 +1,278 @@
+[
+  {
+    "name": "sjdigitals.co",
+    "title": "SJ Digitals Co. — Agency & Platform Infrastructure",
+    "description": "Flagship digital systems platform and corporate web presence for SJ Digitals Co., founded by Surya Pratap. Features zero layout shifts, bespoke client portals, NFC smart business card routing, and instant edge caching.",
+    "category": "web",
+    "featured": true,
+    "language": "JavaScript",
+    "html_url": "https://github.com/killindodo/sjdigitals.co",
+    "homepage": "https://sjdigitals.vercel.app/",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "updated_at": "2026-09-20T05:20:30Z",
+    "topics": ["agency", "design-system", "edge-deployment", "nfc-cards", "vanilla-js", "web-performance"],
+    "specs": {
+      "architecture": "Edge-Cached Static Architecture",
+      "stack": "Semantic HTML5, Modular CSS3 Tokens, Vanilla ES6+",
+      "platform": "Vercel Global Edge & Cloudflare CDN",
+      "role": "Founder & Principal Systems Architect"
+    },
+    "case_study": {
+      "context": "Small and medium enterprises often struggle with bloated, slow website templates with massive JavaScript payloads and painful layout shifts.",
+      "problem": "Create a high-impact, luxury digital agency web presence with zero build dependencies, near-perfect Lighthouse scores, and instant worldwide loading.",
+      "engineering": "Engineered with modern vanilla web standards, custom CSS property tokens, responsive clamp() typography, and edge CDN cache headers.",
+      "architecture": "Client Browser ➔ Edge Anycast CDN ➔ Brotli-compressed static assets ➔ Dynamic WhatsApp lead routing API.",
+      "result": "99+ Lighthouse performance index, sub-100ms first contentful paint, and seamless lead conversion for digital branding clients."
+    }
+  },
+  {
+    "name": "linux-continuity",
+    "title": "Linux Continuity — Android ↔ Linux Continuity Bridge",
+    "description": "Apple-style Continuity ecosystem bridging Linux desktop workstations with Android devices. Real-time clipboard synchronization, AirDrop-like zero-friction file transfer, shared media controls, and interactive shell execution over secure local sockets.",
+    "category": "linux",
+    "featured": true,
+    "language": "Python",
+    "html_url": "https://github.com/killindodo/linux-continuity",
+    "homepage": "https://github.com/killindodo/linux-continuity",
+    "stargazers_count": 3,
+    "forks_count": 0,
+    "updated_at": "2026-09-17T06:33:14Z",
+    "topics": ["android", "clipboard-sync", "continuity", "desktop-integration", "linux", "python3", "sockets"],
+    "specs": {
+      "architecture": "Local UNIX Socket & Daemon Service",
+      "stack": "Python 3, ADB Protocol, Linux Desktop Notifications, Cryptography",
+      "platform": "Linux (Arch / Debian / Fedora) & Android",
+      "role": "Author & Core Developer"
+    },
+    "case_study": {
+      "context": "Linux users often lack the seamless device integration that macOS and iOS users enjoy (AirDrop, Universal Clipboard, device controls).",
+      "problem": "Build an open-source, local-first bridge between Linux and Android without requiring third-party cloud servers or invasive proprietary services.",
+      "engineering": "Implemented an asynchronous daemon architecture using local sockets, ADB port-forwarding, system notification hooks, and secure peer discovery.",
+      "architecture": "Android Client ↔ Encrypted Local Transport / ADB Forwarding ↔ Linux Desktop Daemon ↔ Desktop D-Bus / Clipboard Service.",
+      "result": "Sub-millisecond clipboard transfer, instant file dispatch, and complete independence from cloud services."
+    }
+  },
+  {
+    "name": "pinion",
+    "title": "Pinion — Universal Wireless Print Engine for Android",
+    "description": "Universal wireless print server and hardware spooling daemon for Android. Bridges CUPS, IPP, AirPrint, and Mopria printing protocols with a modern embedded Web UI and root-level automation.",
+    "category": "android",
+    "featured": true,
+    "language": "Java",
+    "html_url": "https://github.com/killindodo/pinion",
+    "homepage": "https://github.com/killindodo/pinion",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "updated_at": "2026-09-17T16:03:27Z",
+    "topics": ["airprint", "android", "cups", "embedded-server", "ipp", "java", "mopria", "print-spooler"],
+    "specs": {
+      "architecture": "Native Android Service & Embedded HTTP Core",
+      "stack": "Java 8+, Android NDK, CUPS Daemon, IPP Protocol, Raw Sockets",
+      "platform": "Android 8.0+ through Android 15 (ARM64)",
+      "role": "Lead Architect & Systems Developer"
+    },
+    "case_study": {
+      "context": "Modern enterprise and legacy USB printers cannot be easily addressed from mobile devices without expensive network print server appliances.",
+      "problem": "Transform any cheap Android device into an industrial-grade, multi-protocol network print server supporting iOS, Android, macOS, and Windows clients.",
+      "engineering": "Integrated a lightweight native Java HTTP/IPP engine with direct raw printer spooling over USB OTG and WiFi, managing print queues and status telemetry.",
+      "architecture": "Client (AirPrint/IPP) ➔ Android WiFi Interface ➔ Pinion IPP Listener ➔ Spooling Buffer ➔ USB OTG Printer Device (/dev/usb/lp0).",
+      "result": "Zero-configuration wireless printing across iOS, Android, and Linux with full real-time job monitoring."
+    }
+  },
+  {
+    "name": "Zezes",
+    "title": "Zezes — Android USB OTG ISO Deployment Core",
+    "description": "Emergency bare-metal multi-boot installer core running directly on Android. Emulates hardware CD-ROM / USB mass storage devices over USB-C OTG using Linux Kernel USB Gadget ConfigFS.",
+    "category": "android",
+    "featured": true,
+    "language": "Kotlin",
+    "html_url": "https://github.com/killindodo/Zezes",
+    "homepage": "https://github.com/killindodo/Zezes",
+    "stargazers_count": 7,
+    "forks_count": 1,
+    "updated_at": "2026-09-16T14:43:32Z",
+    "topics": ["android", "configfs", "iso-boot", "kernel-gadget", "kotlin", "mass-storage", "otg", "recovery"],
+    "specs": {
+      "architecture": "Kernel USB Gadget Subsystem & ConfigFS Driver",
+      "stack": "Kotlin, C / Shell, Linux USB Gadget API, Mass Storage LUNs",
+      "platform": "Android Root (Kernel 4.19+ / 5.10 / 6.1 GKI)",
+      "role": "Systems Engineer"
+    },
+    "case_study": {
+      "context": "When a PC motherboard or operating system crashes, creating a bootable USB installer typically requires access to another working computer.",
+      "problem": "Enable an Android phone to emulate a physical bootable USB drive via USB OTG so that PC BIOS/UEFI discovers it as a genuine installation media.",
+      "engineering": "Programmed Android Linux kernel USB Gadget via ConfigFS, configuring virtual Logical Unit Numbers (LUNs) to serve raw ISO blocks directly over hardware endpoints.",
+      "architecture": "ISO Image on Storage ➔ Kernel ConfigFS Mass Storage Function (f_mass_storage) ➔ USB PHY Controller ➔ PC Motherboard BIOS/UEFI.",
+      "result": "Successfully boots Windows, Ubuntu, Arch Linux, and diagnostic live distributions directly from phone storage."
+    }
+  },
+  {
+    "name": "nitrosense-linux",
+    "title": "NitroSense Linux — Acer EC Thermal & Fan Governor",
+    "description": "Native Linux fan speed controller and thermal monitor for Acer Nitro series gaming laptops. Directly queries and modifies ACPI Embedded Controller (EC) registers to override proprietary firmware fan limitations.",
+    "category": "linux",
+    "featured": true,
+    "language": "Python",
+    "html_url": "https://github.com/killindodo/nitrosense-linux",
+    "homepage": "https://github.com/killindodo/nitrosense-linux",
+    "stargazers_count": 2,
+    "forks_count": 0,
+    "updated_at": "2026-09-06T16:36:13Z",
+    "topics": ["acpi", "c", "ec-controller", "hardware-hacking", "kernel-driver", "linux", "nitro5", "python"],
+    "specs": {
+      "architecture": "Direct ACPI EC Register Read/Write Driver",
+      "stack": "C, Python 3, PyQt6, Linux ec_sys Kernel Module",
+      "platform": "Linux Kernel 5.x / 6.x on Acer Nitro 5 Hardware",
+      "role": "Author & Reverse Engineer"
+    },
+    "case_study": {
+      "context": "Acer Nitro laptops under Linux run fans on conservative default firmware curves, leading to thermal throttling during compute-heavy tasks with no official OEM software.",
+      "problem": "Reverse-engineer the proprietary Windows NitroSense driver and build an open-source native Linux equivalent that directly commands the laptop's Embedded Controller.",
+      "engineering": "Mapped ACPI EC memory registers using ec_sys, identifying fan control offsets, automatic/manual control flags, and RPM sensors to build a reactive thermal governor.",
+      "architecture": "Hardware Thermal Sensors ➔ Linux ec_sys Driver ➔ NitroSense ACPI Register Engine (0x00-0xFF) ➔ Reactive Fan Speed Daemon.",
+      "result": "Drops sustained gaming/compilation temperatures by 10-15°C with customizable speed curves and zero proprietary Windows bloat."
+    }
+  },
+  {
+    "name": "Dodo-RF",
+    "title": "Dodo-RF — Sub-GHz Wireless Protocol Analyzer",
+    "description": "Ultra-portable hardware RF analysis, signal capture, and packet synthesis platform built for CC1101 transceivers paired with ESP32 and RP2040 microcontrollers across 315, 433, 868, and 915 MHz bands.",
+    "category": "embedded",
+    "featured": true,
+    "language": "C++",
+    "html_url": "https://github.com/killindodo/Dodo-RF",
+    "homepage": "https://github.com/killindodo/Dodo-RF",
+    "stargazers_count": 4,
+    "forks_count": 1,
+    "updated_at": "2026-08-19T00:12:44Z",
+    "topics": ["cc1101", "embedded", "esp32", "hardware-security", "iot", "radio-frequency", "rf-capture", "sub-ghz"],
+    "specs": {
+      "architecture": "Embedded Firmware & Real-time Signal Processing",
+      "stack": "C++, Arduino / ESP-IDF, SPI Hardware Bus, Python Desktop GUI",
+      "platform": "ESP32 / RP2040 Microcontrollers + TI CC1101 Transceiver",
+      "role": "Embedded Hardware Architect"
+    },
+    "case_study": {
+      "context": "Sub-GHz RF analysis tools (such as software-defined radios or dedicated analyzers) are either prohibitively expensive or too bulky for field work.",
+      "problem": "Engineer a handheld, low-cost Sub-GHz radio analyzer capable of sniffing, decoding, recording, and transmitting digital radio signals with microsecond timing accuracy.",
+      "engineering": "Designed firmware controlling TI CC1101 registers via high-speed SPI, implementing packet filtering, demodulation presets (ASK/OOK, 2-FSK), and pulse-width timing capture.",
+      "architecture": "RF Antenna ➔ TI CC1101 Transceiver ➔ High-Speed SPI Bus ➔ ESP32 Microcontroller Core ➔ Real-time Signal Analyzer.",
+      "result": "Reliably decodes remote key fobs, automated weather stations, industrial gate controllers, and security sensors in real time."
+    }
+  },
+  {
+    "name": "databricks_pipelines",
+    "title": "Databricks Medallion Data Lakehouse Architecture",
+    "description": "Industrial distributed data lakehouse pipelines implementing Bronze, Silver, and Gold Medallion architecture on Apache Spark / PySpark and Databricks Delta Lake with ACID transactional guarantees.",
+    "category": "data",
+    "featured": true,
+    "language": "Jupyter Notebook",
+    "html_url": "https://github.com/killindodo/databricks_pipelines",
+    "homepage": "https://github.com/killindodo/databricks_pipelines",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "updated_at": "2026-06-20T05:49:11Z",
+    "topics": ["apache-spark", "databricks", "data-engineering", "delta-lake", "etl-pipeline", "medallion-architecture", "pyspark"],
+    "specs": {
+      "architecture": "Medallion Architecture (Bronze ➔ Silver ➔ Gold)",
+      "stack": "PySpark, Databricks Delta Lake, Apache Spark, Python",
+      "platform": "Databricks Cloud / Distributed Spark Clusters",
+      "role": "Data Engineer"
+    },
+    "case_study": {
+      "context": "Enterprise data systems frequently suffer from corrupted schemas, unreliable batch ETL jobs, and un-reproducible analytical downstream reporting.",
+      "problem": "Construct a resilient, automated data engineering pipeline that ingests raw telemetry, validates schema integrity, and delivers curated aggregated data marts.",
+      "engineering": "Built layered PySpark pipelines utilizing Delta Lake ACID transactions, enforcing schema validation at ingestion (Bronze), deduplication and enrichment (Silver), and business aggregation (Gold).",
+      "architecture": "Raw Source Streams ➔ Bronze (Raw Ingestion) ➔ Delta ACID ➔ Silver (Cleaned & Enriched) ➔ Gold (Aggregated Analytics).",
+      "result": "Zero data corruption, reproducible schema enforcement, and optimized Z-order queries on millions of records."
+    }
+  },
+  {
+    "name": "chandrawati-enterprises",
+    "title": "Chandrawati Enterprises — Workforce Outsourcing Portal",
+    "description": "Production web platform for a major manpower and industrial workforce outsourcing corporation in Gaya, Bihar. Engineered for high performance, local asset bundling, and interactive quote dispatch.",
+    "category": "web",
+    "featured": true,
+    "language": "JavaScript",
+    "html_url": "https://github.com/killindodo",
+    "homepage": "https://chandrawati-enterprises.vercel.app/",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "updated_at": "2026-08-15T12:00:00Z",
+    "topics": ["client-portal", "corporate-web", "high-performance", "manpower-solutions", "vanilla-js"],
+    "specs": {
+      "architecture": "Zero-Dependency Responsive Web Portal",
+      "stack": "Semantic HTML5, CSS3 Grid/Flexbox, Vanilla JS, Vercel Edge",
+      "platform": "Vercel Global Edge Production",
+      "role": "Lead Systems & Web Architect"
+    },
+    "case_study": {
+      "context": "A local corporate workforce supplier required a modern digital presence to service enterprise clients, verify candidate profiles, and generate contracts.",
+      "problem": "Deliver a fast, accessible portal with zero third-party framework lock-in, ensuring instant loading even over cellular 4G/3G networks.",
+      "engineering": "Designed responsive design systems, modular CSS architecture, and direct client WhatsApp API quotation hooks without bloated npm dependencies.",
+      "architecture": "Static Asset CDN ➔ Local Caching Service Worker ➔ Client Inquiries Engine ➔ Direct Business WhatsApp Dispatch.",
+      "result": "Instant first contentful paint, 100% responsive compatibility across low-end smartphones, and significant inbound corporate client leads."
+    }
+  },
+  {
+    "name": "redmi-note9-nvram-restore",
+    "title": "Redmi Note 9 NVRAM & IMEI Recovery Suite",
+    "description": "Hardware-level guide and automated binary tooling to reconstruct corrupted NVRAM, baseband calibration partitions, and restore null IMEI on MediaTek MT6769 (Helio G85) devices.",
+    "category": "android",
+    "featured": false,
+    "language": "Python",
+    "html_url": "https://github.com/killindodo/redmi-note9-nvram-restore",
+    "homepage": "https://github.com/killindodo/redmi-note9-nvram-restore",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "updated_at": "2026-09-13T20:13:48Z",
+    "topics": ["android", "baseband", "imei-repair", "mediatek", "nvram", "partition-recovery", "python"],
+    "specs": {
+      "architecture": "Low-level Partition Analysis & Hex Rebuilding",
+      "stack": "Python, SP Flash Tool, MediaTek Partition Table, Hex Binary Editors",
+      "platform": "MediaTek MT6769 (Redmi Note 9 / Merlin)",
+      "role": "Systems Researcher & Hardware Recovery Engineer"
+    }
+  },
+  {
+    "name": "merlin-net-hunter-kernel-MT7601U-WiFi-Adapter-Support-",
+    "title": "Kali NetHunter Kernel & MT7601U Driver Port",
+    "description": "Custom Linux kernel compilation and driver backport enabling external USB MT7601U wireless adapters and packet monitor mode on Kali NetHunter for ARM64 Android devices.",
+    "category": "linux",
+    "featured": false,
+    "language": "C",
+    "html_url": "https://github.com/killindodo/merlin-net-hunter-kernel-MT7601U-WiFi-Adapter-Support-",
+    "homepage": "https://github.com/killindodo/merlin-net-hunter-kernel-MT7601U-WiFi-Adapter-Support-",
+    "stargazers_count": 1,
+    "forks_count": 0,
+    "updated_at": "2026-08-13T13:50:26Z",
+    "topics": ["arm64", "kali-nethunter", "kernel-patch", "linux-kernel", "mt7601u", "packet-injection", "wireless-driver"],
+    "specs": {
+      "architecture": "Kernel Tree Patch & Driver Module Compilation",
+      "stack": "C, Linux Kernel 4.14 / 4.19 Source, Clang / GCC Cross-Toolchains, DKMS",
+      "platform": "ARM64 Linux Kernel for MediaTek Merlin",
+      "role": "Kernel Developer"
+    }
+  },
+  {
+    "name": "ai-engineering-from-scratch",
+    "title": "AI Engineering From Scratch",
+    "description": "Foundational implementations of modern machine learning algorithms, transformer attention mechanisms, tensor computations, and neural architectures coded directly from fundamental mathematics.",
+    "category": "data",
+    "featured": false,
+    "language": "Python",
+    "html_url": "https://github.com/killindodo/ai-engineering-from-scratch",
+    "homepage": "https://github.com/killindodo/ai-engineering-from-scratch",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-07-18T16:45:42Z",
+    "topics": ["ai-engineering", "deep-learning", "from-scratch", "math", "neural-networks", "python", "tensors"],
+    "specs": {
+      "architecture": "Mathematical Foundations & Raw Tensor Implementations",
+      "stack": "Python, NumPy, PyTorch Internals, Mathematical Optimization",
+      "platform": "Cross-Platform Linux / Python",
+      "role": "Systems Researcher"
+    }
+  }
+]

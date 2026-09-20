@@ -1,374 +1,542 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="cinematic">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Surya Pratap — Systems &amp; Web Architect | Founder of SJ Digitals Co.</title>
-    <meta name="description" content="Surya Pratap — Systems & Web Architect, Embedded & Data Engineer, Founder of SJ Digitals Co. Architecting high-performance web platforms, Android & Linux systems, and Sub-GHz hardware.">
+    <title>Surya Pratap — Systems &amp; Software Engineer | KILLINDODO</title>
+    <meta name="description" content="Surya Pratap (KILLINDODO) — Systems & Software Engineer, Hardware Hacker, Founder of SJ Digitals Co. Engineering across interfaces, Linux kernels, Android subsystems, Sub-GHz RF, and data lakehouses.">
+    <meta name="author" content="Surya Pratap (KILLINDODO)">
+    <link rel="canonical" href="https://killindodo.github.io/portfolio/">
 
-    <!-- Fonts: Cormorant Garamond (Editorial Serif) + Plus Jakarta Sans + Space Grotesk + Fira Code -->
+    <!-- Typography: Space Grotesk (Display) + Plus Jakarta Sans (Body) + Fira Code (Technical) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Styles -->
+    <!-- Design System -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Remote Edge Gatekeeper (Live / Maintenance Control via GitHub API) -->
+    <!-- Remote Edge Gatekeeper -->
     <script src="gatekeeper.js"></script>
 </head>
 <body>
 
-    <!-- 1. Interactive Custom Cursor (Desktop) -->
-    <div class="custom-cursor">
-        <div class="cursor-dot" id="cursorDot"></div>
-        <div class="cursor-ring" id="cursorRing"></div>
-    </div>
-
-    <!-- 2. Dynamic Ambient Backgrounds -->
-    <div class="bg-canvas-wrapper">
-        <!-- Matrix Rain (Active in Cyber Console Mode) -->
-        <canvas id="matrix-canvas"></canvas>
-        <!-- CRT Scanline Overlay -->
-        <div class="cyber-crt-overlay"></div>
-        <!-- Ambient Warm Dust & Glow (Active in Cinematic Studio Mode) -->
-        <div class="cinematic-ambient-dust"></div>
-    </div>
-
-    <!-- 3. Floating Theme Switcher Dock -->
-    <aside class="theme-switcher-dock" aria-label="Theme Selection">
-        <button class="theme-opt-btn active" data-set-theme="cinematic" onclick="toggleTheme('cinematic')">
-            <span>🎬</span> Cinematic
-        </button>
-        <button class="theme-opt-btn" data-set-theme="cyber" onclick="toggleTheme('cyber')">
-            <span>⚡</span> Cyber
-        </button>
-    </aside>
-
-    <!-- 4. Navbar -->
-    <header class="navbar-wrap">
-        <nav class="nav-container">
+    <!-- ─── NAVIGATION ─── -->
+    <header class="nav-wrapper">
+        <nav class="nav-bar">
             <div class="nav-brand">
-                <span class="brand-dot"></span>
-                <span class="brand-name">SURYA PRATAP</span>
+                <div class="brand-glyph">SP</div>
+                <div class="brand-text">
+                    <span class="brand-name">SURYA PRATAP</span>
+                    <span class="brand-sub">KILLINDODO / SYSTEMS</span>
+                </div>
             </div>
 
             <div class="nav-links">
                 <a href="#work" class="nav-link">Selected Work</a>
-                <a href="#capabilities" class="nav-link">Capabilities</a>
-                <a href="#founder" class="nav-link">Founder Bio</a>
-                <a href="#contact" class="nav-link">Direct Dispatch</a>
+                <a href="#domains" class="nav-link">Domains</a>
+                <a href="#github-archive" class="nav-link">GitHub Archive</a>
+                <a href="#agency" class="nav-link">SJ Digitals</a>
+                <a href="#philosophy" class="nav-link">Philosophy</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
 
             <div class="nav-actions">
-                <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-agency-nav" title="Visit SJ Digitals Agency">
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                    <span>SJ DIGITALS CO.</span>
+                <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-nav-agency" title="Visit SJ Digitals Agency Platform">
+                    <span class="pulse-dot-amber"></span>
+                    <span>SJ DIGITALS CO. ↗</span>
                 </a>
             </div>
         </nav>
     </header>
 
-    <!-- 5. Main Content Shell -->
+    <!-- ─── MAIN CONTENT SHELL ─── -->
     <main class="page-shell">
 
-        <!-- HERO SECTION -->
-        <section class="hero-section" id="about">
-            <div class="hero-pill-row">
-                <div class="status-badge">
-                    <span style="color: var(--accent);">●</span> AVAILABLE FOR ARCHITECTURE CONSULTING // 2026
+        <!-- ─── HERO SECTION ─── -->
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <div class="hero-preheader">
+                    <span class="status-beacon-live"></span>
+                    <span class="preheader-text">AVAILABLE FOR SYSTEMS CONSULTING // 2026</span>
                 </div>
-                <div class="status-badge" style="border-color: rgba(212, 168, 83, 0.4);">
-                    <i class="fas fa-crown" style="color: #d4a853;"></i> FOUNDER // SJ DIGITALS CO.
+
+                <div class="hero-title-group">
+                    <div class="hero-eyebrow">SYSTEMS &amp; SOFTWARE ENGINEER</div>
+                    <h1 class="hero-name">SURYA PRATAP</h1>
+                    <div class="hero-tagline">
+                        <span class="highlight-role">Software</span> • Hardware • Linux Kernel • Infrastructure
+                    </div>
+                </div>
+
+                <p class="hero-statement">
+                    Founder of <strong>SJ Digitals Co.</strong> I design and build systems across the entire vertical stack—from zero-layout-shift web platforms and enterprise data lakehouses to low-level Linux kernel drivers, Android device subsystems, and Sub-GHz RF microcontrollers.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#work" class="btn-primary">
+                        <span>EXPLORE THE WORK</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-amber-outline">
+                        <span>VISIT SJ DIGITALS</span>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <span>INITIATE DISPATCH</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+
+                <!-- Technical Telemetry Strip -->
+                <div class="hero-metadata-row">
+                    <div class="meta-box">
+                        <span class="meta-box-label">CODENAME</span>
+                        <span class="meta-box-value">KILLINDODO</span>
+                    </div>
+                    <div class="meta-box">
+                        <span class="meta-box-label">AGENCY LEAD</span>
+                        <span class="meta-box-value amber">SJ DIGITALS CO.</span>
+                    </div>
+                    <div class="meta-box">
+                        <span class="meta-box-label">STACK CORE</span>
+                        <span class="meta-box-value cobalt">C/C++ • PYTHON • KOTLIN</span>
+                    </div>
+                    <div class="meta-box">
+                        <span class="meta-box-label">HARDWARE</span>
+                        <span class="meta-box-value">ESP32 • CC1101 • ACPI</span>
+                    </div>
                 </div>
             </div>
 
-            <h1 class="hero-title">
-                Architecting Resilient <br>
-                <span class="accent-text">Web Systems &amp; Hardware Bridges.</span>
-            </h1>
-
-            <p class="hero-bio">
-                Founder of <a href="https://sjdigitals.vercel.app/" target="_blank" style="color: var(--accent); font-weight: 700; text-decoration: underline;">SJ Digitals Co.</a> 
-                Engineering high-performance <strong>Web Platforms &amp; Client Portals</strong>, low-level <strong>Linux &amp; Android Ecosystems (Linux Continuity, Zezes)</strong>, custom <strong>Sub-GHz RF Microcontrollers</strong>, and scalable <strong>Enterprise Data Lakehouses (PySpark/Databricks)</strong>.
-            </p>
-
-            <div class="hero-cta-group">
-                <a href="#work" class="btn-primary">
-                    <span>Explore Selected Work</span>
-                    <i class="fas fa-arrow-down"></i>
-                </a>
-                <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-outline">
-                    <span>Visit SJ Digitals Co.</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-                <a href="#contact" class="btn-outline">
-                    <span>Direct Dispatch</span>
-                    <i class="fas fa-paper-plane"></i>
-                </a>
-            </div>
-
-            <!-- Telemetry Metrics Bar -->
-            <div class="telemetry-strip">
-                <div class="telemetry-card">
-                    <span class="telemetry-label">AGENCY LEAD</span>
-                    <span class="telemetry-val accent">SJ DIGITALS CO. ↗</span>
+            <!-- Living Architecture Canvas -->
+            <div class="hero-canvas-card">
+                <div class="canvas-header">
+                    <span class="canvas-tag">INTERCONNECTED_SYSTEMS_MAP</span>
+                    <span>ACTIVE_TELEMETRY</span>
                 </div>
-                <div class="telemetry-card">
-                    <span class="telemetry-label">CONTINUITY BRIDGE</span>
-                    <span class="telemetry-val">LINUX ↔ ANDROID DAEMON</span>
-                </div>
-                <div class="telemetry-card">
-                    <span class="telemetry-label">EMBEDDED RF</span>
-                    <span class="telemetry-val">DODO-RF (CC1101)</span>
-                </div>
-                <div class="telemetry-card">
-                    <span class="telemetry-label">DATA LAKEHOUSE</span>
-                    <span class="telemetry-val">MEDALLION PYSPARK</span>
+                <canvas id="architectureCanvas"></canvas>
+                <div class="canvas-footer">
+                    <span>LIVE BUS: SPI • I2C • UNIX SOCKETS • ANYCAST EDGE</span>
+                    <span>STATUS: OPERATIONAL</span>
                 </div>
             </div>
         </section>
 
-        <!-- 6. SELECTED WORK SECTION -->
-        <section class="projects-section" id="work">
-            <div class="section-header">
-                <span class="section-tag">PORTFOLIO ARCHIVE</span>
-                <h2 class="section-title">Selected Engineering Work</h2>
-                <p class="section-desc">Production web platforms, open-source Linux daemons, kernel recovery trees, and sub-GHz hardware implementations.</p>
+        <!-- ─── WHAT I BUILD (6 ENGINEERING DOMAINS) ─── -->
+        <section class="section-wrapper" id="domains">
+            <div class="section-head">
+                <span class="section-kicker">ENGINEERING CAPABILITIES</span>
+                <h2 class="section-title">What I Build</h2>
+                <p class="section-subtitle">A multidisciplinary engineering practice moving between web interfaces, operating systems, hardware registers, and distributed data.</p>
             </div>
 
-            <!-- Filter Controls -->
-            <div class="filter-bar">
-                <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')">ALL ARCHIVES</button>
-                <button class="filter-btn" data-filter="web" onclick="filterProjects('web')">WEB PLATFORMS</button>
-                <button class="filter-btn" data-filter="systems" onclick="filterProjects('systems')">LINUX &amp; ANDROID</button>
-                <button class="filter-btn" data-filter="embedded" onclick="filterProjects('embedded')">SUB-GHz RF</button>
-                <button class="filter-btn" data-filter="data" onclick="filterProjects('data')">DATA LAKEHOUSE</button>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="projects-grid">
-
-                <!-- 1. SJ Digitals Co. -->
-                <article class="project-card featured-card" data-category="web">
+            <div class="domains-grid">
+                <!-- Domain 1 -->
+                <div class="domain-card">
                     <div>
-                        <div class="project-top-row">
-                            <span class="project-category">[PRJ_01 // AGENCY_PLATFORM]</span>
-                            <span class="project-status-chip">● LIVE PRODUCTION</span>
-                        </div>
-                        <h3 class="project-name">🌐 SJ Digitals Co. — Modern Digital Agency &amp; Systems Platform</h3>
-                        <p class="project-desc">
-                            Flagship corporate web presence for SJ Digitals Co., founded by Surya Pratap. Showcases creative development, bespoke web systems, corporate branding architectures, smart NFC business card solutions, and edge cloud IT infrastructure. Built for zero layout shifts and instant global edge caching.
-                        </p>
-                        <div class="specs-grid">
-                            <div class="spec-item"><span class="spec-lbl">PLATFORM:</span> <span class="spec-val">Vercel Global Edge</span></div>
-                            <div class="spec-item"><span class="spec-lbl">ROLE:</span> <span class="spec-val">Founder &amp; Lead Architect</span></div>
-                            <div class="spec-item"><span class="spec-lbl">STACK:</span> <span class="spec-val">Vanilla ES6+ / CSS3 Tokens</span></div>
-                            <div class="spec-item"><span class="spec-lbl">SPEED INDEX:</span> <span class="spec-val">99+ / Zero Build Lock-in</span></div>
-                        </div>
+                        <div class="domain-num">DOMAIN // 01</div>
+                        <h3 class="domain-name">Software &amp; Web Systems</h3>
+                        <p class="domain-desc">Zero-layout-shift web applications, client portals, responsive design token systems, and edge caching architectures with zero build lock-in.</p>
                     </div>
-                    <div class="project-foot">
-                        <div class="tech-pills">
-                            <span class="tech-pill">Vercel Edge</span>
-                            <span class="tech-pill">Vanilla JS</span>
-                            <span class="tech-pill">NFC Systems</span>
-                            <span class="tech-pill">Design System</span>
+                    <div class="domain-tech-stack">
+                        <span class="tech-chip">Vanilla ES6+</span>
+                        <span class="tech-chip">Vercel Edge</span>
+                        <span class="tech-chip">Modular CSS3</span>
+                        <span class="tech-chip">REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Domain 2 -->
+                <div class="domain-card">
+                    <div>
+                        <div class="domain-num">DOMAIN // 02</div>
+                        <h3 class="domain-name">Linux &amp; Low-Level</h3>
+                        <p class="domain-desc">ACPI Embedded Controller drivers, custom kernel modules, DKMS backports, system background services, and local UNIX socket IPC.</p>
+                    </div>
+                    <div class="domain-tech-stack">
+                        <span class="tech-chip">C / C++</span>
+                        <span class="tech-chip">ACPI EC sys</span>
+                        <span class="tech-chip">DKMS Modules</span>
+                        <span class="tech-chip">UNIX Sockets</span>
+                    </div>
+                </div>
+
+                <!-- Domain 3 -->
+                <div class="domain-card">
+                    <div>
+                        <div class="domain-num">DOMAIN // 03</div>
+                        <h3 class="domain-name">Android Systems</h3>
+                        <p class="domain-desc">Custom recovery compilation (TWRP, OrangeFox), Linux Kernel USB Gadget ConfigFS, GKI trees, Magisk/KernelSU modules, and root automation.</p>
+                    </div>
+                    <div class="domain-tech-stack">
+                        <span class="tech-chip">Kotlin / Java</span>
+                        <span class="tech-chip">GKI v4/6.1</span>
+                        <span class="tech-chip">USB Gadget</span>
+                        <span class="tech-chip">EROFS Rootfs</span>
+                    </div>
+                </div>
+
+                <!-- Domain 4 -->
+                <div class="domain-card">
+                    <div>
+                        <div class="domain-num">DOMAIN // 04</div>
+                        <h3 class="domain-name">Embedded &amp; Wireless RF</h3>
+                        <p class="domain-desc">Real-time signal analysis, TI CC1101 Sub-GHz packet capture across 315/433/868/915 MHz, SPI bitbanging, and ESP32/RP2040 firmware.</p>
+                    </div>
+                    <div class="domain-tech-stack">
+                        <span class="tech-chip">ESP32 / RP2040</span>
+                        <span class="tech-chip">CC1101 RF</span>
+                        <span class="tech-chip">SPI / I2C Bus</span>
+                        <span class="tech-chip">ASK/OOK 2-FSK</span>
+                    </div>
+                </div>
+
+                <!-- Domain 5 -->
+                <div class="domain-card">
+                    <div>
+                        <div class="domain-num">DOMAIN // 05</div>
+                        <h3 class="domain-name">Data Engineering &amp; Lakehouse</h3>
+                        <p class="domain-desc">Industrial distributed PySpark pipelines, Databricks Delta Lake, ACID transactional lakehouses, and Medallion architecture (Bronze ➔ Silver ➔ Gold).</p>
+                    </div>
+                    <div class="domain-tech-stack">
+                        <span class="tech-chip">Apache Spark</span>
+                        <span class="tech-chip">PySpark</span>
+                        <span class="tech-chip">Databricks</span>
+                        <span class="tech-chip">Delta Lake</span>
+                    </div>
+                </div>
+
+                <!-- Domain 6 -->
+                <div class="domain-card amber-accent">
+                    <div>
+                        <div class="domain-num" style="color: var(--amber-light);">DOMAIN // 06</div>
+                        <h3 class="domain-name">Digital Enterprise Products</h3>
+                        <p class="domain-desc">Client business platforms, NFC smart business card micro-landing pages, WhatsApp catalogues, and local search SEO under SJ Digitals Co.</p>
+                    </div>
+                    <div class="domain-tech-stack">
+                        <span class="tech-chip">SJ Digitals</span>
+                        <span class="tech-chip">Smart NFC</span>
+                        <span class="tech-chip">Local SEO</span>
+                        <span class="tech-chip">Brand Systems</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SELECTED WORK (CURATED CASE STUDIES) ─── -->
+        <section class="section-wrapper" id="work">
+            <div class="section-head">
+                <span class="section-kicker">CURATED ARCHIVE</span>
+                <h2 class="section-title">Selected Work</h2>
+                <p class="section-subtitle">Deep dive into production platforms, open-source systems daemons, hardware firmware, and data pipelines.</p>
+            </div>
+
+            <div class="projects-showcase-grid">
+
+                <!-- Case Study 1: SJ Digitals Co. -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_01]</span>
+                            <span class="case-domain-tag">AGENCY &amp; PLATFORM INFRASTRUCTURE</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-card-link">
-                                <span>Visit Agency</span>
+                        <span class="case-status-chip">● LIVE PRODUCTION</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">SJ Digitals Co. — Modern Digital Agency &amp; Systems Platform</h3>
+                        <p class="case-desc">
+                            Flagship digital systems platform and corporate web presence for SJ Digitals Co., founded by Surya Pratap. Features zero layout shifts, bespoke client portals, NFC smart business card routing, and instant edge caching.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">ARCHITECTURE</span><span class="spec-val">Edge-Cached Static System</span></div>
+                        <div class="spec-cell"><span class="spec-key">ROLE</span><span class="spec-val">Founder &amp; Principal Systems Architect</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, Modular CSS3 Tokens, Vanilla ES6+</span></div>
+                        <div class="spec-cell"><span class="spec-key">PERFORMANCE</span><span class="spec-val">99+ Speed Index / Zero Build Lock-in</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('sjdigitals.co')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-ext-link">
+                                <span>Live Platform</span>
                                 <i class="fas fa-arrow-up-right-from-square"></i>
                             </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Vercel Edge Global
                         </div>
                     </div>
                 </article>
 
-                <!-- 2. Chandrawati Enterprises -->
-                <article class="project-card" data-category="web">
-                    <div>
-                        <div class="project-top-row">
-                            <span class="project-category">[PRJ_02 // CLIENT_PORTAL]</span>
-                            <span class="project-status-chip">● LIVE VERCEL</span>
+                <!-- Case Study 2: Linux Continuity -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_02]</span>
+                            <span class="case-domain-tag">SYSTEMS DAEMON</span>
                         </div>
-                        <h3 class="project-name">💼 Chandrawati Enterprises — Workforce Outsourcing Portal</h3>
-                        <p class="project-desc">
-                            Production web portal for a premier manpower and workforce outsourcing firm in Gaya, Bihar. Features a pixel-perfect responsive design, service quote workflow, and offline-resilient local asset bundling.
+                        <span class="case-status-chip">● OPEN SOURCE // ACTIVE</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Linux Continuity — Seamless Android ↔ Linux Bridge</h3>
+                        <p class="case-desc">
+                            Apple-style Continuity ecosystem bridging Linux desktop workstations with Android devices. Real-time clipboard synchronization, AirDrop-like zero-friction file transfer, shared media controls, and interactive shell execution over secure local sockets.
                         </p>
-                        <div class="specs-grid">
-                            <div class="spec-item"><span class="spec-lbl">CLIENT:</span> <span class="spec-val">Chandrawati Enterprises</span></div>
-                            <div class="spec-item"><span class="spec-lbl">DEPLOYMENT:</span> <span class="spec-val">Vercel Production Edge</span></div>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">CORE PROTOCOL</span><span class="spec-val">Local UNIX Sockets &amp; Cryptography</span></div>
+                        <div class="spec-cell"><span class="spec-key">AUTHOR</span><span class="spec-val">Surya Pratap (KILLINDODO)</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Python 3, ADB Protocol, Linux D-Bus</span></div>
+                        <div class="spec-cell"><span class="spec-key">LATENCY</span><span class="spec-val">Sub-millisecond Clipboard Sync</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('linux-continuity')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/linux-continuity" target="_blank" class="btn-ext-link">
+                                <span>GitHub Repo</span>
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Python 3 • Linux D-Bus
                         </div>
                     </div>
-                    <div class="project-foot">
-                        <div class="tech-pills">
-                            <span class="tech-pill">HTML5/CSS3</span>
-                            <span class="tech-pill">Vanilla JS</span>
-                            <span class="tech-pill">Vercel Edge</span>
+                </article>
+
+                <!-- Case Study 3: Pinion -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_03]</span>
+                            <span class="case-domain-tag">WIRELESS SPOOLING CORE</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://chandrawati-enterprises.vercel.app/" target="_blank" class="btn-card-link">
+                        <span class="case-status-chip">● HARDWARE VALIDATED</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Pinion — Universal Wireless Print Engine for Android</h3>
+                        <p class="case-desc">
+                            Universal wireless print server and hardware spooling daemon for Android. Bridges CUPS, IPP, AirPrint, and Mopria printing protocols with a modern embedded Web UI and root-level automation.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">SUBSYSTEM</span><span class="spec-val">Embedded IPP Core &amp; CUPS Daemon</span></div>
+                        <div class="spec-cell"><span class="spec-key">HARDWARE I/O</span><span class="spec-val">USB OTG (/dev/usb/lp0) &amp; WiFi</span></div>
+                        <div class="spec-cell"><span class="spec-key">COMPATIBILITY</span><span class="spec-val">Android 8.0+ through Android 15</span></div>
+                        <div class="spec-cell"><span class="spec-key">PROTOCOLS</span><span class="spec-val">AirPrint • Mopria • IPP • RAW 9100</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('pinion')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/pinion" target="_blank" class="btn-ext-link">
+                                <span>GitHub Repo</span>
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Java • Native NDK • CUPS
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case Study 4: Zezes -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_04]</span>
+                            <span class="case-domain-tag">KERNEL GADGET SUBSYSTEM</span>
+                        </div>
+                        <span class="case-status-chip">● VALIDATED PROTOYPE</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Zezes — Android USB OTG ISO Deployment Core</h3>
+                        <p class="case-desc">
+                            Emergency bare-metal multi-boot installer core running directly on Android. Emulates hardware CD-ROM / USB mass storage devices over USB-C OTG using Linux Kernel USB Gadget ConfigFS.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">KERNEL INTERFACE</span><span class="spec-val">Linux USB Gadget ConfigFS</span></div>
+                        <div class="spec-cell"><span class="spec-key">USE CASE</span><span class="spec-val">PC BIOS/UEFI Bare-Metal Boot</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Kotlin, C / Shell, USB LUNs</span></div>
+                        <div class="spec-cell"><span class="spec-key">REQUIREMENT</span><span class="spec-val">Android Root (GKI 4.19+ / 5.10 / 6.1)</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('Zezes')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/Zezes" target="_blank" class="btn-ext-link">
+                                <span>GitHub Repo</span>
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Kotlin • Kernel USB Gadget
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case Study 5: NitroSense Linux -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_05]</span>
+                            <span class="case-domain-tag">ACPI EC DRIVER</span>
+                        </div>
+                        <span class="case-status-chip">● STABLE RELEASE</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">NitroSense Linux — Acer EC Thermal &amp; Fan Governor</h3>
+                        <p class="case-desc">
+                            Native Linux fan speed controller and thermal monitor for Acer Nitro series gaming laptops. Directly queries and modifies ACPI Embedded Controller (EC) registers to override proprietary firmware fan limitations.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">HARDWARE TARGET</span><span class="spec-val">Acer Nitro 5 (AN515-42 &amp; AN515 series)</span></div>
+                        <div class="spec-cell"><span class="spec-key">DRIVER INTERFACE</span><span class="spec-val">Linux ec_sys Kernel Module</span></div>
+                        <div class="spec-cell"><span class="spec-key">THERMAL DELTA</span><span class="spec-val">10-15°C Sustained Temperature Drop</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">C, Python 3, PyQt6, ACPI Registers</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('nitrosense-linux')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/nitrosense-linux" target="_blank" class="btn-ext-link">
+                                <span>GitHub Repo</span>
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Python 3 • ACPI EC • C
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case Study 6: Dodo-RF -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_06]</span>
+                            <span class="case-domain-tag">WIRELESS RF HARDWARE</span>
+                        </div>
+                        <span class="case-status-chip">● HARDWARE TESTED</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Dodo-RF — Sub-GHz Wireless Protocol Analyzer</h3>
+                        <p class="case-desc">
+                            Ultra-portable hardware RF analysis, signal capture, and packet synthesis platform built for CC1101 transceivers paired with ESP32 and RP2040 microcontrollers across 315, 433, 868, and 915 MHz bands.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">TRANSCEIVER</span><span class="spec-val">TI CC1101 via High-Speed SPI</span></div>
+                        <div class="spec-cell"><span class="spec-key">FREQUENCIES</span><span class="spec-val">315, 433, 868, 915 MHz Bands</span></div>
+                        <div class="spec-cell"><span class="spec-key">MODULATION</span><span class="spec-val">ASK/OOK, 2-FSK, GFSK, MSK</span></div>
+                        <div class="spec-cell"><span class="spec-key">MICROCONTROLLER</span><span class="spec-val">ESP32 / RP2040 Dual-Core</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('Dodo-RF')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/Dodo-RF" target="_blank" class="btn-ext-link">
+                                <span>GitHub Repo</span>
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            C++ • SPI Bus • ESP32
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case Study 7: Databricks Medallion Pipelines -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_07]</span>
+                            <span class="case-domain-tag">DATA LAKEHOUSE ARCHITECTURE</span>
+                        </div>
+                        <span class="case-status-chip">● PRODUCTION PATTERN</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Databricks Medallion Data Lakehouse Architecture</h3>
+                        <p class="case-desc">
+                            Industrial distributed data lakehouse pipelines implementing Bronze, Silver, and Gold Medallion architecture on Apache Spark / PySpark and Databricks Delta Lake with ACID transactional guarantees.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">STORAGE CORE</span><span class="spec-val">Databricks Delta Lake ACID</span></div>
+                        <div class="spec-cell"><span class="spec-key">ENGINE</span><span class="spec-val">Apache Spark / PySpark</span></div>
+                        <div class="spec-cell"><span class="spec-key">PIPELINE FLOW</span><span class="spec-val">Bronze (Ingestion) ➔ Silver ➔ Gold</span></div>
+                        <div class="spec-cell"><span class="spec-key">INTEGRITY</span><span class="spec-val">Schema Enforcement &amp; Time Travel</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('databricks_pipelines')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/databricks_pipelines" target="_blank" class="btn-ext-link">
+                                <span>GitHub Repo</span>
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            PySpark • Delta Lake • Databricks
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case Study 8: Chandrawati Enterprises -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_08]</span>
+                            <span class="case-domain-tag">CORPORATE CLIENT PORTAL</span>
+                        </div>
+                        <span class="case-status-chip">● LIVE PRODUCTION</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Chandrawati Enterprises — Workforce Outsourcing Portal</h3>
+                        <p class="case-desc">
+                            Production web platform for a major manpower and industrial workforce outsourcing corporation in Gaya, Bihar. Engineered for high performance, local asset bundling, and interactive quote dispatch.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">CLIENT</span><span class="spec-val">Chandrawati Enterprises</span></div>
+                        <div class="spec-cell"><span class="spec-key">DEPLOYMENT</span><span class="spec-val">Vercel Global Edge Production</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, CSS3, Vanilla JS</span></div>
+                        <div class="spec-cell"><span class="spec-key">INTEGRATION</span><span class="spec-val">Direct Business WhatsApp Lead Engine</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('chandrawati-enterprises')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://chandrawati-enterprises.vercel.app/" target="_blank" class="btn-ext-link">
                                 <span>Live Demo</span>
                                 <i class="fas fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
-                    </div>
-                </article>
-
-                <!-- 3. Linux Continuity -->
-                <article class="project-card" data-category="systems">
-                    <div>
-                        <div class="project-top-row">
-                            <span class="project-category">[PRJ_03 // SYSTEMS_DAEMON]</span>
-                            <span class="project-status-chip">● OPEN SOURCE</span>
-                        </div>
-                        <h3 class="project-name">🐧 Linux Continuity — Seamless Android ↔ Linux Bridge</h3>
-                        <p class="project-desc">
-                            High-speed local background daemon bridging Linux desktops with Android devices. Real-time clipboard synchronization, notification forwarding, shared media controls, and remote shell commands over secure local sockets.
-                        </p>
-                        <div class="specs-grid">
-                            <div class="spec-item"><span class="spec-lbl">CORE:</span> <span class="spec-val">Python 3 / UNIX Sockets</span></div>
-                            <div class="spec-item"><span class="spec-lbl">SECURITY:</span> <span class="spec-val">Local Auth Handshake</span></div>
-                        </div>
-                    </div>
-                    <div class="project-foot">
-                        <div class="tech-pills">
-                            <span class="tech-pill">Python</span>
-                            <span class="tech-pill">ADB Protocol</span>
-                            <span class="tech-pill">Sockets</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/killindodo/linux-continuity" target="_blank" class="btn-card-link">
-                                <span>GitHub</span>
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 4. Zezes Mobile ISO Core -->
-                <article class="project-card" data-category="systems">
-                    <div>
-                        <div class="project-top-row">
-                            <span class="project-category">[PRJ_04 // ANDROID_KERNEL]</span>
-                            <span class="project-status-chip">● HARDWARE TESTED</span>
-                        </div>
-                        <h3 class="project-name">📱 Zezes — USB OTG Multi-Boot ISO Dispatcher</h3>
-                        <p class="project-desc">
-                            Turns Android phones into emergency multi-boot USB flash drives. Emulates hardware CD-ROM / USB mass storage over OTG via Android ConfigFS and Linux USB Gadget API.
-                        </p>
-                        <div class="specs-grid">
-                            <div class="spec-item"><span class="spec-lbl">INTERFACE:</span> <span class="spec-val">Linux USB Gadget ConfigFS</span></div>
-                            <div class="spec-item"><span class="spec-lbl">TARGET:</span> <span class="spec-val">Multi-OS Booting</span></div>
-                        </div>
-                    </div>
-                    <div class="project-foot">
-                        <div class="tech-pills">
-                            <span class="tech-pill">C / Shell</span>
-                            <span class="tech-pill">Kernel USB Gadget</span>
-                            <span class="tech-pill">OTG</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/killindodo/Zezes" target="_blank" class="btn-card-link">
-                                <span>GitHub</span>
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 5. Nitrosense Linux -->
-                <article class="project-card" data-category="systems">
-                    <div>
-                        <div class="project-top-row">
-                            <span class="project-category">[PRJ_05 // HARDWARE_DRIVER]</span>
-                            <span class="project-status-chip">● STABLE DRIVER</span>
-                        </div>
-                        <h3 class="project-name">⚡ Nitrosense Linux — ACPI EC Fan Governor</h3>
-                        <p class="project-desc">
-                            Native Linux fan speed controller and thermal monitor for Acer Nitro gaming laptops. Directly reads and writes ACPI Embedded Controller (EC) registers to replace Windows-only proprietary tooling.
-                        </p>
-                        <div class="specs-grid">
-                            <div class="spec-item"><span class="spec-lbl">HARDWARE:</span> <span class="spec-val">ACPI Embedded Controller</span></div>
-                            <div class="spec-item"><span class="spec-lbl">DRIVER:</span> <span class="spec-val">Linux ec_sys Module</span></div>
-                        </div>
-                    </div>
-                    <div class="project-foot">
-                        <div class="tech-pills">
-                            <span class="tech-pill">C</span>
-                            <span class="tech-pill">ACPI EC</span>
-                            <span class="tech-pill">Kernel Drivers</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/killindodo/nitrosense-linux" target="_blank" class="btn-card-link">
-                                <span>GitHub</span>
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 6. Dodo-RF -->
-                <article class="project-card" data-category="embedded">
-                    <div>
-                        <div class="project-top-row">
-                            <span class="project-category">[PRJ_06 // WIRELESS_RF]</span>
-                            <span class="project-status-chip">● EMBEDDED SUITE</span>
-                        </div>
-                        <h3 class="project-name">📻 Dodo-RF — Sub-GHz Protocol Analyzer</h3>
-                        <p class="project-desc">
-                            Custom firmware and GUI suite for CC1101 Sub-GHz transceivers on ESP32 / RP2040. Features raw signal capture, rolling-code inspection, spectrum sniffing, and packet synthesis across 315/433/868/915MHz bands.
-                        </p>
-                        <div class="specs-grid">
-                            <div class="spec-item"><span class="spec-lbl">HARDWARE:</span> <span class="spec-val">TI CC1101 + ESP32/RP2040</span></div>
-                            <div class="spec-item"><span class="spec-lbl">BANDS:</span> <span class="spec-val">315, 433, 868, 915 MHz</span></div>
-                        </div>
-                    </div>
-                    <div class="project-foot">
-                        <div class="tech-pills">
-                            <span class="tech-pill">C++</span>
-                            <span class="tech-pill">SPI Protocol</span>
-                            <span class="tech-pill">Sub-GHz</span>
-                            <span class="tech-pill">ESP32</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/killindodo/Dodo-RF" target="_blank" class="btn-card-link">
-                                <span>GitHub</span>
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 7. Databricks Pipelines -->
-                <article class="project-card" data-category="data">
-                    <div>
-                        <div class="project-top-row">
-                            <span class="project-category">[PRJ_07 // DATA_LAKEHOUSE]</span>
-                            <span class="project-status-chip">● PRODUCTION ETL</span>
-                        </div>
-                        <h3 class="project-name">📊 Databricks Medallion Data Pipelines</h3>
-                        <p class="project-desc">
-                            Industrial-grade PySpark ETL pipelines implementing Bronze, Silver, and Gold Medallion architecture on Databricks Delta Lake with ACID transactional integrity and schema enforcement.
-                        </p>
-                        <div class="specs-grid">
-                            <div class="spec-item"><span class="spec-lbl">ENGINE:</span> <span class="spec-val">Apache Spark / PySpark</span></div>
-                            <div class="spec-item"><span class="spec-lbl">STORAGE:</span> <span class="spec-val">Delta Lakehouse ACID</span></div>
-                        </div>
-                    </div>
-                    <div class="project-foot">
-                        <div class="tech-pills">
-                            <span class="tech-pill">PySpark</span>
-                            <span class="tech-pill">Databricks</span>
-                            <span class="tech-pill">Delta Lake</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/killindodo/databricks_pipelines" target="_blank" class="btn-card-link">
-                                <span>GitHub</span>
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Vercel Edge • Vanilla JS
                         </div>
                     </div>
                 </article>
@@ -376,118 +544,279 @@
             </div>
         </section>
 
-        <!-- 7. CAPABILITIES & SKILLS MATRIX -->
-        <section class="skills-section" id="capabilities">
-            <div class="section-header">
-                <span class="section-tag">ENGINEERING DOMAINS</span>
-                <h2 class="section-title">Interactive Capability Matrix</h2>
-                <p class="section-desc">Select any engineering domain to trigger real-time animated telemetry and technical competency metrics.</p>
+        <!-- ─── LIVE GITHUB ARCHIVE & ECOSYSTEM ─── -->
+        <section class="section-wrapper" id="github-archive">
+            <div class="section-head">
+                <span class="section-kicker">LIVING DATA LAYER</span>
+                <h2 class="section-title">Open Source &amp; Project Archive</h2>
+                <p class="section-subtitle">A live index automatically synchronized with my GitHub profile. Instant search and filter across all public repositories.</p>
             </div>
 
-            <!-- Domain Tabs -->
-            <div class="hud-tabs">
-                <button class="hud-tab active" data-domain="web" onclick="switchSkillDomain('web')">
-                    <i class="fas fa-globe"></i> Web &amp; Client Systems
-                </button>
-                <button class="hud-tab" data-domain="systems" onclick="switchSkillDomain('systems')">
-                    <i class="fas fa-terminal"></i> Linux &amp; Android Systems
-                </button>
-                <button class="hud-tab" data-domain="embedded" onclick="switchSkillDomain('embedded')">
-                    <i class="fas fa-tower-broadcast"></i> Embedded &amp; Sub-GHz RF
-                </button>
-                <button class="hud-tab" data-domain="data" onclick="switchSkillDomain('data')">
-                    <i class="fas fa-database"></i> Data &amp; Lakehouses
-                </button>
-                <button class="hud-tab" data-domain="languages" onclick="switchSkillDomain('languages')">
-                    <i class="fas fa-code"></i> Core Languages
-                </button>
-            </div>
+            <div class="github-archive-container">
+                <!-- Sync Ribbon -->
+                <div class="github-status-ribbon">
+                    <div class="ribbon-left">
+                        <span class="status-beacon-live"></span>
+                        <span id="syncStatusText">Synchronized via Local Cache</span>
+                    </div>
+                    <div class="ribbon-stats">
+                        <span>REPOSITORIES: <span class="stat-token" id="totalRepoCount">11</span></span>
+                        <span>STARS: <span class="stat-token" id="totalStarsCount">16+</span></span>
+                        <span>PROFILE: <a href="https://github.com/killindodo" target="_blank" style="color: var(--cobalt-light); text-decoration: underline;">@killindodo ↗</a></span>
+                    </div>
+                </div>
 
-            <div class="skills-card-display">
-                <div class="skills-list-grid" id="skillsListContainer">
-                    <!-- Dynamic animated skill telemetry rendered by script.js -->
+                <!-- Controls -->
+                <div class="archive-controls">
+                    <div class="search-input-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="repoSearchInput" placeholder="Search projects (e.g. Android, Linux, ESP32, Python, RF)..." aria-label="Search repositories">
+                    </div>
+                    <div class="sort-select-box">
+                        <select id="repoSortSelect" aria-label="Sort repositories">
+                            <option value="relevance">Sort: Engineering Relevance</option>
+                            <option value="updated">Sort: Recently Updated</option>
+                            <option value="stars">Sort: Star Count</option>
+                            <option value="name">Sort: Name (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="filter-pills-row" id="filterPills">
+                    <button class="filter-pill active" data-filter="all">ALL MODULES</button>
+                    <button class="filter-pill" data-filter="web">WEB &amp; PLATFORMS</button>
+                    <button class="filter-pill" data-filter="linux">LINUX &amp; KERNEL</button>
+                    <button class="filter-pill" data-filter="android">ANDROID SYSTEMS</button>
+                    <button class="filter-pill" data-filter="embedded">EMBEDDED &amp; RF</button>
+                    <button class="filter-pill" data-filter="data">DATA &amp; LAKEHOUSE</button>
+                </div>
+
+                <!-- Repositories Grid Container -->
+                <div class="repos-grid" id="reposGrid">
+                    <!-- Populated dynamically by script.js -->
+                </div>
+
+                <!-- GitHub Profile CTA -->
+                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-hairline); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+                    <div>
+                        <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Want to inspect the entire raw source code?</div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Browse all commit histories, branches, and issues directly on GitHub.</div>
+                    </div>
+                    <a href="https://github.com/killindodo" target="_blank" class="btn-primary">
+                        <span>EXPLORE GITHUB (@killindodo)</span>
+                        <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- 8. ABOUT THE FOUNDER -->
-        <section class="about-section" id="founder">
-            <div class="section-header">
-                <span class="section-tag">BIOGRAPHY &amp; VISION</span>
-                <h2 class="section-title">Systems Mindset, Agency Precision</h2>
-            </div>
-
-            <div class="about-card">
-                <div class="about-text">
-                    <p>
-                        I am <strong>Surya Pratap</strong>, a Systems and Web Architect based in Gaya, Bihar. As the founder of <strong>SJ Digitals Co.</strong>, I blend cutting-edge digital agency presentation with low-level systems engineering rigor.
+        <!-- ─── SJ DIGITALS CO. SPOTLIGHT ─── -->
+        <section class="section-wrapper" id="agency">
+            <div class="agency-spotlight-card">
+                <div>
+                    <div class="agency-eyebrow">FOUNDER &amp; TECHNOLOGY STUDIO</div>
+                    <h2 class="agency-headline">SJ Digitals Co.</h2>
+                    <p class="agency-text">
+                        A technology and digital systems agency founded by Surya Pratap, based in Gaya, Bihar. We architect high-converting digital branding ecosystems, bespoke enterprise web portals, NFC smart business card micro-landing systems, Google Business local optimization, and scalable cloud IT infrastructure.
                     </p>
-                    <p>
-                        My work spans full-stack web platforms built with <strong>zero layout shifts and vanilla performance</strong>, low-level Linux daemons that seamlessly connect desktop and mobile devices, reverse-engineering Android kernels and custom recoveries, and developing wireless Sub-GHz packet analysis tools.
-                    </p>
-                    <p>
-                        Whether designing a high-converting digital branding ecosystem or writing raw ACPI register controllers in C, my focus remains unchanged: <strong>robust architectures, resilient execution, and zero bloat</strong>.
-                    </p>
-                </div>
-
-                <div class="founder-highlight-box">
-                    <div class="founder-highlight-title">FOUNDER'S DISPATCH</div>
-                    <div class="founder-highlight-desc">
-                        "Real engineering happens where performance meets intuition. We build systems that perform effortlessly under pressure — from high-throughput client portals to kernel recovery trees."
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-primary" style="display: inline-flex; width: 100%; justify-content: center;">
-                            Visit SJ Digitals Agency ↗
+                    <div class="agency-actions">
+                        <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-agency-primary">
+                            <span>VISIT OFFICIAL AGENCY SITE</span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <a href="https://wa.me/917004185301?text=Hi%20Surya%2C%20I%20am%20interested%20in%20SJ%20Digitals%20services." target="_blank" class="btn-secondary">
+                            <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                            <span>Inquire on WhatsApp</span>
                         </a>
                     </div>
                 </div>
+
+                <div class="agency-features-box">
+                    <div class="feature-bullet">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span><strong>Bespoke Web Platforms:</strong> Zero layout shifts, high speed index, and edge CDN resilience.</span>
+                    </div>
+                    <div class="feature-bullet">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span><strong>NFC Smart Cards:</strong> Tap-to-phone contact exchange and digital profile micro-sites.</span>
+                    </div>
+                    <div class="feature-bullet">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <span><strong>Local Search &amp; SEO:</strong> Google Business Profile rank optimization &amp; catalogue systems.</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 9. CONTACT & DISPATCH -->
-        <section class="contact-section" id="contact">
-            <div class="contact-card">
-                <span class="section-tag">INITIATE COMMUNICATION</span>
-                <h2 class="section-title" style="margin-top: 8px;">Direct Transmission</h2>
-                <p class="section-desc">Available for technical advisory, bespoke web architectures, and client branding systems.</p>
+        <!-- ─── ENGINEERING TIMELINE ─── -->
+        <section class="section-wrapper" id="timeline">
+            <div class="section-head">
+                <span class="section-kicker">CHRONOLOGY</span>
+                <h2 class="section-title">Engineering Evolution</h2>
+                <p class="section-subtitle">The trajectory from hardware reverse engineering and kernel debugging to founding a technology studio and managing cloud data pipelines.</p>
+            </div>
 
-                <div class="contact-btns">
-                    <a href="https://wa.me/917004185301?text=Hi%20Surya%2C%20I%20visited%20your%20portfolio%20and%20want%20to%20connect." target="_blank" class="btn-wa">
+            <div class="timeline-track">
+                <div class="timeline-node">
+                    <span class="timeline-year">2021 — 2022</span>
+                    <h3 class="timeline-title">Hardware Reverse Engineering &amp; Android Device Subsystems</h3>
+                    <p class="timeline-desc">Extensive research into MediaTek MT6769 partitions, baseband NVRAM reconstruction, building custom TWRP recoveries, and compiling custom NetHunter kernels with external Wi-Fi driver support.</p>
+                </div>
+
+                <div class="timeline-node">
+                    <span class="timeline-year">2023 — 2024</span>
+                    <h3 class="timeline-title">Linux Device Drivers &amp; OS Continuity Bridges</h3>
+                    <p class="timeline-desc">Engineered NitroSense Linux fan governor by reverse-engineering proprietary ACPI EC registers. Developed Linux Continuity daemon bridging Linux desktop D-Bus with Android over local sockets.</p>
+                </div>
+
+                <div class="timeline-node">
+                    <span class="timeline-year">2024 — 2025</span>
+                    <h3 class="timeline-title">Founding SJ Digitals Co. &amp; Sub-GHz Wireless Systems</h3>
+                    <p class="timeline-desc">Founded SJ Digitals Co. to engineer fast, resilient digital platforms for regional and corporate clients. Developed Dodo-RF transceiver suite for TI CC1101 on ESP32/RP2040 and Pinion wireless print engine.</p>
+                </div>
+
+                <div class="timeline-node">
+                    <span class="timeline-year">2026 — PRESENT</span>
+                    <h3 class="timeline-title">Distributed Data Lakehouses &amp; Enterprise Architecture</h3>
+                    <p class="timeline-desc">Architecting Medallion-architecture PySpark pipelines on Databricks Delta Lake, integrating high-throughput enterprise systems across cloud, OS, and hardware endpoints.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── PHILOSOPHY & ABOUT ─── -->
+        <section class="section-wrapper" id="philosophy">
+            <div class="section-head">
+                <span class="section-kicker">FOUNDATIONAL PRINCIPLES</span>
+                <h2 class="section-title">Philosophy: Beneath the Abstraction</h2>
+            </div>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-text-card">
+                    <p>
+                        Most modern software engineering focuses on stacking abstractions on top of abstractions. While frameworks accelerate prototyping, true resilience requires knowing <strong>what happens underneath</strong>.
+                    </p>
+                    <p>
+                        When a web request fails, it is not merely a failed JavaScript promise—it traverses TLS handshakes, edge anycast routing, socket buffers, and network interfaces. When an operating system throttles, it is governed by thermal sensors and ACPI embedded controller registers.
+                    </p>
+                    <p>
+                        My work is built on understanding this complete vertical progression. By moving comfortably between high-level client interfaces, Linux kernel internals, embedded microcontrollers, and distributed data engines, I eliminate blind spots and engineer systems that actually work under pressure.
+                    </p>
+                </div>
+
+                <div class="signature-card">
+                    <div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; color: var(--cobalt-light); margin-bottom: 12px; font-weight: 700;">THE_VERTICAL_STACK</div>
+                        <div class="stack-flow-list">
+                            <div class="stack-layer"><span class="num">01</span><span>INTERFACE (WEB &amp; DESIGN SYSTEM)</span></div>
+                            <div class="stack-layer"><span class="num">02</span><span>APPLICATION (PYTHON / KOTLIN / JAVA)</span></div>
+                            <div class="stack-layer"><span class="num">03</span><span>OPERATING SYSTEM (LINUX / ANDROID)</span></div>
+                            <div class="stack-layer"><span class="num">04</span><span>KERNEL &amp; DRIVER (GKI / ACPI EC / DKMS)</span></div>
+                            <div class="stack-layer"><span class="num">05</span><span>HARDWARE &amp; RF (ESP32 / CC1101 / SPI)</span></div>
+                            <div class="stack-layer"><span class="num">06</span><span>DATA INFRASTRUCTURE (PYSPARK / DELTA)</span></div>
+                        </div>
+                    </div>
+                    <div class="killindodo-badge">
+                        ENGINEERED BY KILLINDODO™
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT SECTION ─── -->
+        <section class="section-wrapper" id="contact">
+            <div class="contact-container">
+                <div class="contact-kicker">COMMUNICATION DISPATCH</div>
+                <h2 class="contact-headline">Have a system to build?<br>Let's build it.</h2>
+                <p class="contact-sub">
+                    Available for technical advisory, systems architecture, low-level Linux/Android integrations, embedded hardware prototypes, and bespoke web platforms.
+                </p>
+
+                <div class="contact-channels">
+                    <a href="https://wa.me/917004185301?text=Hi%20Surya%2C%20I%20visited%20your%20portfolio%20and%20want%20to%20collaborate." target="_blank" class="btn-wa-direct">
                         <i class="fab fa-whatsapp" style="font-size: 18px;"></i>
                         <span>WhatsApp Direct (+91 7004185301)</span>
                     </a>
-                    <a href="mailto:suryapratapsingh420786@gmail.com" class="btn-mail">
+                    <a href="mailto:suryapratapsingh420786@gmail.com" class="btn-email-direct">
                         <i class="fas fa-envelope"></i>
                         <span>suryapratapsingh420786@gmail.com</span>
                     </a>
-                    <a href="tel:+917004185301" class="btn-mail">
+                    <a href="tel:+917004185301" class="btn-secondary">
                         <i class="fas fa-phone"></i>
-                        <span>Call Directly</span>
+                        <span>Direct Call</span>
                     </a>
                 </div>
 
-                <div class="socials-row">
-                    <a href="https://www.github.com/killindodo" target="_blank" class="social-icon-btn" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/surya-pratap-270b35153/" target="_blank" class="social-icon-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://t.me/killindod0" target="_blank" class="social-icon-btn" title="Telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="https://sjdigitals.vercel.app/" target="_blank" class="social-icon-btn" title="SJ Digitals Agency"><i class="fas fa-globe"></i></a>
+                <div class="socials-cluster">
+                    <a href="https://github.com/killindodo" target="_blank" class="social-link-btn" title="GitHub (@killindodo)"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/surya-pratap-270b35153/" target="_blank" class="social-link-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://t.me/killindod0" target="_blank" class="social-link-btn" title="Telegram (@killindod0)"><i class="fab fa-telegram"></i></a>
+                    <a href="https://sjdigitals.vercel.app/" target="_blank" class="social-link-btn" title="SJ Digitals Co."><i class="fas fa-globe"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- 10. FOOTER -->
-        <footer class="footer">
+        <!-- ─── FOOTER ─── -->
+        <footer class="page-footer">
             <div>
-                © 2026 SURYA PRATAP. ALL RIGHTS RESERVED. // FOUNDER OF <a href="https://sjdigitals.vercel.app/" target="_blank">SJ DIGITALS CO.</a>
+                SURYA PRATAP // SYSTEMS • SOFTWARE • HARDWARE // KILLINDODO © 2026
             </div>
             <div>
-                DUAL-ENGINE: <span style="color: var(--accent);">CINEMATIC EDITORIAL</span> ⇄ <span style="color: var(--accent);">CYBER CONSOLE</span>
+                FOUNDER: <a href="https://sjdigitals.vercel.app/" target="_blank" style="color: var(--amber-light);">SJ DIGITALS CO.</a>
             </div>
         </footer>
 
     </main>
 
-    <!-- Main Logic -->
+    <!-- ─── CASE STUDY MODAL DRAWER ─── -->
+    <div class="case-modal-overlay" id="caseStudyModal" role="dialog" aria-modal="true">
+        <div class="case-drawer">
+            <button class="drawer-close-btn" onclick="closeCaseStudy()" aria-label="Close Case Study">✕</button>
+
+            <div class="drawer-section-num" id="modalCaseKicker">CASE STUDY // SPECIFICATION</div>
+            <h2 class="case-title" id="modalCaseTitle" style="margin-bottom: 24px;">Project Title</h2>
+
+            <div class="drawer-section-num">01 — CONTEXT</div>
+            <div class="drawer-section-body" id="modalContext">Context text here...</div>
+
+            <div class="drawer-section-num">02 — PROBLEM &amp; BOTTLENECKS</div>
+            <div class="drawer-section-body" id="modalProblem">Problem text here...</div>
+
+            <div class="drawer-section-num">03 — ENGINEERING &amp; DESIGN</div>
+            <div class="drawer-section-body" id="modalEngineering">Engineering text here...</div>
+
+            <div class="drawer-section-num">04 — ARCHITECTURE &amp; DATA FLOW</div>
+            <div class="drawer-section-body" id="modalArchitecture">Architecture flow text here...</div>
+
+            <div class="drawer-section-num">05 — RESULT &amp; IMPACT</div>
+            <div class="drawer-section-body" id="modalResult">Result text here...</div>
+
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-hairline);">
+                <a href="#" id="modalGithubBtn" target="_blank" class="btn-primary">
+                    <i class="fab fa-github"></i>
+                    <span>VIEW ON GITHUB</span>
+                </a>
+                <a href="#" id="modalDemoBtn" target="_blank" class="btn-amber-outline">
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                    <span>LIVE DEMO</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── EASTER EGG DIAGNOSTIC HUD ─── -->
+    <div class="diagnostic-hud" id="diagnosticHud">
+        <span class="hud-close-x" onclick="closeDiagnosticHud()">✕</span>
+        <div style="font-weight: 700; color: #ffffff; border-bottom: 1px solid var(--border-hairline); padding-bottom: 4px;">KILLINDODO_DIAGNOSTICS // v2026</div>
+        <div>OPERATOR: SURYA PRATAP</div>
+        <div>KERNEL: GKI v4/6.1 • EROFS ROOTFS</div>
+        <div>HARDWARE: TI CC1101 @ 433.92MHz</div>
+        <div>CONTINUITY DAEMON: RUNNING (LOCAL PORT 8901)</div>
+        <div>ACPI EC: 0x00-0xFF MAPPED</div>
+        <div style="color: var(--amber-light); margin-top: 4px;">“Engineered, not decorated.”</div>
+    </div>
+
+    <!-- Core Architectural Script -->
     <script src="script.js"></script>
 </body>
 </html>
