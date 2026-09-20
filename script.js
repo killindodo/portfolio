@@ -593,6 +593,21 @@
         }
     };
 
+    window.openMedalModal = function () {
+        const modal = document.getElementById('medalModal');
+        if (!modal) return;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeMedalModal = function () {
+        const modal = document.getElementById('medalModal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
     // ─── 5. LIVING SYSTEM ARCHITECTURE CANVAS ───
     function initArchitectureCanvas() {
         const canvas = document.getElementById('architectureCanvas');
@@ -792,6 +807,20 @@
                 if (e.target === modal) closeCaseStudy();
             });
         }
+
+        const medalModal = document.getElementById('medalModal');
+        if (medalModal) {
+            medalModal.addEventListener('click', (e) => {
+                if (e.target === medalModal) closeMedalModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCaseStudy();
+                closeMedalModal();
+            }
+        });
 
         initArchitectureCanvas();
         loadGitHubData();

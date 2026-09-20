@@ -1218,6 +1218,274 @@ img, svg {
     line-height: 1.6;
 }
 
+.timeline-mentor-link {
+    color: var(--cobalt-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+
+.timeline-mentor-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+.timeline-mentor-link i {
+    font-size: 12px;
+    color: #0077b5;
+}
+
+/* Physical Artifact Preview (Medal) */
+.timeline-artifact-card {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(229, 169, 60, 0.06);
+    border: 1px solid rgba(229, 169, 60, 0.28);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+    max-width: 520px;
+}
+
+.timeline-artifact-card:hover {
+    background: rgba(229, 169, 60, 0.12);
+    border-color: rgba(229, 169, 60, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(229, 169, 60, 0.15);
+}
+
+.artifact-thumb-wrapper {
+    position: relative;
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(229, 169, 60, 0.5);
+    box-shadow: 0 0 14px rgba(229, 169, 60, 0.25);
+    background: #000;
+}
+
+.artifact-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.timeline-artifact-card:hover .artifact-thumb {
+    transform: scale(1.1);
+}
+
+.artifact-zoom-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: var(--amber-light);
+    font-size: 15px;
+}
+
+.timeline-artifact-card:hover .artifact-zoom-overlay {
+    opacity: 1;
+}
+
+.artifact-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.artifact-kicker {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    color: var(--amber-light);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.artifact-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.artifact-sub {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.artifact-tap-hint {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--amber);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Medal Inspection Modal / Lightbox */
+.medal-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 2100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
+}
+
+.medal-modal-backdrop.active {
+    display: flex;
+    opacity: 1;
+}
+
+.medal-modal-card {
+    position: relative;
+    background: #0d1017;
+    border: 1px solid rgba(229, 169, 60, 0.4);
+    border-radius: var(--radius-md);
+    width: 100%;
+    max-width: 660px;
+    padding: 32px 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(229, 169, 60, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: scale(0.96);
+    transition: transform var(--transition-smooth);
+}
+
+.medal-modal-backdrop.active .medal-modal-card {
+    transform: scale(1);
+}
+
+.medal-modal-header {
+    border-bottom: 1px solid var(--border-hairline);
+    padding-bottom: 12px;
+}
+
+.medal-modal-title {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+.medal-modal-sub {
+    font-size: 13px;
+    color: var(--amber-light);
+    margin-top: 2px;
+}
+
+.medal-modal-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+@media (min-width: 600px) {
+    .medal-modal-body {
+        grid-template-columns: 210px 1fr;
+    }
+}
+
+.medal-modal-image-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 210px;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(229, 169, 60, 0.6);
+    box-shadow: 0 0 35px rgba(229, 169, 60, 0.3);
+    background: #000;
+}
+
+.medal-modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.medal-badge-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(229, 169, 60, 0.12);
+    border: 1px solid rgba(229, 169, 60, 0.3);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--amber-light);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.medal-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+}
+
+.medal-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-label {
+    color: var(--text-tertiary);
+}
+
+.info-val {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.medal-modal-note {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    border-left: 2px solid var(--amber);
+    padding-left: 12px;
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.2);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+}
+
 /* ─── 6. ABOUT & PHILOSOPHY ─── */
 .philosophy-grid {
     display: grid;
