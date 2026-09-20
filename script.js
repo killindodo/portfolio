@@ -738,12 +738,12 @@
         window.addEventListener('resize', resize);
 
         const nodes = [
-            { id: 'web', label: 'WEB PLATFORMS', x: 0.18, y: 0.25, color: '#3b82f6' },
-            { id: 'linux', label: 'LINUX KERNEL', x: 0.50, y: 0.20, color: '#60a5fa' },
-            { id: 'android', label: 'ANDROID OS', x: 0.82, y: 0.30, color: '#a855f7' },
-            { id: 'rf', label: 'SUB-GHz RF', x: 0.30, y: 0.75, color: '#10b981' },
-            { id: 'hardware', label: 'ACPI EC & ESP32', x: 0.55, y: 0.80, color: '#d97706' },
-            { id: 'data', label: 'DATA LAKEHOUSE', x: 0.78, y: 0.70, color: '#06b6d4' }
+            { id: 'web', label: 'WEB PLATFORMS', x: 0.18, y: 0.25, color: '#38bdf8' },
+            { id: 'linux', label: 'LINUX KERNEL', x: 0.50, y: 0.20, color: '#3b82f6' },
+            { id: 'android', label: 'ANDROID OS', x: 0.82, y: 0.30, color: '#60a5fa' },
+            { id: 'rf', label: 'SUB-GHz RF', x: 0.30, y: 0.75, color: '#f59e0b' },
+            { id: 'hardware', label: 'ACPI EC & ESP32', x: 0.55, y: 0.80, color: '#fbbf24' },
+            { id: 'data', label: 'DATA LAKEHOUSE', x: 0.78, y: 0.70, color: '#10b981' }
         ];
 
         const connections = [
@@ -751,11 +751,12 @@
         ];
 
         let pulses = [
-            { conn: 0, progress: 0.1, speed: 0.007 },
-            { conn: 1, progress: 0.4, speed: 0.009 },
-            { conn: 2, progress: 0.7, speed: 0.006 },
-            { conn: 3, progress: 0.2, speed: 0.008 },
-            { conn: 4, progress: 0.8, speed: 0.005 }
+            { conn: 0, progress: 0.1, speed: 0.007, color: '#38bdf8' },
+            { conn: 1, progress: 0.4, speed: 0.009, color: '#3b82f6' },
+            { conn: 2, progress: 0.7, speed: 0.006, color: '#fbbf24' },
+            { conn: 3, progress: 0.2, speed: 0.008, color: '#f59e0b' },
+            { conn: 4, progress: 0.8, speed: 0.005, color: '#10b981' },
+            { conn: 5, progress: 0.5, speed: 0.007, color: '#38bdf8' }
         ];
 
         let mouseX = -1;
@@ -773,8 +774,25 @@
         });
 
         function draw() {
-            ctx.fillStyle = '#090b10';
+            ctx.fillStyle = '#06080e';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Subtle telemetry background grid
+            ctx.strokeStyle = 'rgba(56, 189, 248, 0.025)';
+            ctx.lineWidth = 1;
+            const gridSize = 32;
+            for (let x = 0; x < canvas.width; x += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            for (let y = 0; y < canvas.height; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
 
             // Draw Bus Traces
             connections.forEach(([i, j]) => {
@@ -785,8 +803,12 @@
                 const x2 = n2.x * canvas.width;
                 const y2 = n2.y * canvas.height;
 
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-                ctx.lineWidth = 1.5;
+                const dist1 = Math.hypot(x1 - mouseX, y1 - mouseY);
+                const dist2 = Math.hypot(x2 - mouseX, y2 - mouseY);
+                const isBusActive = dist1 < 50 || dist2 < 50;
+
+                ctx.strokeStyle = isBusActive ? 'rgba(56, 189, 248, 0.35)' : 'rgba(56, 189, 248, 0.09)';
+                ctx.lineWidth = isBusActive ? 2 : 1.2;
                 ctx.beginPath();
                 ctx.moveTo(x1, y1);
                 ctx.lineTo(x2, y2);
@@ -807,11 +829,11 @@
                 const px = x1 + (x2 - x1) * p.progress;
                 const py = y1 + (y2 - y1) * p.progress;
 
-                ctx.fillStyle = '#60a5fa';
-                ctx.shadowColor = '#60a5fa';
-                ctx.shadowBlur = 8;
+                ctx.fillStyle = p.color;
+                ctx.shadowColor = p.color;
+                ctx.shadowBlur = 10;
                 ctx.beginPath();
-                ctx.arc(px, py, 3, 0, Math.PI * 2);
+                ctx.arc(px, py, 3.5, 0, Math.PI * 2);
                 ctx.fill();
                 ctx.shadowBlur = 0;
             });
@@ -824,8 +846,18 @@
                 const dist = Math.hypot(nx - mouseX, ny - mouseY);
                 const isHover = dist < 45;
 
+                // Outer Halo
+                if (isHover) {
+                    ctx.fillStyle = n.color;
+                    ctx.globalAlpha = 0.15;
+                    ctx.beginPath();
+                    ctx.arc(nx, ny, 22, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                }
+
                 // Outer Ring
-                ctx.strokeStyle = isHover ? n.color : 'rgba(255, 255, 255, 0.15)';
+                ctx.strokeStyle = isHover ? n.color : 'rgba(56, 189, 248, 0.22)';
                 ctx.lineWidth = isHover ? 2 : 1;
                 ctx.beginPath();
                 ctx.arc(nx, ny, isHover ? 14 : 9, 0, Math.PI * 2);
@@ -833,9 +865,12 @@
 
                 // Inner Core
                 ctx.fillStyle = n.color;
+                ctx.shadowColor = n.color;
+                ctx.shadowBlur = isHover ? 12 : 4;
                 ctx.beginPath();
                 ctx.arc(nx, ny, isHover ? 6 : 4, 0, Math.PI * 2);
                 ctx.fill();
+                ctx.shadowBlur = 0;
 
                 // Node Label
                 ctx.fillStyle = isHover ? '#ffffff' : '#94a3b8';

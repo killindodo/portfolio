@@ -90,13 +90,24 @@
 
 ---
 
-## 4. UI, Gradience & Aesthetic Design System
+## 4. UI, Gradience & Unified Spectral Cyberdeck Design System
 
-* **Color Palette & Ambient Glow Mesh**:
-  * Base Background: Deep Obsidian `#07090e` with ambient multi-stop radial glow mesh (cyan `rgba(6, 182, 212, 0.08)`, cobalt `rgba(59, 130, 246, 0.12)`, amber `rgba(217, 119, 6, 0.09)`).
-  * Typography Gradient: Primary title (`SURYA PRATAP`) rendered with a metallic iridescent silver-white gradient (`linear-gradient(180deg, #FFFFFF 25%, #E2E8F0 65%, #94A3B8 100%)`).
-  * Eyebrow Badge: Pill container with cyan/cobalt border and soft ambient back-glow.
-  * Timeline Track: 4-stop vertical gradient (`#38bdf8` ➔ `#3b82f6` ➔ `#f59e0b` ➔ `#10b981`) with glowing pulse nodes.
+* **The 4-Phase Engineering Evolution Color Architecture**:
+  * Rooted entirely in the chronology timeline's luminous spectrum, harmonizing the entire digital headquarters into a high-performance aerospace cyberdeck:
+    * **Phase 1: Code & Curiosity (2012–2015)**: Electric Cyan (`#38bdf8`, `rgba(56, 189, 248, 0.28)`) — HTML discovery, Class Topper Rank 1 NCO medal, raw code exploration.
+    * **Phase 2: Low-Level Systems & OS Mastery (2016–2020)**: High-Voltage Cobalt (`#3b82f6` / `#60a5fa`, `rgba(59, 130, 246, 0.28)`) — Android kernel recoveries (TWRP), ROM modding, SPPU Pune University OS kernels & DBMS.
+    * **Phase 3: Hardware, Solder, RF & High-Stakes Logistics (2021–2025)**: Incandescent Amber (`#f59e0b` / `#fbbf24`, `rgba(245, 158, 11, 0.28)`) — Officers Training Academy & Central Jail supply logistics, ESP32 microcontrollers, Dodo-RF Sub-GHz TI CC1101 transceivers.
+    * **Phase 4: Live Production Telemetry & Data Lakehouse (2026+)**: Terminal Emerald (`#10b981` / `#34d399`, `rgba(16, 185, 129, 0.28)`) — Distributed PySpark Delta Lake Medallion pipelines, zero-downtime platforms.
+* **Ambient Multi-Stop Radial Mesh**:
+  * Canvas base: Ultra-deep obsidian `#05070c`.
+  * Ambient aerospace bloom: Cyan at top-left, Cobalt behind architecture, Amber behind hardware/timeline, and Emerald around live systems/lakehouse.
+* **Component-Level Cyberdeck System**:
+  * **Primary Action Buttons**: Replaced generic plain white with high-contrast cyberdeck action buttons: deep obsidian core, illuminated cyan-cobalt border (`#38bdf8`), and electric neon charge on hover.
+  * **Telemetry Strip**: The 4 telemetry readouts directly map to the 4 phases: KILLINDODO (Cyan), SJ Digitals (Cobalt), Core Stack (Amber), Hardware (Emerald).
+  * **Architecture Canvas (`#architectureCanvas`)**: 6 interconnected nodes now use the exact 4-phase palette with telemetry grid background and colored photon pulses traveling along active data buses.
+  * **6 Engineering Domain Cards**: Each card features a dedicated illuminated top accent bar matching its vertical tier, glowing on hover with an ambient aura.
+  * **Curated Case Studies**: Specs tables formatted as high-density avionics readouts with hairline borders, cyan action buttons, and emerald production status chips.
+  * **Philosophy Card**: Illuminated with a continuous vertical spectral gradient border (`#38bdf8` ➔ `#3b82f6` ➔ `#f59e0b` ➔ `#10b981`), visually verifying vertical stack mastery from silicon to software.
 * **Performance & Accessibility**:
   * 0 external framework bloat (pure vanilla JS + CSS).
   * High-contrast ratios meeting WCAG AA standards.
