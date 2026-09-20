@@ -55,10 +55,20 @@
   * Built interactive school science and computing projects; awarded **Class Topper (Rank 1)** in the **14th SOF National Cyber Olympiad (2014–15)**.
   * Physical verified artifact: `assets/images/medal.jpg` (Class Topper Rank 1 Gold Medal).
   * This milestone gave immense validation and ignited a fierce drive: for the next 3 straight years, studied **C, C++, Java, Arduino, Ruby, and Python** from a dedicated teacher who understood my curiosity and helped me in achieving fundamental mastery.
-* **2016 (The Android Awakening & Shyam Kr Pandey)**:
+* **2016 — 2017 (The Android Awakening, Shyam Kr Pandey & Custom ROM Modding)**:
   * Purchased a used Samsung Galaxy Ace Duos and attempted to root and mod it, encountering countless initial failures.
   * Met [**Shyam Kr Pandey**](https://in.linkedin.com/in/shyam-pandey-5ab20262), who unlocked the deeper universe of Android low-level development.
   * Successfully rooted and modded first personal phone: **Panasonic Eluga I2**. Compiled custom TWRP recoveries for the Eluga I2 and Karbonn devices, and began rooting and unbricking Android phones across the community.
+  * **Historical ROM Modding Archive (March 28, 2017)**:
+    * Authentic Facebook post screenshot (`assets/images/rom_mod_fb_post.jpg`): *"Now a days everyone is mad about custom rom......but here comes ur creativity to modify your boring rom into a peice of art that evry one wants to have..... #xposed_iz_lub #unique #creativity"* (tagged with Shyam Pandey).
+    * Custom Dialer Mod (`assets/images/rom_mod_1sjd.jpg`): Clean minimalist in-call layout & soft navigation bar.
+    * Google Assistant on Legacy Android (`assets/images/rom_mod_2sjd.jpg`): Framework XML injection & build.prop spoofing.
+    * Crimson Quick Settings & Battery Bar (`assets/images/rom_mod_3sjd.jpg`): SystemUI hex modding, dual-SIM Jio 4G toggles.
+    * Frosted Glass Notification Shade (`assets/images/rom_mod_4sjd.jpg`): Real-time Gaussian blur shader & custom avatar tile.
+  * Unified Archival Lightbox Modal (`#archiveLightboxModal`): Allows full-screen inspection, keyboard arrow navigation, and quick-switching thumbnail bar.
+* **Special UI Component — Interactive Cybernetic Snake Slide Bar**:
+  * Fixed right-edge canvas slider (`#snakeSlideBar`, `#snakeCanvas`) tracking page scroll depth.
+  * Features lerp damping physics, sinusoidal undulation wave proportional to scroll velocity, luminous cyan/emerald head with cybernetic eyes, and interactive click-and-drag scrubbing.
 * **2018 — 2020 (SPPU / Pune University — Low-Level Architecture & Hacking)**:
   * Graduated 12th grade in 2018 and moved to Pune for higher studies at **Savitribai Phule Pune University (SPPU)**.
   * Immersed deeply in Database Management Systems (DBMS/RDBMS), operating systems architecture, Linux kernels, ethical hacking, Wi-Fi security, music production, and low-level hardware programming.

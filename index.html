@@ -24,6 +24,12 @@
 </head>
 <body>
 
+    <!-- ─── SNAKE SCROLL SLIDE BAR ─── -->
+    <div class="snake-slidebar-wrap" id="snakeSlideBar" aria-label="Interactive Snake Scroll Bar" title="Interactive Snake Scroll Tracker">
+        <canvas id="snakeCanvas"></canvas>
+        <div class="snake-tooltip" id="snakeTooltip">START // HERO</div>
+    </div>
+
     <!-- ─── NAVIGATION ─── -->
     <header class="nav-wrapper">
         <nav class="nav-bar">
@@ -612,7 +618,7 @@
                     <p class="timeline-desc">I engineered interactive school science and technology projects, achieving <strong>Class Topper (Rank 1)</strong> in the <strong>14th SOF National Cyber Olympiad (2014–15)</strong>. Winning that medal gave me immense validation and motivated me so much that for the next three straight years, I immersed myself in studying <strong>C, C++, Java, Arduino, Ruby, and Python</strong> from a teacher who understood my curiosity and helped me in achieving fundamental mastery.</p>
                     
                     <!-- Verified Physical Artifact (Medal) -->
-                    <div class="timeline-artifact-card" onclick="openMedalModal()" title="Click to inspect verified 14th SOF NCO Rank 1 Medal">
+                    <div class="timeline-artifact-card" onclick="openArchiveModal('medal')" title="Click to inspect verified 14th SOF NCO Rank 1 Medal">
                         <div class="artifact-thumb-wrapper">
                             <img src="assets/images/medal.jpg" alt="14th SOF National Cyber Olympiad Class Topper Rank 1 Medal" class="artifact-thumb" loading="lazy">
                             <div class="artifact-zoom-overlay"><i class="fas fa-search-plus"></i></div>
@@ -626,11 +632,66 @@
                     </div>
                 </div>
 
-                <!-- 2016 -->
+                <!-- 2016 - 2017 -->
                 <div class="timeline-node">
-                    <span class="timeline-year">2016</span>
-                    <h3 class="timeline-title">The Android Awakening — Meeting Shyam Kr Pandey &amp; Kernel Modding</h3>
-                    <p class="timeline-desc">I bought a used Samsung Galaxy Ace Duos and attempted rooting and flashing, failing countless times. In 2016, I met <a href="https://in.linkedin.com/in/shyam-pandey-5ab20262" target="_blank" rel="noopener noreferrer" class="timeline-mentor-link"><strong>Shyam Kr Pandey</strong> <i class="fab fa-linkedin"></i></a>, who unlocked the deeper universe of Android low-level development for me. I successfully modded my first personally owned phone—the <strong>Panasonic Eluga I2</strong>. From there, I compiled custom TWRP recovery trees for the Eluga I2 and Karbonn devices, and rooted and unbricked smartphones across the community.</p>
+                    <span class="timeline-year">2016 — 2017</span>
+                    <h3 class="timeline-title">The Android Awakening — Meeting Shyam Kr Pandey, Custom ROMs &amp; SystemUI Modding</h3>
+                    <p class="timeline-desc">I bought a used Samsung Galaxy Ace Duos and attempted rooting and flashing, failing countless times. In 2016, I met <a href="https://in.linkedin.com/in/shyam-pandey-5ab20262" target="_blank" rel="noopener noreferrer" class="timeline-mentor-link"><strong>Shyam Kr Pandey</strong> <i class="fab fa-linkedin"></i></a>, who unlocked the deeper universe of Android low-level development for me. I successfully modded my first personally owned phone—the <strong>Panasonic Eluga I2</strong>. From there, I compiled custom TWRP recovery trees for the Eluga I2 and Karbonn devices, crafted custom ROMs, built Xposed modules, customized SystemUI with bespoke dark themes, custom dialers, blur notification panels, and rooted/unbricked smartphones across the community.</p>
+
+                    <!-- Historical Facebook Post & ROM Modding Archive Gallery -->
+                    <div class="timeline-rom-archive">
+                        <!-- Featured Facebook Post Card -->
+                        <div class="rom-fb-feature-card" onclick="openArchiveModal('rom_fb')" title="Click to inspect authentic 2017 Facebook ROM modding post">
+                            <div class="rom-fb-header">
+                                <div class="rom-fb-user-badge">
+                                    <i class="fab fa-facebook" style="color: #1877f2; font-size: 16px;"></i>
+                                    <span>SURYA PRATAP SINGH &amp; SHYAM PANDEY // MARCH 28, 2017</span>
+                                </div>
+                                <span class="rom-fb-tag">#xposed_iz_lub #unique #creativity</span>
+                            </div>
+                            <div class="rom-fb-content">
+                                <div class="rom-fb-text-quote">
+                                    “Now a days everyone is mad about custom rom......but here comes ur creativity to modify your boring rom into a peice of art that evry one wants to have.....”
+                                </div>
+                                <div class="rom-fb-thumb-wrap">
+                                    <img src="assets/images/rom_mod_fb_post.jpg" alt="Facebook post screenshot of ROM modding with Shyam Pandey" class="rom-fb-thumb" loading="lazy">
+                                    <div class="artifact-zoom-overlay"><i class="fas fa-search-plus"></i> View Post</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ROM Screenshots Strip -->
+                        <div class="rom-screens-strip">
+                            <div class="rom-screen-item" onclick="openArchiveModal('rom_dialer')" title="Custom Dialer UI Mod">
+                                <div class="rom-screen-img-box">
+                                    <img src="assets/images/rom_mod_1sjd.jpg" alt="Custom Dialer UI Mod" loading="lazy">
+                                    <div class="artifact-zoom-overlay"><i class="fas fa-search-plus"></i></div>
+                                </div>
+                                <span class="rom-screen-label">Custom Dialer</span>
+                            </div>
+                            <div class="rom-screen-item" onclick="openArchiveModal('rom_assistant')" title="Google Assistant Integration">
+                                <div class="rom-screen-img-box">
+                                    <img src="assets/images/rom_mod_2sjd.jpg" alt="Google Assistant Integration" loading="lazy">
+                                    <div class="artifact-zoom-overlay"><i class="fas fa-search-plus"></i></div>
+                                </div>
+                                <span class="rom-screen-label">Google Assistant</span>
+                            </div>
+                            <div class="rom-screen-item" onclick="openArchiveModal('rom_qs')" title="Crimson Quick Settings Mod">
+                                <div class="rom-screen-img-box">
+                                    <img src="assets/images/rom_mod_3sjd.jpg" alt="Crimson Quick Settings Mod" loading="lazy">
+                                    <div class="artifact-zoom-overlay"><i class="fas fa-search-plus"></i></div>
+                                </div>
+                                <span class="rom-screen-label">Crimson Quick Settings</span>
+                            </div>
+                            <div class="rom-screen-item" onclick="openArchiveModal('rom_shade')" title="Blurred Notification Shade">
+                                <div class="rom-screen-img-box">
+                                    <img src="assets/images/rom_mod_4sjd.jpg" alt="Blurred Notification Shade" loading="lazy">
+                                    <div class="artifact-zoom-overlay"><i class="fas fa-search-plus"></i></div>
+                                </div>
+                                <span class="rom-screen-label">Notification Shade</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 2018 - 2020 -->
@@ -907,46 +968,27 @@
         </div>
     </div>
 
-    <!-- ─── MEDAL INSPECTION MODAL / LIGHTBOX ─── -->
-    <div class="medal-modal-backdrop" id="medalModal" role="dialog" aria-modal="true" aria-label="Medal Inspection">
-        <div class="medal-modal-card">
-            <button class="drawer-close-btn" onclick="closeMedalModal()" aria-label="Close Medal Modal">✕</button>
-            <div class="medal-modal-header">
-                <span class="drawer-section-num" style="margin-top: 0; color: var(--amber-light);">PHYSICAL ARTIFACT ARCHIVE // 2014–15</span>
-                <h3 class="medal-modal-title">14th SOF National Cyber Olympiad Medal</h3>
-                <p class="medal-modal-sub">Class Topper • Rank 1 — Science Olympiad Foundation</p>
+    <!-- ─── UNIFIED ARCHIVAL LIGHTBOX MODAL ─── -->
+    <div class="archive-lightbox-backdrop" id="archiveLightboxModal" role="dialog" aria-modal="true" aria-label="Archival Artifact Lightbox">
+        <div class="archive-lightbox-card">
+            <button class="drawer-close-btn" onclick="closeArchiveModal()" aria-label="Close Lightbox">✕</button>
+            <div class="archive-lightbox-head">
+                <span class="drawer-section-num" id="lightboxCategory" style="margin-top: 0; color: var(--amber-light);">HISTORICAL ARCHIVE</span>
+                <h3 class="archive-lightbox-title" id="lightboxTitle">Artifact Title</h3>
+                <p class="archive-lightbox-sub" id="lightboxSub">Artifact Subtitle</p>
             </div>
-            <div class="medal-modal-body">
-                <div class="medal-modal-image-wrap">
-                    <img src="assets/images/medal.jpg" alt="14th SOF National Cyber Olympiad Class Topper Rank 1 Medal" class="medal-modal-img">
+            
+            <div class="archive-lightbox-viewport">
+                <button class="lightbox-nav-btn prev" onclick="navigateArchive(-1)" aria-label="Previous Artifact">‹</button>
+                <div class="lightbox-img-stage">
+                    <img id="lightboxImg" src="" alt="Archival Artifact Preview" class="lightbox-display-img">
                 </div>
-                <div class="medal-modal-details">
-                    <div class="medal-badge-verified">
-                        <i class="fas fa-certificate" style="color: #E5A93C;"></i>
-                        <span>VERIFIED PHYSICAL ARTIFACT</span>
-                    </div>
-                    <div class="medal-info-grid">
-                        <div class="medal-info-row">
-                            <span class="info-label">AWARD</span>
-                            <span class="info-val">Class Topper, Rank 1</span>
-                        </div>
-                        <div class="medal-info-row">
-                            <span class="info-label">COMPETITION</span>
-                            <span class="info-val">14th SOF National Cyber Olympiad (NCO)</span>
-                        </div>
-                        <div class="medal-info-row">
-                            <span class="info-label">SESSION</span>
-                            <span class="info-val">Academic Year 2014–2015</span>
-                        </div>
-                        <div class="medal-info-row">
-                            <span class="info-label">FOUNDATION</span>
-                            <span class="info-val">Science Olympiad Foundation (SOF)</span>
-                        </div>
-                    </div>
-                    <p class="medal-modal-note">
-                        "Winning this medal gave me immense validation and sparked my obsession. For the next three straight years, I studied C, C++, Java, Arduino, Ruby, and Python under a teacher who understood my curiosity and helped me in achieving fundamental mastery."
-                    </p>
-                </div>
+                <button class="lightbox-nav-btn next" onclick="navigateArchive(1)" aria-label="Next Artifact">›</button>
+            </div>
+
+            <div class="archive-lightbox-footer">
+                <p class="archive-lightbox-desc" id="lightboxDesc">Detailed artifact description...</p>
+                <div class="archive-lightbox-thumbs" id="lightboxThumbBar"></div>
             </div>
         </div>
     </div>

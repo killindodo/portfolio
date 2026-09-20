@@ -593,19 +593,135 @@
         }
     };
 
-    window.openMedalModal = function () {
-        const modal = document.getElementById('medalModal');
+    // ─── 4b. HISTORICAL ARCHIVE LIGHTBOX SYSTEM ───
+    const ARCHIVE_ITEMS = [
+        {
+            id: 'medal',
+            src: 'assets/images/medal.jpg',
+            title: '14th SOF National Cyber Olympiad Medal',
+            sub: 'Class Topper • Rank 1 (Academic Year 2014–15)',
+            category: 'COMPUTING OLYMPIAD // 2014–15',
+            desc: 'Class Topper Rank 1 Gold Medal awarded by the Science Olympiad Foundation. This milestone gave me immense validation and motivated me so much that for the next three straight years, I immersed myself in studying C, C++, Java, Arduino, Ruby, and Python under a teacher who understood my curiosity and helped me in achieving fundamental mastery.'
+        },
+        {
+            id: 'rom_fb',
+            src: 'assets/images/rom_mod_fb_post.jpg',
+            title: 'Original Facebook Post with Shyam Pandey',
+            sub: 'March 28, 2017 • Custom ROM & Xposed Framework Era',
+            category: 'HISTORICAL ARCHIVE // 2017',
+            desc: '“Now a days everyone is mad about custom rom......but here comes ur creativity to modify your boring rom into a peice of art that evry one wants to have..... #xposed_iz_lub #unique #creativity” — Authentic 2017 post tagged with mentor Shyam Pandey while modding the Panasonic Eluga I2.'
+        },
+        {
+            id: 'rom_dialer',
+            src: 'assets/images/rom_mod_1sjd.jpg',
+            title: 'Custom Minimalist Dialer Mod',
+            sub: 'Framework & In-Call Layout Modification',
+            category: 'ANDROID ROM MOD // 2017',
+            desc: 'Handcrafted custom dialer layout with minimalist typography, custom soft navigation bar, and integrated call framework styling for low-end MediaTek hardware.'
+        },
+        {
+            id: 'rom_assistant',
+            src: 'assets/images/rom_mod_2sjd.jpg',
+            title: 'Google Assistant Deep Integration',
+            sub: 'Build.prop & System Framework Patching',
+            category: 'ANDROID ROM MOD // 2017',
+            desc: 'Enabled Google Assistant and voice actions on uncertified legacy Android builds via framework XML injection, build.prop spoofing, and Google Play Services patches.'
+        },
+        {
+            id: 'rom_qs',
+            src: 'assets/images/rom_mod_3sjd.jpg',
+            title: 'Crimson Quick Settings & Battery Pill',
+            sub: 'SystemUI Hex Editing & Theme Modding',
+            category: 'SYSTEMUI MOD // 2017',
+            desc: 'Bespoke dark SystemUI notification shade featuring crimson red toggle highlights, circular battery meter with exact percentage, dual-SIM Jio 4G status indicators, and custom audio profile toggles.'
+        },
+        {
+            id: 'rom_shade',
+            src: 'assets/images/rom_mod_4sjd.jpg',
+            title: 'Frosted Glass Notification Shade',
+            sub: 'Gaussian Blur Background & User Avatar Header',
+            category: 'SYSTEMUI MOD // 2017',
+            desc: 'Real-time Gaussian blurred background shader layered beneath the notification shade, custom status bar battery pill, and customized user avatar lockscreen tile.'
+        }
+    ];
+
+    let currentArchiveIndex = 0;
+
+    window.openArchiveModal = function (itemId) {
+        const modal = document.getElementById('archiveLightboxModal');
         if (!modal) return;
+
+        let index = ARCHIVE_ITEMS.findIndex(item => item.id === itemId);
+        if (index === -1) index = 0;
+        currentArchiveIndex = index;
+
+        updateLightboxContent();
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
 
-    window.closeMedalModal = function () {
-        const modal = document.getElementById('medalModal');
+    window.closeArchiveModal = function () {
+        const modal = document.getElementById('archiveLightboxModal');
         if (modal) {
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
+    };
+
+    window.navigateArchive = function (direction) {
+        currentArchiveIndex = (currentArchiveIndex + direction + ARCHIVE_ITEMS.length) % ARCHIVE_ITEMS.length;
+        updateLightboxContent();
+    };
+
+    function updateLightboxContent() {
+        const item = ARCHIVE_ITEMS[currentArchiveIndex];
+        if (!item) return;
+
+        const catEl = document.getElementById('lightboxCategory');
+        const titleEl = document.getElementById('lightboxTitle');
+        const subEl = document.getElementById('lightboxSub');
+        const imgEl = document.getElementById('lightboxImg');
+        const descEl = document.getElementById('lightboxDesc');
+        const thumbBar = document.getElementById('lightboxThumbBar');
+
+        if (catEl) catEl.textContent = item.category;
+        if (titleEl) titleEl.textContent = item.title;
+        if (subEl) subEl.textContent = item.sub;
+        if (descEl) descEl.textContent = item.desc;
+
+        if (imgEl) {
+            imgEl.style.opacity = '0';
+            imgEl.style.transform = 'scale(0.96)';
+            setTimeout(() => {
+                imgEl.src = item.src;
+                imgEl.alt = item.title;
+                imgEl.style.opacity = '1';
+                imgEl.style.transform = 'scale(1)';
+            }, 60);
+        }
+
+        if (thumbBar) {
+            thumbBar.innerHTML = ARCHIVE_ITEMS.map((it, idx) => `
+                <button class="lightbox-thumb-btn ${idx === currentArchiveIndex ? 'active' : ''}" onclick="window.setArchiveIndex(${idx})" title="${it.title}">
+                    <img src="${it.src}" alt="${it.title}" loading="lazy">
+                </button>
+            `).join('');
+        }
+    }
+
+    window.setArchiveIndex = function (idx) {
+        if (idx >= 0 && idx < ARCHIVE_ITEMS.length) {
+            currentArchiveIndex = idx;
+            updateLightboxContent();
+        }
+    };
+
+    // Backward compatibility for medal triggers
+    window.openMedalModal = function () {
+        window.openArchiveModal('medal');
+    };
+    window.closeMedalModal = function () {
+        window.closeArchiveModal();
     };
 
     // ─── 5. LIVING SYSTEM ARCHITECTURE CANVAS ───
@@ -808,22 +924,273 @@
             });
         }
 
-        const medalModal = document.getElementById('medalModal');
-        if (medalModal) {
-            medalModal.addEventListener('click', (e) => {
-                if (e.target === medalModal) closeMedalModal();
+        const archiveModal = document.getElementById('archiveLightboxModal');
+        if (archiveModal) {
+            archiveModal.addEventListener('click', (e) => {
+                if (e.target === archiveModal) closeArchiveModal();
             });
         }
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeCaseStudy();
-                closeMedalModal();
+                closeArchiveModal();
+            } else if (archiveModal && archiveModal.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    navigateArchive(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateArchive(1);
+                }
             }
         });
 
         initArchitectureCanvas();
+        initSnakeSlideBar();
         loadGitHubData();
     });
+
+    // ─── 6. INTERACTIVE SNAKE SCROLL SLIDE BAR ───
+    function initSnakeSlideBar() {
+        const wrap = document.getElementById('snakeSlideBar');
+        const canvas = document.getElementById('snakeCanvas');
+        const tooltip = document.getElementById('snakeTooltip');
+        if (!wrap || !canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let width = 0;
+        let height = 0;
+        let dpr = window.devicePixelRatio || 1;
+
+        function resize() {
+            width = canvas.offsetWidth;
+            height = canvas.offsetHeight;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.scale(dpr, dpr);
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        const sections = [
+            { id: 'hero', label: 'START // HERO' },
+            { id: 'domains', label: 'DOMAINS // CAPABILITIES' },
+            { id: 'work', label: 'PROJECTS // ARCHIVE' },
+            { id: 'timeline', label: 'TIMELINE // 2012–2026' },
+            { id: 'agency', label: 'AGENCY // SJ DIGITALS' },
+            { id: 'philosophy', label: 'FOUNDATIONS // PHILOSOPHY' },
+            { id: 'contact', label: 'DISPATCH // CONTACT' }
+        ];
+
+        const marginTop = 50;
+        const marginBottom = 50;
+        const numSegments = 14;
+        const snake = [];
+        for (let i = 0; i < numSegments; i++) {
+            snake.push({ x: width / 2, y: marginTop });
+        }
+
+        let targetY = marginTop;
+        let velocityY = 0;
+        let lastTargetY = marginTop;
+        let isDragging = false;
+        let isHovered = false;
+
+        function getScrollFraction() {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            if (max <= 0) return 0;
+            return Math.max(0, Math.min(1, window.scrollY / max));
+        }
+
+        function getCurrentSectionLabel(frac) {
+            const scrollPos = window.scrollY + window.innerHeight * 0.35;
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const el = document.getElementById(sections[i].id);
+                if (el && el.offsetTop <= scrollPos) {
+                    return sections[i].label;
+                }
+            }
+            return sections[0].label;
+        }
+
+        function scrollToFrac(frac) {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            window.scrollTo({ top: frac * max, behavior: 'auto' });
+        }
+
+        function handlePointer(e) {
+            const rect = canvas.getBoundingClientRect();
+            const clientY = (e.touches && e.touches[0]) ? e.touches[0].clientY : e.clientY;
+            const relativeY = clientY - rect.top;
+            const trackH = height - marginTop - marginBottom;
+            if (trackH > 0) {
+                const frac = Math.max(0, Math.min(1, (relativeY - marginTop) / trackH));
+                scrollToFrac(frac);
+            }
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            handlePointer(e);
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                handlePointer(e);
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            if (!isHovered && tooltip) tooltip.classList.remove('visible');
+        });
+
+        canvas.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            handlePointer(e);
+        }, { passive: false });
+
+        window.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                handlePointer(e);
+            }
+        }, { passive: false });
+
+        window.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        canvas.addEventListener('mouseenter', () => {
+            isHovered = true;
+            if (tooltip) tooltip.classList.add('visible');
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            isHovered = false;
+            if (tooltip && !isDragging) tooltip.classList.remove('visible');
+        });
+
+        let time = 0;
+
+        function animate() {
+            time += 0.05;
+            const trackH = height - marginTop - marginBottom;
+            const frac = getScrollFraction();
+            targetY = marginTop + frac * trackH;
+            velocityY = targetY - lastTargetY;
+            lastTargetY = targetY;
+
+            // Head smoothly interpolates to targetY
+            snake[0].y += (targetY - snake[0].y) * 0.25;
+            const speed = Math.abs(velocityY);
+            const waveAmp = Math.min(8, speed * 1.2 + 1.0);
+            snake[0].x = (width / 2) + Math.sin(time * 2) * (waveAmp * 0.4);
+
+            // Follower segments slither behind with sinusoidal wave
+            for (let i = 1; i < numSegments; i++) {
+                const prev = snake[i - 1];
+                const cur = snake[i];
+                cur.y += (prev.y - cur.y) * 0.38;
+                const wave = Math.sin(time * 2.5 - i * 0.55) * (waveAmp * (1 - i / numSegments));
+                cur.x = (width / 2) + wave;
+            }
+
+            // Update tooltip position & label
+            if (tooltip && (isHovered || isDragging)) {
+                tooltip.textContent = getCurrentSectionLabel(frac);
+                tooltip.style.top = `${Math.max(20, Math.min(height - 40, snake[0].y - 12))}px`;
+            }
+
+            // Clear and render canvas
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw track line
+            const trackX = width / 2;
+            ctx.beginPath();
+            ctx.moveTo(trackX, marginTop);
+            ctx.lineTo(trackX, height - marginBottom);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw section milestones on track
+            sections.forEach(sec => {
+                const el = document.getElementById(sec.id);
+                if (el) {
+                    const max = document.documentElement.scrollHeight - window.innerHeight;
+                    const secFrac = max > 0 ? Math.min(1, el.offsetTop / max) : 0;
+                    const secY = marginTop + secFrac * trackH;
+                    ctx.beginPath();
+                    ctx.arc(trackX, secY, 2, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+                    ctx.fill();
+                }
+            });
+
+            // Draw Snake Body
+            ctx.save();
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            for (let i = numSegments - 1; i > 0; i--) {
+                const p1 = snake[i];
+                const p0 = snake[i - 1];
+                const segFrac = 1 - (i / numSegments); // 0 at tail, 1 at head
+                const segWidth = 2.5 + segFrac * 5.5; // Taper from 8px to 2.5px
+
+                ctx.beginPath();
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p0.x, p0.y);
+                ctx.lineWidth = segWidth;
+
+                if (isDragging) {
+                    ctx.strokeStyle = `rgba(245, 158, 11, ${0.3 + segFrac * 0.7})`;
+                    ctx.shadowColor = '#f59e0b';
+                } else {
+                    ctx.strokeStyle = `rgba(56, 189, 248, ${0.25 + segFrac * 0.75})`;
+                    ctx.shadowColor = '#38bdf8';
+                }
+                ctx.shadowBlur = 6 + segFrac * 6;
+                ctx.stroke();
+            }
+
+            // Draw Snake Head
+            const head = snake[0];
+            const neck = snake[1] || head;
+            const headAngle = Math.atan2(head.y - neck.y, head.x - neck.x) || (Math.PI / 2);
+            ctx.save();
+            ctx.translate(head.x, head.y);
+            ctx.rotate(headAngle);
+
+            // Glowing head aura
+            ctx.beginPath();
+            ctx.ellipse(0, 0, 6, 4.5, 0, 0, Math.PI * 2);
+            ctx.fillStyle = isDragging ? '#fbbf24' : '#38bdf8';
+            ctx.shadowColor = isDragging ? '#f59e0b' : '#38bdf8';
+            ctx.shadowBlur = 12;
+            ctx.fill();
+
+            // Head core
+            ctx.beginPath();
+            ctx.ellipse(0, 0, 3.5, 2.5, 0, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+
+            // Snake Eyes (cybernetic emerald dots)
+            ctx.fillStyle = '#10b981';
+            ctx.beginPath();
+            ctx.arc(2.5, -2.5, 1.2, 0, Math.PI * 2);
+            ctx.arc(2.5, 2.5, 1.2, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.restore();
+            ctx.restore();
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
 
 })();
