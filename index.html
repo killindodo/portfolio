@@ -45,6 +45,7 @@
                 <a href="#work" class="nav-link">Selected Work</a>
                 <a href="#domains" class="nav-link">Domains</a>
                 <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#languages" class="nav-link">Languages</a>
                 <a href="#github-archive" class="nav-link">GitHub Archive</a>
                 <a href="#agency" class="nav-link">SJ Digitals</a>
                 <a href="#philosophy" class="nav-link">Philosophy</a>
@@ -52,6 +53,10 @@
             </div>
 
             <div class="nav-actions">
+                <a href="./classic/" class="btn-nav-edition" title="Switch to Classic Terminal Console Edition">
+                    <i class="fas fa-terminal"></i>
+                    <span>CLASSIC CONSOLE ↗</span>
+                </a>
                 <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-nav-agency" title="Visit SJ Digitals Agency Platform">
                     <span class="pulse-dot-amber"></span>
                     <span>SJ DIGITALS CO. ↗</span>
@@ -122,13 +127,13 @@
             <!-- Living Architecture Canvas -->
             <div class="hero-canvas-card">
                 <div class="canvas-header">
-                    <span class="canvas-tag">INTERCONNECTED_SYSTEMS_MAP</span>
-                    <span>ACTIVE_TELEMETRY</span>
+                    <span class="canvas-tag">INTERCONNECTED_SYSTEMS_MAP // CYBERNETIC_MATRIX</span>
+                    <span>ACTIVE_TELEMETRY • [CLICK_NODE_TO_INJECT]</span>
                 </div>
                 <canvas id="architectureCanvas"></canvas>
                 <div class="canvas-footer">
-                    <span>LIVE BUS: SPI • I2C • UNIX SOCKETS • ANYCAST EDGE</span>
-                    <span>STATUS: OPERATIONAL</span>
+                    <span>LIVE BUS: SPI • I2C • CC1101 SUB-GHz • GKI KERNEL • DELTA LAKE</span>
+                    <span id="canvasMatrixStatus">STATUS: ALL SYSTEMS NOMINAL</span>
                 </div>
             </div>
         </section>
@@ -284,51 +289,11 @@
                     </div>
                 </article>
 
-                <!-- 2. Indian Central School (CLOSED SOURCE) -->
+                <!-- 2. Chandrawati Enterprises (CLOSED SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
                             <span class="case-num-tag">[PRJ_02]</span>
-                            <span class="case-domain-tag">INSTITUTIONAL ACADEMIC PORTAL</span>
-                        </div>
-                        <span class="case-status-chip" style="background: rgba(217, 119, 6, 0.15); color: var(--amber-light); border-color: rgba(217, 119, 6, 0.35);">
-                            🔒 CLOSED SOURCE • LIVE CLIENT PORTAL
-                        </span>
-                    </div>
-                    <div>
-                        <h3 class="case-title">Indian Central School — Enterprise Academic Portal</h3>
-                        <p class="case-desc">
-                            Enterprise institutional web portal and academic management infrastructure for Indian Central School (Gaya, Bihar). Engineered for high availability, student admission workflows, and fast mobile responsiveness across low-bandwidth cellular connections.
-                        </p>
-                    </div>
-                    <div class="case-specs-table">
-                        <div class="spec-cell"><span class="spec-key">CLIENT</span><span class="spec-val">Indian Central School (Gaya, Bihar)</span></div>
-                        <div class="spec-cell"><span class="spec-key">ROLE</span><span class="spec-val">Lead Systems Architect &amp; Web Engineer</span></div>
-                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, CSS3 Grid, Vanilla ES6+, Edge CDN</span></div>
-                        <div class="spec-cell"><span class="spec-key">SOURCE AVAILABILITY</span><span class="spec-val" style="color: var(--amber-light);">Proprietary Institutional Platform</span></div>
-                    </div>
-                    <div class="case-actions-row">
-                        <div class="case-links-left">
-                            <button class="btn-open-case" onclick="openCaseStudy('indian-central-school')">
-                                <i class="fas fa-layer-group"></i>
-                                <span>VIEW CASE STUDY</span>
-                            </button>
-                            <a href="https://icsgayaji.org" target="_blank" class="btn-amber-outline">
-                                <span>VISIT LIVE PORTAL ↗</span>
-                                <i class="fas fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            icsgayaji.org
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 3. Chandrawati Enterprises (CLOSED SOURCE) -->
-                <article class="case-study-card">
-                    <div class="case-study-head">
-                        <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_03]</span>
                             <span class="case-domain-tag">CORPORATE CLIENT PORTAL</span>
                         </div>
                         <span class="case-status-chip" style="background: rgba(217, 119, 6, 0.15); color: var(--amber-light); border-color: rgba(217, 119, 6, 0.35);">
@@ -338,13 +303,13 @@
                     <div>
                         <h3 class="case-title">Chandrawati Enterprises — Workforce Outsourcing Portal</h3>
                         <p class="case-desc">
-                            Production web platform for a major manpower and industrial workforce outsourcing corporation in Gaya, Bihar. Engineered for high performance, local asset bundling, and interactive quote dispatch.
+                            Production web platform for a major manpower and industrial workforce outsourcing corporation in Gaya, Bihar. Engineered for high performance, dynamic inquiry dispatch, local asset bundling, and zero-dependency architecture ensuring lightning-fast load times.
                         </p>
                     </div>
                     <div class="case-specs-table">
-                        <div class="spec-cell"><span class="spec-key">CLIENT</span><span class="spec-val">Chandrawati Enterprises</span></div>
+                        <div class="spec-cell"><span class="spec-key">CLIENT</span><span class="spec-val">Chandrawati Enterprises (Gaya, Bihar)</span></div>
                         <div class="spec-cell"><span class="spec-key">DEPLOYMENT</span><span class="spec-val">Vercel Global Edge Production</span></div>
-                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, CSS3, Vanilla JS</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, Modular CSS3, Vanilla JS</span></div>
                         <div class="spec-cell"><span class="spec-key">SOURCE AVAILABILITY</span><span class="spec-val" style="color: var(--amber-light);">Proprietary Corporate Platform</span></div>
                     </div>
                     <div class="case-actions-row">
@@ -353,37 +318,115 @@
                                 <i class="fas fa-layer-group"></i>
                                 <span>VIEW CASE STUDY</span>
                             </button>
-                            <a href="https://chandrawati-enterprises.vercel.app/" target="_blank" class="btn-amber-outline">
+                            <a href="https://chandrawatienterprises.vercel.app" target="_blank" class="btn-amber-outline">
                                 <span>VISIT LIVE PORTAL ↗</span>
                                 <i class="fas fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            Vercel Edge • Vanilla JS
+                            Vercel Edge • Zero Dependencies
                         </div>
                     </div>
                 </article>
 
-                <!-- 4. Linux Continuity (OPEN SOURCE) -->
+                <!-- 3. Indian Central School (CLOSED SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_03]</span>
+                            <span class="case-domain-tag">INSTITUTIONAL ACADEMIC PORTAL</span>
+                        </div>
+                        <span class="case-status-chip" style="background: rgba(217, 119, 6, 0.15); color: var(--amber-light); border-color: rgba(217, 119, 6, 0.35);">
+                            🔒 CLOSED SOURCE • LIVE DOMAIN
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Indian Central School — Official Web &amp; Campus Portal</h3>
+                        <p class="case-desc">
+                            Full-featured academic portal for Indian Central School (CBSE Pattern, Estd. 2000, A.T. Gate, Gaya Ji). Integrates a real-time admissions ticker, interactive academic calendar, faculty directory, online inquiries, and direct mobile links to the school parent app.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">CUSTOM DOMAIN</span><span class="spec-val">icsgayaji.org</span></div>
+                        <div class="spec-cell"><span class="spec-key">INSTITUTION</span><span class="spec-val">Indian Central School (Gaya Ji)</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, CSS3 Grid, Vanilla ES6+</span></div>
+                        <div class="spec-cell"><span class="spec-key">HOSTING</span><span class="spec-val">GitHub Pages with Custom DNS &amp; SSL</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('indian-central-school')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://icsgayaji.org/" target="_blank" class="btn-amber-outline">
+                                <span>VISIT LIVE PORTAL ↗</span>
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            icsgayaji.org • Custom DNS
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. NitroSense Linux (OPEN SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
                             <span class="case-num-tag">[PRJ_04]</span>
-                            <span class="case-domain-tag">SYSTEMS DAEMON</span>
+                            <span class="case-domain-tag">KERNEL EC DRIVER</span>
                         </div>
-                        <span class="case-status-chip">● OPEN SOURCE // PUBLIC</span>
+                        <span class="case-status-chip">● OPEN SOURCE // DKMS + PyQt6 + ACPI EC</span>
                     </div>
                     <div>
-                        <h3 class="case-title">Linux Continuity — Seamless Android ↔ Linux Bridge</h3>
+                        <h3 class="case-title">NitroSense Linux: ACPI EC Kernel Driver &amp; PyQt6 Cyber GUI</h3>
+                        <p class="case-desc">
+                            Dedicated native Linux GUI and Embedded Controller (EC) kernel driver for Acer Nitro 5 (AN515-42 &amp; compatible AN515 series) laptops. Solves the proprietary ITE EC routing constraint where standard Linux utilities fail to communicate with fans. Patched DMI whitelists in the acer-nitro-ec hwmon driver with automated DKMS rebuilds, exposed sysfs nodes under /sys/class/hwmon/ for passwordless user control, and created a sleek PyQt6 cyberpunk interface.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">HARDWARE TARGET</span><span class="spec-val">Acer Nitro 5 (AN515-42 &amp; AN515 series)</span></div>
+                        <div class="spec-cell"><span class="spec-key">DRIVER INTERFACE</span><span class="spec-val">Linux ec_sys / ACPI EC Kernel Module</span></div>
+                        <div class="spec-cell"><span class="spec-key">THERMAL DELTA</span><span class="spec-val">10-15°C Sustained Temperature Drop</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">C, Python 3, PyQt6, ACPI Registers, DKMS</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('nitrosense-linux')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/nitrosense-linux" target="_blank" class="btn-ext-link">
+                                <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Python 3 • ACPI EC • C
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. Linux Continuity (OPEN SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_05]</span>
+                            <span class="case-domain-tag">CONTINUITY BRIDGE</span>
+                        </div>
+                        <span class="case-status-chip">● OPEN SOURCE // PYTHON + WEBSOCKETS</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Linux Continuity: Apple-Style Ecosystem for Linux &amp; Android</h3>
                         <p class="case-desc">
                             Apple-style Continuity ecosystem bridging Linux desktop workstations with Android devices. Real-time clipboard synchronization, AirDrop-like zero-friction file transfer, shared media controls, and interactive shell execution over secure local sockets.
                         </p>
                     </div>
                     <div class="case-specs-table">
-                        <div class="spec-cell"><span class="spec-key">CORE PROTOCOL</span><span class="spec-val">Local UNIX Sockets &amp; Cryptography</span></div>
-                        <div class="spec-cell"><span class="spec-key">AUTHOR</span><span class="spec-val">Surya Pratap (KILLINDODO)</span></div>
-                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Python 3, ADB Protocol, Linux D-Bus</span></div>
-                        <div class="spec-cell"><span class="spec-key">LATENCY</span><span class="spec-val">Sub-millisecond Clipboard Sync</span></div>
+                        <div class="spec-cell"><span class="spec-key">PROTOCOLS</span><span class="spec-val">WebSockets / Async HTTP REST / Linux D-Bus</span></div>
+                        <div class="spec-cell"><span class="spec-key">DAEMON</span><span class="spec-val">Python 3 Asynchronous Background Service</span></div>
+                        <div class="spec-cell"><span class="spec-key">CAPABILITIES</span><span class="spec-val">AirDrop File Share / Clipboard Daemon</span></div>
+                        <div class="spec-cell"><span class="spec-key">COMPATIBILITY</span><span class="spec-val">Linux (GNOME/KDE/XFCE) ↔ Android 10+</span></div>
                     </div>
                     <div class="case-actions-row">
                         <div class="case-links-left">
@@ -397,17 +440,211 @@
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            Python 3 • Linux D-Bus
+                            Python 3 • Linux D-Bus • WebSockets
                         </div>
                     </div>
                 </article>
 
-                <!-- 5. Pinion (OPEN SOURCE) -->
+                <!-- 6. Zezes (OPEN SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_05]</span>
-                            <span class="case-domain-tag">WIRELESS SPOOLING CORE</span>
+                            <span class="case-num-tag">[PRJ_06]</span>
+                            <span class="case-domain-tag">ANDROID CORE &amp; KERNEL GADGET</span>
+                        </div>
+                        <span class="case-status-chip">● OPEN SOURCE // KOTLIN + NDK RAW I/O</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Zezes: Mobile ISO Deployment Core (Android USB OTG Burner)</h3>
+                        <p class="case-desc">
+                            High-performance native Android application engineered to flash bootable OS ISO and IMG images directly to USB flash drives via USB OTG. Bypasses standard Android storage framework bottlenecks through raw block sector writes, parses hybrid ISO headers, constructs UEFI GPT/MBR partition tables, and formats drives entirely on-device without requiring a PC.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">PLATFORM</span><span class="spec-val">Android Native (Kotlin + C/NDK Engine)</span></div>
+                        <div class="spec-cell"><span class="spec-key">INTERFACE</span><span class="spec-val">USB OTG Mass Storage Raw Sector Access</span></div>
+                        <div class="spec-cell"><span class="spec-key">BOOT SCHEMES</span><span class="spec-val">Hybrid ISO, UEFI Bootable GPT / MBR</span></div>
+                        <div class="spec-cell"><span class="spec-key">KERNEL INTERFACE</span><span class="spec-val">Linux USB Gadget ConfigFS (Root Required)</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('Zezes')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/Zezes" target="_blank" class="btn-ext-link">
+                                <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Android Kotlin • USB OTG • NDK Raw I/O
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7. TWRP 3.7.1 Custom Recovery (OPEN SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_07]</span>
+                            <span class="case-domain-tag">ANDROID RECOVERY</span>
+                        </div>
+                        <span class="case-status-chip">● OPEN SOURCE // GKI 6.1 + VENDOR_BOOT</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">TWRP 3.7.1 Custom Recovery (Moto Pad 60 Pro — Android 16 &amp; 14)</h3>
+                        <p class="case-desc">
+                            Custom recovery device trees for Motorola Moto Pad 60 Pro (XT2571-1) and Lenovo Idea Tab Pro 12.7 (TB373FU) on MediaTek Dimensity 8300 (MT6897). Engineered on Android GKI Boot Header v4 with recovery embedded inside vendor_boot.img, dynamic EROFS/F2FS system mounting, hardware KMS graphics acceleration at 2944x1840 @ 144Hz, and full Android 16 (LineageOS 23) compatibility.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">SOC</span><span class="spec-val">MediaTek Dimensity 8300 (MT6897)</span></div>
+                        <div class="spec-cell"><span class="spec-key">KERNELS</span><span class="spec-val">Android 16 (LineageOS 23) &amp; Android 14 (ZUI)</span></div>
+                        <div class="spec-cell"><span class="spec-key">DISPLAY</span><span class="spec-val">2944x1840 144Hz Hardware KMS Render</span></div>
+                        <div class="spec-cell"><span class="spec-key">STORAGE</span><span class="spec-val">Super (EROFS) + /data (F2FS Encrypted)</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('twrp-moto-pad-60-pro')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/TWRP-A16-moto-pad-60-pro" target="_blank" class="btn-ext-link">
+                                <i class="fab fa-github"></i>
+                                <span>A16 REPO ↗</span>
+                            </a>
+                            <a href="https://github.com/killindodo/TWRP-A14-moto-pad-60-pro" target="_blank" class="btn-ext-link">
+                                <i class="fab fa-github"></i>
+                                <span>A14 REPO ↗</span>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            fastboot flash vendor_boot_a vendor_boot.img
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8. Dodo-RF (OPEN SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_08]</span>
+                            <span class="case-domain-tag">RF HARDWARE</span>
+                        </div>
+                        <span class="case-status-chip">● OPEN SOURCE // ESP32 + CC1101</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Dodo-RF: Multi-Band Sub-GHz Transceiver Platform</h3>
+                        <p class="case-desc">
+                            Standalone RF capture, analysis, and replay device. Emits its own standalone Wi-Fi SoftAP serving an embedded cyberpunk web dashboard directly from flash memory (PROGMEM). Supports digital frequency shifting across 315, 433, 868, and 915 MHz with interrupt-driven pulse demodulation.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">CORE</span><span class="spec-val">ESP32 30-Pin NodeMCU / RP2040</span></div>
+                        <div class="spec-cell"><span class="spec-key">TRANSCEIVER</span><span class="spec-val">TI CC1101 via Hardware SPI</span></div>
+                        <div class="spec-cell"><span class="spec-key">BANDS</span><span class="spec-val">315 / 433.92 / 868.3 / 915 MHz</span></div>
+                        <div class="spec-cell"><span class="spec-key">STORAGE</span><span class="spec-val">Flash Non-Volatile (Preferences.h)</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('Dodo-RF')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/Dodo-RF" target="_blank" class="btn-ext-link">
+                                <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            ESP32 • CC1101 • C++ • Sub-GHz
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 9. MT7601U WiFi Driver Patch on Kali NetHunter (OPEN SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_09]</span>
+                            <span class="case-domain-tag">DRIVER PATCH</span>
+                        </div>
+                        <span class="case-status-chip">● OPEN SOURCE // Linux 4.14 NetHunter</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">MT7601U WiFi Driver Patch on Kali NetHunter</h3>
+                        <p class="case-desc">
+                            Diagnosed USB device enumeration failures and built driver support (CONFIG_MT7601U=y) for Linux 4.14 kernel on Redmi Note 9 (merlin). Resolved Proton-Clang toolchain linker conflicts with glibc and verified live packet capture in Monitor Mode using airmon-ng.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">DEVICE</span><span class="spec-val">Redmi Note 9 (merlin)</span></div>
+                        <div class="spec-cell"><span class="spec-key">KERNEL</span><span class="spec-val">Linux 4.14.186-g284095c</span></div>
+                        <div class="spec-cell"><span class="spec-key">TOOLCHAIN</span><span class="spec-val">Proton-Clang (LLVM 13)</span></div>
+                        <div class="spec-cell"><span class="spec-key">MODES</span><span class="spec-val">Managed &amp; Monitor Mode (airmon-ng)</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('merlin-net-hunter-kernel-MT7601U-WiFi-Adapter-Support-')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/merlin-net-hunter-kernel-MT7601U-WiFi-Adapter-Support-" target="_blank" class="btn-ext-link">
+                                <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Linux 4.14 • Proton-Clang • Monitor Mode
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 10. Automated Medallion Architecture Data Pipeline (OPEN SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_10]</span>
+                            <span class="case-domain-tag">DATA LAKEHOUSE</span>
+                        </div>
+                        <span class="case-status-chip">● OPEN SOURCE // Databricks + PySpark</span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Automated Medallion Architecture Data Pipeline</h3>
+                        <p class="case-desc">
+                            Built an automated enterprise data lakehouse implementing Medallion Architecture (Bronze ➔ Silver ➔ Gold). Converted complex SQL procedures into distributed PySpark transformations and orchestrated scheduled pipelines via Databricks Workflows with Git CI/CD versioning.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">PLATFORM</span><span class="spec-val">Databricks Lakehouse Cloud</span></div>
+                        <div class="spec-cell"><span class="spec-key">ENGINE</span><span class="spec-val">Apache Spark / PySpark</span></div>
+                        <div class="spec-cell"><span class="spec-key">ARCHITECTURE</span><span class="spec-val">Medallion Multi-Hop (Bronze ➔ Gold)</span></div>
+                        <div class="spec-cell"><span class="spec-key">ORCHESTRATION</span><span class="spec-val">Databricks Workflows &amp; Delta ACID</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('databricks_pipelines')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://github.com/killindodo/databricks_pipelines" target="_blank" class="btn-ext-link">
+                                <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Databricks • PySpark • Medallion • SQL
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 11. Pinion (OPEN SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_11]</span>
+                            <span class="case-domain-tag">PRINT ENGINE</span>
                         </div>
                         <span class="case-status-chip">● OPEN SOURCE // HARDWARE TESTED</span>
                     </div>
@@ -435,159 +672,7 @@
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            Java • Native NDK • CUPS
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 6. Zezes (OPEN SOURCE) -->
-                <article class="case-study-card">
-                    <div class="case-study-head">
-                        <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_06]</span>
-                            <span class="case-domain-tag">KERNEL GADGET SUBSYSTEM</span>
-                        </div>
-                        <span class="case-status-chip">● OPEN SOURCE // VALIDATED</span>
-                    </div>
-                    <div>
-                        <h3 class="case-title">Zezes — Android USB OTG ISO Deployment Core</h3>
-                        <p class="case-desc">
-                            Emergency bare-metal multi-boot installer core running directly on Android. Emulates hardware CD-ROM / USB mass storage devices over USB-C OTG using Linux Kernel USB Gadget ConfigFS.
-                        </p>
-                    </div>
-                    <div class="case-specs-table">
-                        <div class="spec-cell"><span class="spec-key">KERNEL INTERFACE</span><span class="spec-val">Linux USB Gadget ConfigFS</span></div>
-                        <div class="spec-cell"><span class="spec-key">USE CASE</span><span class="spec-val">PC BIOS/UEFI Bare-Metal Boot</span></div>
-                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Kotlin, C / Shell, USB LUNs</span></div>
-                        <div class="spec-cell"><span class="spec-key">REQUIREMENT</span><span class="spec-val">Android Root (GKI 4.19+ / 5.10 / 6.1)</span></div>
-                    </div>
-                    <div class="case-actions-row">
-                        <div class="case-links-left">
-                            <button class="btn-open-case" onclick="openCaseStudy('Zezes')">
-                                <i class="fas fa-layer-group"></i>
-                                <span>VIEW CASE STUDY</span>
-                            </button>
-                            <a href="https://github.com/killindodo/Zezes" target="_blank" class="btn-ext-link">
-                                <i class="fab fa-github"></i>
-                                <span>VIEW GITHUB REPO ↗</span>
-                            </a>
-                        </div>
-                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            Kotlin • Kernel USB Gadget
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 7. NitroSense Linux (OPEN SOURCE) -->
-                <article class="case-study-card">
-                    <div class="case-study-head">
-                        <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_07]</span>
-                            <span class="case-domain-tag">ACPI EC DRIVER</span>
-                        </div>
-                        <span class="case-status-chip">● OPEN SOURCE // STABLE</span>
-                    </div>
-                    <div>
-                        <h3 class="case-title">NitroSense Linux — Acer EC Thermal &amp; Fan Governor</h3>
-                        <p class="case-desc">
-                            Native Linux fan speed controller and thermal monitor for Acer Nitro series gaming laptops. Directly queries and modifies ACPI Embedded Controller (EC) registers to override proprietary firmware fan limitations.
-                        </p>
-                    </div>
-                    <div class="case-specs-table">
-                        <div class="spec-cell"><span class="spec-key">HARDWARE TARGET</span><span class="spec-val">Acer Nitro 5 (AN515-42 &amp; AN515 series)</span></div>
-                        <div class="spec-cell"><span class="spec-key">DRIVER INTERFACE</span><span class="spec-val">Linux ec_sys Kernel Module</span></div>
-                        <div class="spec-cell"><span class="spec-key">THERMAL DELTA</span><span class="spec-val">10-15°C Sustained Temperature Drop</span></div>
-                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">C, Python 3, PyQt6, ACPI Registers</span></div>
-                    </div>
-                    <div class="case-actions-row">
-                        <div class="case-links-left">
-                            <button class="btn-open-case" onclick="openCaseStudy('nitrosense-linux')">
-                                <i class="fas fa-layer-group"></i>
-                                <span>VIEW CASE STUDY</span>
-                            </button>
-                            <a href="https://github.com/killindodo/nitrosense-linux" target="_blank" class="btn-ext-link">
-                                <i class="fab fa-github"></i>
-                                <span>VIEW GITHUB REPO ↗</span>
-                            </a>
-                        </div>
-                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            Python 3 • ACPI EC • C
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 8. Dodo-RF (OPEN SOURCE) -->
-                <article class="case-study-card">
-                    <div class="case-study-head">
-                        <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_08]</span>
-                            <span class="case-domain-tag">WIRELESS RF HARDWARE</span>
-                        </div>
-                        <span class="case-status-chip">● OPEN SOURCE // HARDWARE TESTED</span>
-                    </div>
-                    <div>
-                        <h3 class="case-title">Dodo-RF — Sub-GHz Wireless Protocol Analyzer</h3>
-                        <p class="case-desc">
-                            Ultra-portable hardware RF analysis, signal capture, and packet synthesis platform built for CC1101 transceivers paired with ESP32 and RP2040 microcontrollers across 315, 433, 868, and 915 MHz bands.
-                        </p>
-                    </div>
-                    <div class="case-specs-table">
-                        <div class="spec-cell"><span class="spec-key">TRANSCEIVER</span><span class="spec-val">TI CC1101 via High-Speed SPI</span></div>
-                        <div class="spec-cell"><span class="spec-key">FREQUENCIES</span><span class="spec-val">315, 433, 868, 915 MHz Bands</span></div>
-                        <div class="spec-cell"><span class="spec-key">MODULATION</span><span class="spec-val">ASK/OOK, 2-FSK, GFSK, MSK</span></div>
-                        <div class="spec-cell"><span class="spec-key">MICROCONTROLLER</span><span class="spec-val">ESP32 / RP2040 Dual-Core</span></div>
-                    </div>
-                    <div class="case-actions-row">
-                        <div class="case-links-left">
-                            <button class="btn-open-case" onclick="openCaseStudy('Dodo-RF')">
-                                <i class="fas fa-layer-group"></i>
-                                <span>VIEW CASE STUDY</span>
-                            </button>
-                            <a href="https://github.com/killindodo/Dodo-RF" target="_blank" class="btn-ext-link">
-                                <i class="fab fa-github"></i>
-                                <span>VIEW GITHUB REPO ↗</span>
-                            </a>
-                        </div>
-                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            C++ • SPI Bus • ESP32
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 9. Databricks Pipelines (OPEN SOURCE) -->
-                <article class="case-study-card">
-                    <div class="case-study-head">
-                        <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_09]</span>
-                            <span class="case-domain-tag">DATA LAKEHOUSE ARCHITECTURE</span>
-                        </div>
-                        <span class="case-status-chip">● OPEN SOURCE // PATTERN</span>
-                    </div>
-                    <div>
-                        <h3 class="case-title">Databricks Medallion Data Lakehouse Architecture</h3>
-                        <p class="case-desc">
-                            Industrial distributed data lakehouse pipelines implementing Bronze, Silver, and Gold Medallion architecture on Apache Spark / PySpark and Databricks Delta Lake with ACID transactional guarantees.
-                        </p>
-                    </div>
-                    <div class="case-specs-table">
-                        <div class="spec-cell"><span class="spec-key">STORAGE CORE</span><span class="spec-val">Databricks Delta Lake ACID</span></div>
-                        <div class="spec-cell"><span class="spec-key">ENGINE</span><span class="spec-val">Apache Spark / PySpark</span></div>
-                        <div class="spec-cell"><span class="spec-key">PIPELINE FLOW</span><span class="spec-val">Bronze (Ingestion) ➔ Silver ➔ Gold</span></div>
-                        <div class="spec-cell"><span class="spec-key">INTEGRITY</span><span class="spec-val">Schema Enforcement &amp; Time Travel</span></div>
-                    </div>
-                    <div class="case-actions-row">
-                        <div class="case-links-left">
-                            <button class="btn-open-case" onclick="openCaseStudy('databricks_pipelines')">
-                                <i class="fas fa-layer-group"></i>
-                                <span>VIEW CASE STUDY</span>
-                            </button>
-                            <a href="https://github.com/killindodo/databricks_pipelines" target="_blank" class="btn-ext-link">
-                                <i class="fab fa-github"></i>
-                                <span>VIEW GITHUB REPO ↗</span>
-                            </a>
-                        </div>
-                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            PySpark • Delta Lake • Databricks
+                            Java • Native NDK • CUPS • IPP
                         </div>
                     </div>
                 </article>
@@ -734,6 +819,90 @@
                     <span class="timeline-year">2026 — PRESENT</span>
                     <h3 class="timeline-title">Unified Architecture, Linux Continuity &amp; Data Lakehouses</h3>
                     <p class="timeline-desc">I am architecting Medallion-architecture PySpark pipelines on Databricks Delta Lake, authoring the Linux Continuity desktop bridge daemon, and engineering unified systems across cloud, OS, and silicon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── POLYGLOT EVOLUTION & LANGUAGE TELEMETRY (2012 → 2026) ─── -->
+        <section class="section-wrapper" id="languages">
+            <div class="section-head">
+                <span class="section-kicker">POLYGLOT SPECTRUM // 2012 → 2026</span>
+                <h2 class="section-title">Language Evolution &amp; Mastery Matrix</h2>
+                <p class="section-subtitle">A fourteen-year chronological journey: from handcrafting raw HTML in 7th grade to Linux kernelspace C, Dalvik bytecode disassembly, bare-metal RF firmware, and distributed PySpark lakehouses.</p>
+            </div>
+
+            <div class="polyglot-card">
+                <!-- Visualizer Header & Mode Toggles -->
+                <div class="polyglot-header">
+                    <div class="polyglot-tags">
+                        <span class="polyglot-status-badge"><span class="pulse-dot"></span> LIVE TELEMETRY</span>
+                        <span class="polyglot-sub-tag">9 CORE RUNTIMES // 14-YEAR CHRONOLOGY</span>
+                    </div>
+
+                    <div class="polyglot-controls">
+                        <!-- Mode Switcher -->
+                        <div class="polyglot-btn-group" id="graphModeGroup">
+                            <button type="button" class="graph-toggle-btn active" data-mode="stream" title="Chronological Mastery Streamgraph across 2012–2026">
+                                <i class="fas fa-chart-area"></i> STREAMGRAPH
+                            </button>
+                            <button type="button" class="graph-toggle-btn" data-mode="radar" title="Multi-Axis Architectural Radar Matrix">
+                                <i class="fas fa-spider"></i> RADAR SPECTRUM
+                            </button>
+                        </div>
+
+                        <!-- Epoch Filter -->
+                        <div class="polyglot-epoch-group" id="epochFilterGroup">
+                            <button type="button" class="epoch-btn active" data-epoch="all">ALL (2012–2026)</button>
+                            <button type="button" class="epoch-btn" data-epoch="genesis">GENESIS '12–'15</button>
+                            <button type="button" class="epoch-btn" data-epoch="modding">MODDING '16–'20</button>
+                            <button type="button" class="epoch-btn" data-epoch="enterprise">ENTERPRISE '21–'24</button>
+                            <button type="button" class="epoch-btn" data-epoch="silicon">SILICON &amp; CLOUD '25–'26</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main High-DPI Canvas Viewport -->
+                <div class="canvas-viewport-wrap">
+                    <canvas id="languageCanvas"></canvas>
+                    <div class="canvas-scanline-hint">
+                        <span><i class="fas fa-mouse-pointer"></i> SCRUB HORIZONTALLY TO SCAN YEARS • CLICK CHIPS TO INSPECT</span>
+                        <span id="activeScrubReadout">ERA: 2026 // UNIFIED SYSTEMS &amp; SILICON</span>
+                    </div>
+                </div>
+
+                <!-- Deep Telemetry Inspector Card (Dynamically updated on hover/click) -->
+                <div class="lang-inspector-hud" id="langInspectorHud">
+                    <div class="hud-top-meta">
+                        <div class="hud-lang-title-group">
+                            <span class="hud-lang-indicator" id="hudIndicator"></span>
+                            <span class="hud-lang-name" id="hudLangName">C / C++ (12 YEARS ACTIVE)</span>
+                            <span class="hud-lang-badge" id="hudLangCategory">SYSTEMS &amp; HARDWARE // RING 0</span>
+                        </div>
+                        <div class="hud-origin-pill" id="hudOriginPill">ADOPTED: 2014 // CLASS 8 CS DEEP DIVE</div>
+                    </div>
+                    <div class="hud-details-grid">
+                        <div class="hud-detail-cell">
+                            <span class="hud-label">EXECUTION LAYER &amp; RUNTIME</span>
+                            <span class="hud-val" id="hudRuntime">Linux Kernel Ring 0 • ESP-IDF • Bare-Metal Silicon</span>
+                        </div>
+                        <div class="hud-detail-cell">
+                            <span class="hud-label">PRIMARY PRODUCTION ARTIFACTS</span>
+                            <span class="hud-val" id="hudArtifacts">Dodo-RF CC1101 Sub-GHz Suite • ACPI EC Kernel Driver • TWRP Recovery Trees</span>
+                        </div>
+                        <div class="hud-detail-cell">
+                            <span class="hud-label">CORE TOOLING &amp; CONCURRENCY</span>
+                            <span class="hud-val" id="hudTooling">GCC, Clang, DKMS, FreeRTOS, ESP32 DMA, POSIX Sockets</span>
+                        </div>
+                        <div class="hud-detail-cell code-cell">
+                            <span class="hud-label">MICRO-PAYLOAD PREVIEW</span>
+                            <code class="hud-code" id="hudCode">ioctl(fd, ACPI_EC_READ, &amp;ec_packet); // SMBus 0x68</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Languages Chips Grid -->
+                <div class="languages-matrix-grid" id="languagesMatrixGrid">
+                    <!-- Injected dynamically by script.js -->
                 </div>
             </div>
         </section>
@@ -1009,5 +1178,7 @@
 
     <!-- Core Architectural Script -->
     <script src="script.js"></script>
+    <!-- 3D Universe Scene, Tech Creatures & Alien Lizard Tracker -->
+    <script src="universe.js"></script>
 </body>
 </html>
