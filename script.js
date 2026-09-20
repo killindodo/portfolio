@@ -1,344 +1,271 @@
 /**
- * Surya Pratap // Retro Cyber Console v2.6
- * Matrix Rain Engine, Skills Telemetry HUD & Folding Console Drawers
+ * Surya Pratap Portfolio — Dual-Theme Controller & Interactive Engine
+ * Cinematic Editorial Studio ⇄ Retro Cyber Console
  */
 
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
+    'use strict';
 
-    /* -------------------------------------------------------------
-       1. AUTHENTIC MATRIX DIGITAL RAIN ENGINE (CANVAS 60FPS)
-       ------------------------------------------------------------- */
-    function initMatrixRain() {
-        const canvas = document.getElementById("matrix-canvas");
-        if (!canvas) return;
+    // ─── 1. THEME ENGINE ───
+    const THEME_STORAGE_KEY = 'sp_portfolio_theme';
+    let currentTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'cinematic';
 
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return;
-
-        let width, height, columns, drops, speeds, dropLengths;
-        
-        // Authentic Matrix glyph set: Half-width Katakana, Hexadecimal, Binary, Math & Cyber symbols
-        const matrixChars = "0123456789ABCDEFｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜλπΣΩµ⚡🦤SP01";
-        const charArray = matrixChars.split("");
-        const fontSize = 16;
-
-        function resize() {
-            const dpr = Math.min(window.devicePixelRatio || 1, 2);
-            width = canvas.width = window.innerWidth * dpr;
-            height = canvas.height = window.innerHeight * dpr;
-            canvas.style.width = window.innerWidth + "px";
-            canvas.style.height = window.innerHeight + "px";
-            ctx.scale(dpr, dpr);
-
-            const displayWidth = window.innerWidth;
-            const displayHeight = window.innerHeight;
-            columns = Math.ceil(displayWidth / fontSize);
-            drops = [];
-            speeds = [];
-
-            for (let i = 0; i < columns; i++) {
-                // Initialize across the ENTIRE viewport height so rain is immediately active everywhere
-                drops[i] = Math.floor(Math.random() * (displayHeight / fontSize));
-                speeds[i] = 1 + Math.random() * 0.8;
-            }
-
-            // Fill solid black on init/resize
-            ctx.fillStyle = "#03060c";
-            ctx.fillRect(0, 0, displayWidth, displayHeight);
+    function initTheme() {
+        // Check URL parameter override (e.g. ?theme=cyber or ?theme=cinematic)
+        const urlParams = new URLSearchParams(window.location.search);
+        const themeParam = urlParams.get('theme');
+        if (themeParam === 'cyber' || themeParam === 'cinematic') {
+            currentTheme = themeParam;
         }
 
-        resize();
-        window.addEventListener("resize", debounce(resize, 100));
+        applyTheme(currentTheme);
+    }
 
-        let isVisible = true;
-        document.addEventListener("visibilitychange", () => {
-            isVisible = document.visibilityState === "visible";
+    function applyTheme(theme) {
+        currentTheme = theme;
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
+
+        // Update Theme Switcher buttons
+        document.querySelectorAll('.theme-opt-btn').forEach(btn => {
+            if (btn.getAttribute('data-set-theme') === theme) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
         });
 
-        // Respect system accessibility setting
-        const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (prefersReducedMotion) {
-            ctx.fillStyle = "#03060c";
-            ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
-            return;
+        // Trigger or stop Matrix canvas
+        if (theme === 'cyber') {
+            startMatrixRain();
+        } else {
+            stopMatrixRain();
         }
 
-        let lastTime = 0;
-        const fps = 33; // 30-33 FPS provides smooth flow with low CPU consumption
-        const fpsInterval = 1000 / fps;
+        // Re-render skills bar animation
+        renderSkills(currentDomain);
+    }
 
-        function renderStream(timestamp) {
-            requestAnimationFrame(renderStream);
+    window.toggleTheme = function (theme) {
+        applyTheme(theme);
+    };
 
-            if (!isVisible) return;
+    // ─── 2. INTERACTIVE CUSTOM CURSOR ───
+    const cursorDot = document.getElementById('cursorDot');
+    const cursorRing = document.getElementById('cursorRing');
 
-            const elapsed = timestamp - lastTime;
-            if (elapsed < fpsInterval) return;
-            lastTime = timestamp - (elapsed % fpsInterval);
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+    let isCursorActive = false;
 
-            const displayWidth = window.innerWidth;
-            const displayHeight = window.innerHeight;
+    if (cursorDot && cursorRing) {
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
 
-            // Trailing darkness fade layer
-            ctx.fillStyle = "rgba(3, 6, 12, 0.15)";
-            ctx.fillRect(0, 0, displayWidth, displayHeight);
+            if (!isCursorActive) {
+                isCursorActive = true;
+                cursorDot.style.display = 'block';
+                cursorRing.style.display = 'block';
+            }
+        });
 
-            ctx.font = `bold ${fontSize}px 'Fira Code', monospace`;
+        // Smooth trailing animation for outer ring
+        function animateCursor() {
+            ringX += (mouseX - ringX) * 0.18;
+            ringY += (mouseY - ringY) * 0.18;
+            cursorRing.style.left = `${ringX}px`;
+            cursorRing.style.top = `${ringY}px`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
 
-            for (let i = 0; i < columns; i++) {
-                const char = charArray[Math.floor(Math.random() * charArray.length)];
-                const x = i * fontSize;
-                const y = drops[i] * fontSize;
+        // Expand cursor on interactive hover
+        const interactiveElements = 'a, button, input, textarea, .filter-btn, .hud-tab, .project-card, .telemetry-card';
+        document.querySelectorAll(interactiveElements).forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+    }
 
-                // 1. Leading sparkler head (bright glowing white/lime)
-                if (Math.random() > 0.85) {
-                    ctx.fillStyle = "#FFFFFF";
-                    ctx.shadowColor = "#00FF66";
-                    ctx.shadowBlur = 10;
-                } else if (i % 4 === 0) {
-                    // Cyber Cyan accent column
-                    ctx.fillStyle = "#00F2FE";
-                    ctx.shadowColor = "rgba(0, 242, 254, 0.6)";
-                    ctx.shadowBlur = 6;
-                } else {
-                    // Classic Matrix Phosphor Green
-                    ctx.fillStyle = "#00FF41";
-                    ctx.shadowColor = "rgba(0, 255, 65, 0.5)";
-                    ctx.shadowBlur = 4;
-                }
+    // ─── 3. MATRIX RAIN CANVAS (Active on Cyber theme) ───
+    const canvas = document.getElementById('matrix-canvas');
+    let matrixCtx = canvas ? canvas.getContext('2d') : null;
+    let matrixAnimationId = null;
+    let drops = [];
+    const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネハヒフヘホマミムメモヤユヨラリルレワヲンABCDEF';
 
-                ctx.fillText(char, x, y);
-                ctx.shadowBlur = 0;
+    function initMatrix() {
+        if (!canvas || !matrixCtx) return;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const columns = Math.floor(canvas.width / 20);
+        drops = Array(columns).fill(1);
+    }
 
-                // Reset drop when past bottom
-                if (y > displayHeight && Math.random() > 0.975) {
-                    drops[i] = 0;
-                    speeds[i] = 1 + Math.random() * 0.8;
-                }
+    function drawMatrix() {
+        if (!matrixCtx) return;
+        matrixCtx.fillStyle = 'rgba(5, 8, 17, 0.08)';
+        matrixCtx.fillRect(0, 0, canvas.width, canvas.height);
 
-                drops[i] += speeds[i];
+        matrixCtx.fillStyle = '#00FF9D';
+        matrixCtx.font = '14px Fira Code, monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = characters.charAt(Math.floor(Math.random() * characters.length));
+            matrixCtx.fillText(text, i * 20, drops[i] * 20);
+
+            if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+        matrixAnimationId = requestAnimationFrame(drawMatrix);
+    }
+
+    function startMatrixRain() {
+        if (!canvas) return;
+        initMatrix();
+        if (!matrixAnimationId) {
+            drawMatrix();
+        }
+    }
+
+    function stopMatrixRain() {
+        if (matrixAnimationId) {
+            cancelAnimationFrame(matrixAnimationId);
+            matrixAnimationId = null;
+            if (matrixCtx) {
+                matrixCtx.clearRect(0, 0, canvas.width, canvas.height);
             }
         }
-
-        requestAnimationFrame(renderStream);
     }
 
-    function debounce(func, wait) {
-        let timeout;
-        return function() {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(this, arguments), wait);
-        };
-    }
+    window.addEventListener('resize', () => {
+        if (currentTheme === 'cyber') initMatrix();
+    });
 
-    initMatrixRain();
-
-    /* -------------------------------------------------------------
-       2. RETRO TYPING COMMAND LINE ENGINE
-       ------------------------------------------------------------- */
-    const roles = [
-        "Full-Stack Web Architect & Founder @ SJ Digitals Co.",
-        "Author of NitroSense Linux (Kernel EC Driver & PyQt6 GUI).",
-        "Creator of Linux Continuity (AirDrop & PTY Shell for Linux/Android).",
-        "Android Systems & Kernel Engineer (Zezes ISO Deployer, GKI 6.1).",
-        "Data Engineer & Enterprise PySpark Lakehouse Specialist.",
-        "ESP32 & CC1101 Sub-GHz RF Transceiver Builder."
-    ];
-
-    const targetElement = document.getElementById("typing-text");
-    let roleIdx = 0;
-    let charIdx = 0;
-    let isDeleting = false;
-    let typingSpeed = 60;
-
-    function runTypingLoop() {
-        if (!targetElement) return;
-
-        const currentText = roles[roleIdx];
-
-        if (isDeleting) {
-            targetElement.textContent = currentText.substring(0, charIdx - 1);
-            charIdx--;
-            typingSpeed = 25;
-        } else {
-            targetElement.textContent = currentText.substring(0, charIdx + 1);
-            charIdx++;
-            typingSpeed = 60;
-        }
-
-        if (!isDeleting && charIdx === currentText.length) {
-            typingSpeed = 2000;
-            isDeleting = true;
-        } else if (isDeleting && charIdx === 0) {
-            isDeleting = false;
-            roleIdx = (roleIdx + 1) % roles.length;
-            typingSpeed = 300;
-        }
-
-        setTimeout(runTypingLoop, typingSpeed);
-    }
-
-    runTypingLoop();
-
-    /* -------------------------------------------------------------
-       3. INTERACTIVE DYNAMIC SKILLS GRAPH ENGINE
-       ------------------------------------------------------------- */
+    // ─── 4. SKILLS TELEMETRY DATA & RENDERER ───
     const skillsData = {
         web: [
-            { name: "Semantic HTML5 & Responsive CSS3 Design Systems", score: 95 },
-            { name: "Vanilla JavaScript (ES6+, DOM, Asynchronous I/O)", score: 92 },
-            { name: "Client Web Portals & Vercel Global Edge Deployments", score: 90 },
-            { name: "REST APIs, WebSockets & Real-Time Event Streams", score: 88 },
-            { name: "Performance Optimization (Lighthouse 99+, Zero-Build)", score: 92 }
+            { name: "Vanilla ES6+ & High-Perf DOM Architecture", level: 98, note: "Zero layout shift, micro-interactions" },
+            { name: "Vercel Edge & Cloudflare Workers Deployment", level: 95, note: "Global CDN caching & low-latency routing" },
+            { name: "Modern CSS3 / Design Tokens & Responsive Grid", level: 96, note: "Fluid clamp() typography & glassmorphism" },
+            { name: "NFC Smart Business Solutions & Micro-Portals", level: 92, note: "Client contact dispatch & catalog integration" }
         ],
         systems: [
-            { name: "Linux Continuity Daemon (IPC, D-Bus, PTY Terminal Mirrors)", score: 92 },
-            { name: "Android GKI Header v4/6.1 & Kernel Driver Compilation", score: 88 },
-            { name: "Zezes Mobile ISO Engine (USB OTG Raw Block I/O)", score: 88 },
-            { name: "Acer Nitro ACPI EC Register Fan Control & Telemetry", score: 86 },
-            { name: "TWRP 3.7.1 / Custom Recovery Bringup (MT6897)", score: 88 }
+            { name: "Linux Continuity (Android ↔ Linux Bridge)", level: 95, note: "UNIX domain sockets, ADB, daemon sync" },
+            { name: "Zezes Mobile ISO Core (USB Gadget OTG)", level: 90, note: "Kernel mass-storage emulation on Android" },
+            { name: "Nitrosense Linux (ACPI EC Read/Write)", level: 92, note: "Thermal monitoring via ec_sys registers" },
+            { name: "Android GKI v4/6.1 & Custom Recovery Trees", level: 88, note: "TWRP / OrangeFox device builds & EROFS" }
         ],
         embedded: [
-            { name: "ESP32 Firmware & Embedded C++", score: 90 },
-            { name: "TI CC1101 Sub-GHz Demodulation (315/433/868/915 MHz)", score: 88 },
-            { name: "Zero-CDN Embedded WebServers (PROGMEM Flash)", score: 86 },
-            { name: "Hardware SPI / I2C Bus & Pinout Engineering", score: 82 }
+            { name: "CC1101 Sub-GHz Transceivers (Dodo-RF)", level: 90, note: "315/433/868/915MHz packet sniffing & replay" },
+            { name: "Microcontrollers: ESP32 & RP2040 Architecture", level: 94, note: "FreeRTOS, dual-core tasks, hardware interrupts" },
+            { name: "Bus Protocols: SPI, I2C, UART, Direct GPIO", level: 92, note: "High-speed bitbanging & peripheral control" },
+            { name: "RF Modulation & Signal Analysis (FSK, ASK/OOK)", level: 88, note: "Rolling-code inspection & packet decoding" }
         ],
         data: [
-            { name: "Databricks & PySpark Distributed Transformations", score: 92 },
-            { name: "Medallion Lakehouse Architecture (Bronze -> Silver -> Gold)", score: 90 },
-            { name: "SQL Query Optimization & Delta Lake Management", score: 88 },
-            { name: "ETL Orchestration & Databricks Workflows CI/CD", score: 85 }
+            { name: "Apache Spark / PySpark Distributed Compute", level: 92, note: "High-throughput dataframe transformations" },
+            { name: "Databricks Delta Lakehouse (Medallion Flow)", level: 90, note: "Bronze / Silver / Gold ACID transactional ETL" },
+            { name: "Parquet & Delta Schema Enforcement", level: 88, note: "Automated data contracts & time-travel audits" },
+            { name: "Data Optimization & Z-Ordering Indexing", level: 85, note: "Minimizing shuffle & partition skew" }
         ],
         languages: [
-            { name: "Python (Systems, Data Pipelines, Daemons, REST)", score: 94 },
-            { name: "JavaScript & Modern Web APIs", score: 91 },
-            { name: "Kotlin (Android Native & Block Storage APIs)", score: 86 },
-            { name: "C / Embedded C++ (Firmware & Kernel Drivers)", score: 88 },
-            { name: "Bash & Linux Shell Scripting", score: 88 },
-            { name: "SQL (DDL, DML, Distributed Spark SQL)", score: 87 }
+            { name: "Python (Systems, Daemons, Spark ETL)", level: 95, note: "Core backend, hardware automation" },
+            { name: "JavaScript / TypeScript (ES6+, Node, DOM)", level: 94, note: "Edge Workers, interactive client portals" },
+            { name: "C / C++ (Linux Kernel, Microcontrollers)", level: 88, note: "Hardware abstraction, ACPI registers" },
+            { name: "Bash & Linux Shell Scripting", level: 96, note: "OS provisioning, ROM building, CI automation" },
+            { name: "SQL (Analytical Queries & Transformations)", level: 90, note: "Relational optimization & warehousing" }
         ]
     };
 
-    const graphContainer = document.getElementById("skills-graph-container");
-    const domainTitle = document.getElementById("graph-domain-title");
-    const hudTabs = document.querySelectorAll(".hud-tab");
+    let currentDomain = 'web';
 
-    function renderDomainGraph(domainKey) {
-        const dataset = skillsData[domainKey];
-        if (!dataset || !graphContainer) return;
+    function renderSkills(domain) {
+        currentDomain = domain;
+        const container = document.getElementById('skillsListContainer');
+        if (!container) return;
 
-        graphContainer.innerHTML = "";
+        const items = skillsData[domain] || skillsData.web;
+        container.innerHTML = '';
 
-        dataset.forEach(item => {
-            const itemRow = document.createElement("div");
-            itemRow.className = "graph-item";
-            itemRow.innerHTML = `
-                <div class="graph-label-row">
-                    <span>${item.name}</span>
-                    <strong>${item.score}%</strong>
+        items.forEach(skill => {
+            const row = document.createElement('div');
+            row.className = 'skill-row';
+            row.innerHTML = `
+                <div class="skill-row-head">
+                    <span>${skill.name}</span>
+                    <span style="color: var(--accent); font-family: var(--font-mono); font-size: 12px;">${skill.level}%</span>
                 </div>
-                <div class="bar-track">
-                    <div class="bar-fill" data-score="${item.score}"></div>
+                <div class="skill-bar-track">
+                    <div class="skill-bar-fill" style="width: 0%"></div>
                 </div>
+                <div style="font-size: 11px; color: var(--text-dim);">${skill.note}</div>
             `;
-            graphContainer.appendChild(itemRow);
+            container.appendChild(row);
+
+            // Trigger animation
+            setTimeout(() => {
+                const bar = row.querySelector('.skill-bar-fill');
+                if (bar) bar.style.width = `${skill.level}%`;
+            }, 60);
         });
 
-        setTimeout(() => {
-            const fills = graphContainer.querySelectorAll(".bar-fill");
-            fills.forEach(fill => {
-                const targetScore = fill.getAttribute("data-score");
-                fill.style.width = `${targetScore}%`;
-            });
-        }, 50);
+        // Update tabs active state
+        document.querySelectorAll('.hud-tab').forEach(t => {
+            if (t.getAttribute('data-domain') === domain) t.classList.add('active');
+            else t.classList.remove('active');
+        });
     }
 
-    hudTabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-            hudTabs.forEach(t => t.classList.remove("active"));
-            tab.classList.add("active");
+    window.switchSkillDomain = function (domain) {
+        renderSkills(domain);
+    };
 
-            const domain = tab.getAttribute("data-domain");
-            domainTitle.textContent = `${tab.innerText.toUpperCase()} // METRICS`;
-            renderDomainGraph(domain);
+    // ─── 5. PROJECT CATEGORY FILTERING ───
+    window.filterProjects = function (category) {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            if (btn.getAttribute('data-filter') === category) btn.classList.add('active');
+            else btn.classList.remove('active');
         });
-    });
 
-    // Default to Web & Client Systems telemetry
-    renderDomainGraph("web");
-
-    /* -------------------------------------------------------------
-       4. INTERACTIVE FOLDING PROJECT ACCORDION
-       ------------------------------------------------------------- */
-    const drawers = document.querySelectorAll(".project-console-drawer");
-
-    drawers.forEach(drawer => {
-        const trigger = drawer.querySelector(".drawer-trigger");
-
-        trigger.addEventListener("click", () => {
-            const isOpen = drawer.classList.contains("is-open");
-            if (!isOpen) {
-                drawer.classList.add("is-open");
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            const cardCat = card.getAttribute('data-category');
+            if (category === 'all' || cardCat === category) {
+                card.style.display = 'flex';
+                setTimeout(() => card.style.opacity = '1', 20);
             } else {
-                drawer.classList.remove("is-open");
+                card.style.opacity = '0';
+                setTimeout(() => card.style.display = 'none', 200);
             }
         });
+    };
 
-        trigger.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                trigger.click();
-            }
+    // ─── 6. NAVBAR SCROLL LISTENER ───
+    const navbar = document.querySelector('.navbar-wrap');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
         });
-    });
+    }
 
-    /* -------------------------------------------------------------
-       5. 1-CLICK TERMINAL COMMAND COPIER
-       ------------------------------------------------------------- */
-    const copyButtons = document.querySelectorAll(".copy-cmd-btn");
-
-    copyButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            const cmdBox = btn.closest(".cmd-run-bar");
-            const codeText = cmdBox.querySelector("code").innerText;
-
-            navigator.clipboard.writeText(codeText).then(() => {
-                const icon = btn.querySelector("i");
-                icon.className = "fas fa-check";
-                icon.style.color = "var(--cyber-emerald)";
-
-                setTimeout(() => {
-                    icon.className = "far fa-copy";
-                    icon.style.color = "";
-                }, 1800);
-            });
+    // ─── 7. CLIPBOARD / TOAST UTILITY ───
+    window.copyText = function (text, label) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert((label || 'Link') + ' copied to clipboard!');
         });
+    };
+
+    // ─── 8. BOOTSTRAP ───
+    window.addEventListener('DOMContentLoaded', () => {
+        initTheme();
+        renderSkills('web');
     });
-
-    /* -------------------------------------------------------------
-       6. CLIENT-SIDE CATEGORY FILTERING
-       ------------------------------------------------------------- */
-    const filterButtons = document.querySelectorAll(".filter-btn");
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            filterButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            const selectedFilter = btn.getAttribute("data-filter");
-
-            drawers.forEach(drawer => {
-                const category = drawer.getAttribute("data-category") || "";
-                const categories = category.split(/\s+/);
-                if (selectedFilter === "all" || categories.includes(selectedFilter)) {
-                    drawer.style.display = "block";
-                } else {
-                    drawer.style.display = "none";
-                }
-            });
-        });
-    });
-
-});
+})();
