@@ -946,6 +946,7 @@
 
         initArchitectureCanvas();
         initSnakeSlideBar();
+        initShyamLoveAnimation();
         loadGitHubData();
     });
 
@@ -1191,6 +1192,64 @@
         }
 
         animate();
+    }
+
+    // ─── 7. SHYAM PANDEY MENTOR LOVE FOUNTAIN ANIMATION ───
+    function initShyamLoveAnimation() {
+        const hearts = ['❤️', '💖', '💕', '💓', '💗', '✨', '🥰'];
+
+        function spawnHeart(x, y) {
+            const heart = document.createElement('div');
+            heart.className = 'shyam-heart-particle';
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+            const dx = (Math.random() - 0.5) * 64;
+            const rot = (Math.random() - 0.5) * 55;
+            const size = 15 + Math.random() * 12;
+
+            heart.style.setProperty('--dx', `${dx}px`);
+            heart.style.setProperty('--rot', `${rot}deg`);
+            heart.style.fontSize = `${size}px`;
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1250);
+        }
+
+        document.querySelectorAll('.timeline-mentor-link, [data-mentor-love]').forEach(el => {
+            let lastSpawn = 0;
+
+            // On mousemove / hover - gentle streaming fountain
+            el.addEventListener('mousemove', (e) => {
+                const now = Date.now();
+                if (now - lastSpawn > 75) {
+                    spawnHeart(e.clientX, e.clientY);
+                    lastSpawn = now;
+                }
+            });
+
+            // On initial hover - instant greeting burst
+            el.addEventListener('mouseenter', (e) => {
+                for (let i = 0; i < 4; i++) {
+                    setTimeout(() => spawnHeart(e.clientX, e.clientY), i * 60);
+                }
+            });
+
+            // On click - passionate eruption of 14 mini hearts!
+            el.addEventListener('click', (e) => {
+                for (let i = 0; i < 14; i++) {
+                    setTimeout(() => {
+                        const jitterX = e.clientX + (Math.random() - 0.5) * 24;
+                        const jitterY = e.clientY + (Math.random() - 0.5) * 24;
+                        spawnHeart(jitterX, jitterY);
+                    }, i * 28);
+                }
+            });
+        });
     }
 
 })();
