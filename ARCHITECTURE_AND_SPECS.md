@@ -25,55 +25,51 @@
 
 ---
 
-## 2. Creative & Visual Direction
+## 2. Project Classification: Closed-Source vs Open-Source
 
-* **Vibe**: Apple-level presentation × Linear-level interface polish × Vercel typography × Stripe architectural rigor.
-* **Color Palette**:
-  * Deep Near-Black Graphite: `#08090D`, `#0E1118`, `#141824`
-  * Hairline Technical Borders: `rgba(255, 255, 255, 0.08)` to `rgba(255, 255, 255, 0.16)`
-  * Off-White Architectural Typography: `#F5F6F8`, `#E2E4E9`, `#94A3B8`
-  * Technical Accent: Precision Electric Cobalt (`#3B82F6` / `#60A5FA`)
-  * Founder Accent: Warm Editorial Amber (`#D97706` / `#F59E0B` for SJ Digitals Co.)
-  * System Success Indicators: Emerald `#10B981`
-* **Typography**:
-  * Primary Sans: `Plus Jakarta Sans` / `-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`
-  * Monospace Technical Data & Schematics: `Fira Code`, `monospace`
-  * Display Headlines: `Space Grotesk`, `sans-serif` (Precision engineered geometry)
+### Closed-Source Projects (Proprietary Production Platforms)
+*Rule: People can view the live result/website and the technical case study, but **NO GitHub source code links** are displayed.*
+1. **SJ Digitals Co.** (`https://sjdigitals.vercel.app/`): Agency & Digital Systems Infrastructure.
+2. **Indian Central School** (`https://icsgayaji.org`): Academic management and student records platform.
+3. **Chandrawati Enterprises** (`https://chandrawati-enterprises.vercel.app/`): Industrial manpower outsourcing portal.
 
----
-
-## 3. Engineering Domains (The 6 Pillars)
-
-1. **Software & Web Platforms (`web`)**: Zero layout shifts, high-throughput interfaces, vanilla performance, edge deployment.
-2. **Linux & Low Level (`linux`)**: ACPI Embedded Controller drivers, custom kernel modules, DKMS, system daemons, UNIX sockets.
-3. **Android System Architecture (`android`)**: Custom recovery (TWRP/OrangeFox), USB Gadget ConfigFS, GKI kernels, EROFS, Magisk/KernelSU.
-4. **Embedded & Wireless RF (`embedded`)**: ESP32, RP2040, CC1101 Sub-GHz transceivers (315/433/868/915MHz), SPI/I2C bitbanging, packet replay.
-5. **Data Engineering & Lakehouse (`data`)**: Databricks Delta Lake, Apache Spark / PySpark, Medallion Architecture (Bronze ➔ Silver ➔ Gold).
-6. **Digital Enterprise Products (`agency`)**: Client web platforms, NFC smart business ecosystems, Google Business local optimization via SJ Digitals Co.
+### Open-Source Projects (Public Repositories on GitHub)
+*Rule: Full source code, commit history, and GitHub links displayed.*
+1. **Linux Continuity**: Android ↔ Linux continuity daemon over local UNIX sockets.
+2. **Pinion**: Universal wireless print server for Android (IPP/CUPS/Mopria/AirPrint).
+3. **Zezes**: USB OTG bootable ISO deployment core via Kernel ConfigFS.
+4. **NitroSense Linux**: ACPI EC fan governor and thermal monitoring for Acer Nitro 5.
+5. **Dodo-RF**: Sub-GHz radio analysis, capture, and packet synthesis (ESP32 + CC1101).
+6. **Databricks Pipelines**: Medallion architecture (Bronze ➔ Silver ➔ Gold) on PySpark/Delta Lake.
+7. **Redmi Note 9 NVRAM Restore**: Low-level MediaTek MT6769 baseband and IMEI recovery tool.
+8. **NetHunter MT7601U Driver**: Linux kernel driver patch for wireless packet injection.
+9. **AI Engineering From Scratch**: Mathematical foundations and neural implementations from scratch.
 
 ---
 
-## 4. Live GitHub Data Layer & Architecture
+## 3. The Complete Engineering Evolution Timeline (2012 → 2026)
 
-* **Source of Truth**: `https://api.github.com/users/killindodo/repos`
-* **Fallback Layer**: `data/repositories.json` (offline-safe, pre-rendered snapshot of all 11+ public repositories with detailed case studies).
-* **Sync Strategy**:
-  1. At load time, client-side script queries GitHub API.
-  2. If rate-limited or offline, seamlessly loads `data/repositories.json`.
-  3. Continuous background auto-sync via `.github/workflows/update-github-data.yml`.
-* **Search & Filter**:
-  * Real-time client-side keyword search (Android, Linux, ESP32, Python, driver, RF, etc.).
-  * Multi-domain category pills (`ALL`, `WEB`, `LINUX`, `ANDROID`, `EMBEDDED`, `DATA`).
-  * Sorting by Relevance, Recently Updated, Stars, and Name.
-
----
-
-## 5. Interactive Components & Case Study Experience
-
-* **Hero Living System Architecture**: An interactive HTML5 Canvas displaying an evolving graph of nodes, bus traces, and signal pulses representing the unified hardware-to-cloud ecosystem.
-* **Case Study Drawer Modal**:
-  * Clicking any project card expands a full-screen or slide-in technical breakdown:
-    `01 — CONTEXT` • `02 — PROBLEM` • `03 — ENGINEERING` • `04 — ARCHITECTURE` • `05 — IMPLEMENTATION` • `06 — RESULT` • `07 — REPOSITORY & DEMO`.
-* **Engineering Evolution Timeline**: Milestones spanning 2021 to 2026.
-* **Easter Egg**: Pressing the backtick key (`` ` ``) or typing `killindodo` opens a floating real-time technical diagnostic console with system telemetry.
-* **Remote Gatekeeper**: Fully integrated with `gatekeeper.js` (with automatic local development safeguard).
+* **2012 (Class 7 — First Spark of Curiosity)**:
+  * Discovered HTML and realized digital experiences could be built from scratch. Developed a relentless passion for programming and web structures.
+* **2014 — 2015 (School Projects & Academic Rank 1)**:
+  * Built numerous interactive school science and computing projects; awarded **Class Topper (Rank 1)**.
+  * This milestone ignited a fierce determination: for the next 3 consecutive years, studied **C, C++, Java, Arduino, Ruby, and Python** under a supportive mentor who recognized and nurtured his obsessive curiosity.
+* **2016 (The Android Awakening & Shyam Kr Pandey)**:
+  * Purchased a used Samsung Galaxy Ace Duos and attempted to root and mod it, encountering countless initial failures.
+  * Met **Shyam Kr Pandey**, who unlocked the deeper world of Android internals.
+  * Successfully rooted and modded his first personal phone: **Panasonic Eluga I2**. Compiled custom TWRP recoveries for the Eluga I2 and Karbonn devices, and began rooting and unbricking Android phones across the community.
+* **2018 — 2020 (SPPU / Pune University — Low-Level Architecture)**:
+  * Graduated high school (12th grade) and moved to Pune for higher studies at **Savitribai Phule Pune University (SPPU)**.
+  * Immersed deeply in Database Management Systems (DBMS/RDBMS), Operating Systems architecture, Linux Kernels, ethical hacking, music production, and low-level hardware programming.
+* **2020 — 2021 (Graduation & Pandemic Pivot)**:
+  * Returned home during the COVID-19 pandemic. Graduated with a **Bachelor of Business Administration in Computer Applications (BBA-CA)**, marrying business logic with technical architecture.
+* **2021 — 2023 (Surya Jyoti Enterprises & Government Logistics)**:
+  * Established **Surya Jyoti Enterprises** to put business administration and logistics to the test in high-stakes environments.
+  * Successfully executed state and central government supply contracts for prestigious high-security institutions, including the **Officers Training Academy (OTA)**, **Central Jails**, and **Sub-Jails**, ensuring 100% on-time, transparent, and smooth operational supply chains.
+* **2024 (Founding SJ Digitals Co.)**:
+  * Channeled over a decade of systems engineering, web performance optimization, and operational experience into founding **SJ Digitals Co.**, delivering zero-bloat web portals, NFC smart business card ecosystems, and digital branding.
+* **2025 (The Sleeping Monster Awakens — Dodo-RF & ESP32)**:
+  * Longtime mentor and friend **Shyam Kr Pandey** gifted him two **ESP32 microcontrollers**, re-awakening the low-level embedded hardware hacker inside.
+  * Engineered **Dodo-RF**: a portable Sub-GHz wireless protocol analyzer, packet sniffer, and replay engine pairing ESP32/RP2040 with TI CC1101 transceivers.
+* **2026 — PRESENT (Unified Systems Architecture & Data Lakehouses)**:
+  * Architecting Medallion-architecture PySpark pipelines on Databricks Delta Lake, Linux Continuity daemons, and unified cloud-to-silicon systems engineering.

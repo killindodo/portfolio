@@ -12,7 +12,7 @@
     let searchQuery = '';
     let currentSort = 'relevance';
 
-    // Fallback static dataset (embedded from data/repositories.json)
+    // Curated dataset (Embedded from data/repositories.json)
     const fallbackRepositories = [
         {
             name: "sjdigitals.co",
@@ -20,12 +20,13 @@
             description: "Flagship digital systems platform and corporate web presence for SJ Digitals Co., founded by Surya Pratap. Features zero layout shifts, bespoke client portals, NFC smart business card routing, and instant edge caching.",
             category: "web",
             featured: true,
+            closed_source: true,
             language: "JavaScript",
-            html_url: "https://github.com/killindodo/sjdigitals.co",
+            html_url: null,
             homepage: "https://sjdigitals.vercel.app/",
-            stargazers_count: 2,
+            stargazers_count: 0,
             updated_at: "2026-09-20T05:20:30Z",
-            topics: ["agency", "design-system", "edge-deployment", "nfc-cards", "vanilla-js", "web-performance"],
+            topics: ["agency", "closed-source", "design-system", "edge-deployment", "nfc-cards", "vanilla-js", "web-performance"],
             specs: {
                 architecture: "Edge-Cached Static Architecture",
                 stack: "Semantic HTML5, Modular CSS3 Tokens, Vanilla ES6+",
@@ -41,11 +42,66 @@
             }
         },
         {
+            name: "indian-central-school",
+            title: "Indian Central School — Institutional Academic Portal",
+            description: "Enterprise institutional web portal and academic management infrastructure for Indian Central School (Gaya, Bihar). Engineered for high availability, student admission workflows, and fast mobile responsiveness.",
+            category: "web",
+            featured: true,
+            closed_source: true,
+            language: "JavaScript",
+            html_url: null,
+            homepage: "https://icsgayaji.org",
+            stargazers_count: 0,
+            updated_at: "2026-09-15T15:00:00Z",
+            topics: ["academic-portal", "closed-source", "institutional-web", "mobile-first", "student-records"],
+            specs: {
+                architecture: "Production Academic Web Portal",
+                stack: "Semantic HTML5, CSS3 Grid, Vanilla ES6+, Edge CDN",
+                platform: "Hostinger Cloud / Global CDN Edge",
+                role: "Lead Systems Architect & Web Engineer"
+            },
+            case_study: {
+                context: "A prominent regional educational institution required an authoritative digital portal for admissions, faculty announcements, and parent communication.",
+                problem: "Construct a responsive, tamper-resilient web portal capable of handling peak admissions traffic with zero layout shifts and instant asset caching on low-bandwidth mobile networks.",
+                engineering: "Designed modular HTML5 architectures, optimized SVG branding assets, and integrated secure inquiry and admission routing workflows with zero third-party framework overhead.",
+                architecture: "Student/Parent Device ➔ Edge CDN Caching ➔ Static Delivery Engine ➔ Secure Inquiry Webhook & Direct School Desk Routing.",
+                result: "Reliable 100% uptime during admissions season, sub-second load times on rural cellular networks, and modernized institutional presence."
+            }
+        },
+        {
+            name: "chandrawati-enterprises",
+            title: "Chandrawati Enterprises — Workforce Outsourcing Portal",
+            description: "Production web platform for a major manpower and industrial workforce outsourcing corporation in Gaya, Bihar. Engineered for high performance, local asset bundling, and interactive quote dispatch.",
+            category: "web",
+            featured: true,
+            closed_source: true,
+            language: "JavaScript",
+            html_url: null,
+            homepage: "https://chandrawati-enterprises.vercel.app/",
+            stargazers_count: 0,
+            updated_at: "2026-08-15T12:00:00Z",
+            topics: ["client-portal", "closed-source", "corporate-web", "high-performance", "manpower-solutions", "vanilla-js"],
+            specs: {
+                architecture: "Zero-Dependency Responsive Web Portal",
+                stack: "Semantic HTML5, CSS3 Grid/Flexbox, Vanilla JS, Vercel Edge",
+                platform: "Vercel Global Edge Production",
+                role: "Lead Systems & Web Architect"
+            },
+            case_study: {
+                context: "A local corporate workforce supplier required a modern digital presence to service enterprise clients, verify candidate profiles, and generate contracts.",
+                problem: "Deliver a fast, accessible portal with zero third-party framework lock-in, ensuring instant loading even over cellular 4G/3G networks.",
+                engineering: "Designed responsive design systems, modular CSS architecture, and direct client WhatsApp API quotation hooks without bloated npm dependencies.",
+                architecture: "Static Asset CDN ➔ Local Caching Service Worker ➔ Client Inquiries Engine ➔ Direct Business WhatsApp Dispatch.",
+                result: "Instant first contentful paint, 100% responsive compatibility across low-end smartphones, and significant inbound corporate client leads."
+            }
+        },
+        {
             name: "linux-continuity",
             title: "Linux Continuity — Android ↔ Linux Continuity Bridge",
             description: "Apple-style Continuity ecosystem bridging Linux desktop workstations with Android devices. Real-time clipboard synchronization, AirDrop-like zero-friction file transfer, shared media controls, and interactive shell execution over secure local sockets.",
             category: "linux",
             featured: true,
+            closed_source: false,
             language: "Python",
             html_url: "https://github.com/killindodo/linux-continuity",
             homepage: "https://github.com/killindodo/linux-continuity",
@@ -72,6 +128,7 @@
             description: "Universal wireless print server and hardware spooling daemon for Android. Bridges CUPS, IPP, AirPrint, and Mopria printing protocols with a modern embedded Web UI and root-level automation.",
             category: "android",
             featured: true,
+            closed_source: false,
             language: "Java",
             html_url: "https://github.com/killindodo/pinion",
             homepage: "https://github.com/killindodo/pinion",
@@ -98,6 +155,7 @@
             description: "Emergency bare-metal multi-boot installer core running directly on Android. Emulates hardware CD-ROM / USB mass storage devices over USB-C OTG using Linux Kernel USB Gadget ConfigFS.",
             category: "android",
             featured: true,
+            closed_source: false,
             language: "Kotlin",
             html_url: "https://github.com/killindodo/Zezes",
             homepage: "https://github.com/killindodo/Zezes",
@@ -124,6 +182,7 @@
             description: "Native Linux fan speed controller and thermal monitor for Acer Nitro series gaming laptops. Directly queries and modifies ACPI Embedded Controller (EC) registers to override proprietary firmware fan limitations.",
             category: "linux",
             featured: true,
+            closed_source: false,
             language: "Python",
             html_url: "https://github.com/killindodo/nitrosense-linux",
             homepage: "https://github.com/killindodo/nitrosense-linux",
@@ -150,6 +209,7 @@
             description: "Ultra-portable hardware RF analysis, signal capture, and packet synthesis platform built for CC1101 transceivers paired with ESP32 and RP2040 microcontrollers across 315, 433, 868, and 915 MHz bands.",
             category: "embedded",
             featured: true,
+            closed_source: false,
             language: "C++",
             html_url: "https://github.com/killindodo/Dodo-RF",
             homepage: "https://github.com/killindodo/Dodo-RF",
@@ -176,6 +236,7 @@
             description: "Industrial distributed data lakehouse pipelines implementing Bronze, Silver, and Gold Medallion architecture on Apache Spark / PySpark and Databricks Delta Lake with ACID transactional guarantees.",
             category: "data",
             featured: true,
+            closed_source: false,
             language: "Jupyter Notebook",
             html_url: "https://github.com/killindodo/databricks_pipelines",
             homepage: "https://github.com/killindodo/databricks_pipelines",
@@ -197,37 +258,12 @@
             }
         },
         {
-            name: "chandrawati-enterprises",
-            title: "Chandrawati Enterprises — Workforce Outsourcing Portal",
-            description: "Production web platform for a major manpower and industrial workforce outsourcing corporation in Gaya, Bihar. Engineered for high performance, local asset bundling, and interactive quote dispatch.",
-            category: "web",
-            featured: true,
-            language: "JavaScript",
-            html_url: "https://github.com/killindodo",
-            homepage: "https://chandrawati-enterprises.vercel.app/",
-            stargazers_count: 1,
-            updated_at: "2026-08-15T12:00:00Z",
-            topics: ["client-portal", "corporate-web", "high-performance", "manpower-solutions", "vanilla-js"],
-            specs: {
-                architecture: "Zero-Dependency Responsive Web Portal",
-                stack: "Semantic HTML5, CSS3 Grid/Flexbox, Vanilla JS, Vercel Edge",
-                platform: "Vercel Global Edge Production",
-                role: "Lead Systems & Web Architect"
-            },
-            case_study: {
-                context: "A local corporate workforce supplier required a modern digital presence to service enterprise clients, verify candidate profiles, and generate contracts.",
-                problem: "Deliver a fast, accessible portal with zero third-party framework lock-in, ensuring instant loading even over cellular 4G/3G networks.",
-                engineering: "Designed responsive design systems, modular CSS architecture, and direct client WhatsApp API quotation hooks without bloated npm dependencies.",
-                architecture: "Static Asset CDN ➔ Local Caching Service Worker ➔ Client Inquiries Engine ➔ Direct Business WhatsApp Dispatch.",
-                result: "Instant first contentful paint, 100% responsive compatibility across low-end smartphones, and significant inbound corporate client leads."
-            }
-        },
-        {
             name: "redmi-note9-nvram-restore",
             title: "Redmi Note 9 NVRAM & IMEI Recovery Suite",
             description: "Hardware-level guide and automated binary tooling to reconstruct corrupted NVRAM, baseband calibration partitions, and restore null IMEI on MediaTek MT6769 (Helio G85) devices.",
             category: "android",
             featured: false,
+            closed_source: false,
             language: "Python",
             html_url: "https://github.com/killindodo/redmi-note9-nvram-restore",
             homepage: "https://github.com/killindodo/redmi-note9-nvram-restore",
@@ -247,6 +283,7 @@
             description: "Custom Linux kernel compilation and driver backport enabling external USB MT7601U wireless adapters and packet monitor mode on Kali NetHunter for ARM64 Android devices.",
             category: "linux",
             featured: false,
+            closed_source: false,
             language: "C",
             html_url: "https://github.com/killindodo/merlin-net-hunter-kernel-MT7601U-WiFi-Adapter-Support-",
             homepage: "https://github.com/killindodo/merlin-net-hunter-kernel-MT7601U-WiFi-Adapter-Support-",
@@ -266,6 +303,7 @@
             description: "Foundational implementations of modern machine learning algorithms, transformer attention mechanisms, tensor computations, and neural architectures coded directly from fundamental mathematics.",
             category: "data",
             featured: false,
+            closed_source: false,
             language: "Python",
             html_url: "https://github.com/killindodo/ai-engineering-from-scratch",
             homepage: "https://github.com/killindodo/ai-engineering-from-scratch",
@@ -313,13 +351,16 @@
         liveList.forEach(liveRepo => {
             const existing = allRepositories.find(r => r.name.toLowerCase() === liveRepo.name.toLowerCase());
             if (existing) {
-                existing.stargazers_count = liveRepo.stargazers_count;
-                existing.updated_at = liveRepo.updated_at;
-                if (!existing.description && liveRepo.description) {
-                    existing.description = liveRepo.description;
+                // If existing is marked closed source, keep it closed source!
+                if (!existing.closed_source) {
+                    existing.stargazers_count = liveRepo.stargazers_count;
+                    existing.updated_at = liveRepo.updated_at;
+                    if (!existing.description && liveRepo.description) {
+                        existing.description = liveRepo.description;
+                    }
                 }
             } else {
-                // New repository discovered!
+                // Inferred as open-source public repository
                 const inferredCategory = inferCategory(liveRepo);
                 allRepositories.push({
                     name: liveRepo.name,
@@ -327,6 +368,7 @@
                     description: liveRepo.description || "Public engineering module by Surya Pratap.",
                     category: inferredCategory,
                     featured: false,
+                    closed_source: false,
                     language: liveRepo.language || "Shell",
                     html_url: liveRepo.html_url,
                     homepage: liveRepo.homepage || liveRepo.html_url,
@@ -372,8 +414,11 @@
     function getFilteredRepositories() {
         return allRepositories.filter(repo => {
             // Category check
-            const matchesCategory = (activeFilter === 'all') || (repo.category === activeFilter);
-            if (!matchesCategory) return false;
+            if (activeFilter === 'opensource') {
+                if (repo.closed_source) return false;
+            } else if (activeFilter !== 'all') {
+                if (repo.category !== activeFilter) return false;
+            }
 
             // Search query check
             if (searchQuery) {
@@ -419,13 +464,17 @@
             const langClass = getLangClass(repo.language);
             const dateStr = formatDate(repo.updated_at);
 
+            const sourceBadge = repo.closed_source
+                ? `<span style="font-family: var(--font-mono); font-size: 10px; padding: 2px 6px; border-radius: 4px; background: rgba(217, 119, 6, 0.15); color: var(--amber-light); border: 1px solid rgba(217, 119, 6, 0.3);">PROPRIETARY CLIENT PLATFORM</span>`
+                : `<span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">★ ${repo.stargazers_count || 0}</span>`;
+
             card.innerHTML = `
                 <div>
                     <div class="repo-card-head">
                         <span class="repo-name-text">${escapeHtml(repo.name)}</span>
-                        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">★ ${repo.stargazers_count || 0}</span>
+                        ${sourceBadge}
                     </div>
-                    <p class="repo-card-desc">${escapeHtml(repo.description || 'Public engineering module.')}</p>
+                    <p class="repo-card-desc">${escapeHtml(repo.description || 'Production engineering module.')}</p>
                 </div>
                 <div class="repo-meta-foot">
                     <div class="lang-indicator">
@@ -433,7 +482,7 @@
                         <span>${escapeHtml(repo.language || 'Code')}</span>
                     </div>
                     <div>
-                        <span>${dateStr}</span>
+                        <span>${repo.closed_source ? 'Live Production' : dateStr}</span>
                     </div>
                 </div>
             `;
@@ -480,11 +529,15 @@
         if (!modal) return;
 
         document.getElementById('modalCaseTitle').textContent = repo.title || repo.name;
-        document.getElementById('modalCaseKicker').textContent = `CASE STUDY // ${repo.category ? repo.category.toUpperCase() : 'ENGINEERING'}`;
+        
+        const sourceStatus = repo.closed_source 
+            ? 'PROPRIETARY / CLIENT PLATFORM (SOURCE CLOSED)' 
+            : 'OPEN SOURCE REPOSITORY';
+        document.getElementById('modalCaseKicker').textContent = `CASE STUDY // ${sourceStatus}`;
 
         const cs = repo.case_study || {
             context: "Engineered to address critical bottlenecks in system performance and reliability.",
-            problem: "Developing an open-source, robust implementation with zero proprietary lock-in.",
+            problem: "Developing a robust implementation with zero proprietary lock-in.",
             engineering: "Engineered with modular, low-overhead architectures and rigorous automated validation.",
             architecture: "Client / Input Layer ➔ Hardware/System Layer ➔ Data Processing Engine ➔ Verified Output.",
             result: "Production-ready, highly reliable codebase published as open-source software."
@@ -496,17 +549,35 @@
         document.getElementById('modalArchitecture').textContent = cs.architecture;
         document.getElementById('modalResult').textContent = cs.result;
 
-        // Links
+        // Links configuration based on closed_source rule
         const ghBtn = document.getElementById('modalGithubBtn');
         const demoBtn = document.getElementById('modalDemoBtn');
+        const closedNotice = document.getElementById('modalClosedNotice');
 
-        if (ghBtn) ghBtn.href = repo.html_url;
-        if (demoBtn) {
-            if (repo.homepage && repo.homepage !== repo.html_url) {
+        if (repo.closed_source) {
+            // HARD RULE: Hide GitHub button for closed source
+            if (ghBtn) ghBtn.style.display = 'none';
+            if (closedNotice) closedNotice.style.display = 'inline-block';
+            if (demoBtn) {
                 demoBtn.href = repo.homepage;
                 demoBtn.style.display = 'inline-flex';
-            } else {
-                demoBtn.style.display = 'none';
+                demoBtn.innerHTML = `<span>VISIT LIVE PLATFORM ↗</span>`;
+            }
+        } else {
+            // Open Source: Show GitHub button
+            if (ghBtn) {
+                ghBtn.href = repo.html_url;
+                ghBtn.style.display = 'inline-flex';
+            }
+            if (closedNotice) closedNotice.style.display = 'none';
+            if (demoBtn) {
+                if (repo.homepage && repo.homepage !== repo.html_url) {
+                    demoBtn.href = repo.homepage;
+                    demoBtn.style.display = 'inline-flex';
+                    demoBtn.innerHTML = `<span>LIVE DEMO ↗</span>`;
+                } else {
+                    demoBtn.style.display = 'none';
+                }
             }
         }
 
@@ -650,13 +721,11 @@
     // ─── 6. EASTER EGG DIAGNOSTIC HUD ───
     let keyBuffer = '';
     window.addEventListener('keydown', (e) => {
-        // Toggle on backtick
         if (e.key === '`') {
             toggleDiagnosticHud();
             return;
         }
 
-        // Close on escape
         if (e.key === 'Escape') {
             closeCaseStudy();
             const hud = document.getElementById('diagnosticHud');
@@ -664,7 +733,6 @@
             return;
         }
 
-        // Detect "killindodo" secret sequence
         keyBuffer = (keyBuffer + e.key.toLowerCase()).slice(-10);
         if (keyBuffer.includes('killindodo')) {
             toggleDiagnosticHud();
@@ -693,7 +761,6 @@
 
     // ─── 8. SETUP EVENT LISTENERS & BOOTSTRAP ───
     window.addEventListener('DOMContentLoaded', () => {
-        // Search Input
         const searchInput = document.getElementById('repoSearchInput');
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
@@ -702,7 +769,6 @@
             });
         }
 
-        // Sort Select
         const sortSelect = document.getElementById('repoSortSelect');
         if (sortSelect) {
             sortSelect.addEventListener('change', (e) => {
@@ -711,7 +777,6 @@
             });
         }
 
-        // Filter Pills
         document.querySelectorAll('.filter-pill').forEach(pill => {
             pill.addEventListener('click', () => {
                 document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
@@ -721,7 +786,6 @@
             });
         });
 
-        // Close modal on click outside
         const modal = document.getElementById('caseStudyModal');
         if (modal) {
             modal.addEventListener('click', (e) => {
@@ -729,7 +793,6 @@
             });
         }
 
-        // Init Architecture Canvas & Load GitHub Data
         initArchitectureCanvas();
         loadGitHubData();
     });

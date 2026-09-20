@@ -38,6 +38,7 @@
             <div class="nav-links">
                 <a href="#work" class="nav-link">Selected Work</a>
                 <a href="#domains" class="nav-link">Domains</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
                 <a href="#github-archive" class="nav-link">GitHub Archive</a>
                 <a href="#agency" class="nav-link">SJ Digitals</a>
                 <a href="#philosophy" class="nav-link">Philosophy</a>
@@ -230,21 +231,23 @@
         <!-- ─── SELECTED WORK (CURATED CASE STUDIES) ─── -->
         <section class="section-wrapper" id="work">
             <div class="section-head">
-                <span class="section-kicker">CURATED ARCHIVE</span>
+                <span class="section-kicker">CURATED PORTFOLIO</span>
                 <h2 class="section-title">Selected Work</h2>
-                <p class="section-subtitle">Deep dive into production platforms, open-source systems daemons, hardware firmware, and data pipelines.</p>
+                <p class="section-subtitle">Deep dive into production client platforms (closed-source) alongside open-source systems daemons, hardware firmware, and data pipelines.</p>
             </div>
 
             <div class="projects-showcase-grid">
 
-                <!-- Case Study 1: SJ Digitals Co. -->
+                <!-- 1. SJ Digitals Co. (CLOSED SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
                             <span class="case-num-tag">[PRJ_01]</span>
                             <span class="case-domain-tag">AGENCY &amp; PLATFORM INFRASTRUCTURE</span>
                         </div>
-                        <span class="case-status-chip">● LIVE PRODUCTION</span>
+                        <span class="case-status-chip" style="background: rgba(217, 119, 6, 0.15); color: var(--amber-light); border-color: rgba(217, 119, 6, 0.35);">
+                            🔒 CLOSED SOURCE • LIVE PRODUCTION
+                        </span>
                     </div>
                     <div>
                         <h3 class="case-title">SJ Digitals Co. — Modern Digital Agency &amp; Systems Platform</h3>
@@ -256,7 +259,7 @@
                         <div class="spec-cell"><span class="spec-key">ARCHITECTURE</span><span class="spec-val">Edge-Cached Static System</span></div>
                         <div class="spec-cell"><span class="spec-key">ROLE</span><span class="spec-val">Founder &amp; Principal Systems Architect</span></div>
                         <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, Modular CSS3 Tokens, Vanilla ES6+</span></div>
-                        <div class="spec-cell"><span class="spec-key">PERFORMANCE</span><span class="spec-val">99+ Speed Index / Zero Build Lock-in</span></div>
+                        <div class="spec-cell"><span class="spec-key">SOURCE AVAILABILITY</span><span class="spec-val" style="color: var(--amber-light);">Proprietary Production Platform</span></div>
                     </div>
                     <div class="case-actions-row">
                         <div class="case-links-left">
@@ -264,8 +267,8 @@
                                 <i class="fas fa-layer-group"></i>
                                 <span>VIEW CASE STUDY</span>
                             </button>
-                            <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-ext-link">
-                                <span>Live Platform</span>
+                            <a href="https://sjdigitals.vercel.app/" target="_blank" class="btn-amber-outline">
+                                <span>VISIT LIVE PLATFORM ↗</span>
                                 <i class="fas fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
@@ -275,14 +278,94 @@
                     </div>
                 </article>
 
-                <!-- Case Study 2: Linux Continuity -->
+                <!-- 2. Indian Central School (CLOSED SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
                             <span class="case-num-tag">[PRJ_02]</span>
+                            <span class="case-domain-tag">INSTITUTIONAL ACADEMIC PORTAL</span>
+                        </div>
+                        <span class="case-status-chip" style="background: rgba(217, 119, 6, 0.15); color: var(--amber-light); border-color: rgba(217, 119, 6, 0.35);">
+                            🔒 CLOSED SOURCE • LIVE CLIENT PORTAL
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Indian Central School — Enterprise Academic Portal</h3>
+                        <p class="case-desc">
+                            Enterprise institutional web portal and academic management infrastructure for Indian Central School (Gaya, Bihar). Engineered for high availability, student admission workflows, and fast mobile responsiveness across low-bandwidth cellular connections.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">CLIENT</span><span class="spec-val">Indian Central School (Gaya, Bihar)</span></div>
+                        <div class="spec-cell"><span class="spec-key">ROLE</span><span class="spec-val">Lead Systems Architect &amp; Web Engineer</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, CSS3 Grid, Vanilla ES6+, Edge CDN</span></div>
+                        <div class="spec-cell"><span class="spec-key">SOURCE AVAILABILITY</span><span class="spec-val" style="color: var(--amber-light);">Proprietary Institutional Platform</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('indian-central-school')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://icsgayaji.org" target="_blank" class="btn-amber-outline">
+                                <span>VISIT LIVE PORTAL ↗</span>
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            icsgayaji.org
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. Chandrawati Enterprises (CLOSED SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_03]</span>
+                            <span class="case-domain-tag">CORPORATE CLIENT PORTAL</span>
+                        </div>
+                        <span class="case-status-chip" style="background: rgba(217, 119, 6, 0.15); color: var(--amber-light); border-color: rgba(217, 119, 6, 0.35);">
+                            🔒 CLOSED SOURCE • LIVE CLIENT PORTAL
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="case-title">Chandrawati Enterprises — Workforce Outsourcing Portal</h3>
+                        <p class="case-desc">
+                            Production web platform for a major manpower and industrial workforce outsourcing corporation in Gaya, Bihar. Engineered for high performance, local asset bundling, and interactive quote dispatch.
+                        </p>
+                    </div>
+                    <div class="case-specs-table">
+                        <div class="spec-cell"><span class="spec-key">CLIENT</span><span class="spec-val">Chandrawati Enterprises</span></div>
+                        <div class="spec-cell"><span class="spec-key">DEPLOYMENT</span><span class="spec-val">Vercel Global Edge Production</span></div>
+                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, CSS3, Vanilla JS</span></div>
+                        <div class="spec-cell"><span class="spec-key">SOURCE AVAILABILITY</span><span class="spec-val" style="color: var(--amber-light);">Proprietary Corporate Platform</span></div>
+                    </div>
+                    <div class="case-actions-row">
+                        <div class="case-links-left">
+                            <button class="btn-open-case" onclick="openCaseStudy('chandrawati-enterprises')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>VIEW CASE STUDY</span>
+                            </button>
+                            <a href="https://chandrawati-enterprises.vercel.app/" target="_blank" class="btn-amber-outline">
+                                <span>VISIT LIVE PORTAL ↗</span>
+                                <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
+                            Vercel Edge • Vanilla JS
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. Linux Continuity (OPEN SOURCE) -->
+                <article class="case-study-card">
+                    <div class="case-study-head">
+                        <div class="case-badge-group">
+                            <span class="case-num-tag">[PRJ_04]</span>
                             <span class="case-domain-tag">SYSTEMS DAEMON</span>
                         </div>
-                        <span class="case-status-chip">● OPEN SOURCE // ACTIVE</span>
+                        <span class="case-status-chip">● OPEN SOURCE // PUBLIC</span>
                     </div>
                     <div>
                         <h3 class="case-title">Linux Continuity — Seamless Android ↔ Linux Bridge</h3>
@@ -303,8 +386,8 @@
                                 <span>VIEW CASE STUDY</span>
                             </button>
                             <a href="https://github.com/killindodo/linux-continuity" target="_blank" class="btn-ext-link">
-                                <span>GitHub Repo</span>
                                 <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
@@ -313,14 +396,14 @@
                     </div>
                 </article>
 
-                <!-- Case Study 3: Pinion -->
+                <!-- 5. Pinion (OPEN SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_03]</span>
+                            <span class="case-num-tag">[PRJ_05]</span>
                             <span class="case-domain-tag">WIRELESS SPOOLING CORE</span>
                         </div>
-                        <span class="case-status-chip">● HARDWARE VALIDATED</span>
+                        <span class="case-status-chip">● OPEN SOURCE // HARDWARE TESTED</span>
                     </div>
                     <div>
                         <h3 class="case-title">Pinion — Universal Wireless Print Engine for Android</h3>
@@ -341,8 +424,8 @@
                                 <span>VIEW CASE STUDY</span>
                             </button>
                             <a href="https://github.com/killindodo/pinion" target="_blank" class="btn-ext-link">
-                                <span>GitHub Repo</span>
                                 <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
@@ -351,14 +434,14 @@
                     </div>
                 </article>
 
-                <!-- Case Study 4: Zezes -->
+                <!-- 6. Zezes (OPEN SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_04]</span>
+                            <span class="case-num-tag">[PRJ_06]</span>
                             <span class="case-domain-tag">KERNEL GADGET SUBSYSTEM</span>
                         </div>
-                        <span class="case-status-chip">● VALIDATED PROTOYPE</span>
+                        <span class="case-status-chip">● OPEN SOURCE // VALIDATED</span>
                     </div>
                     <div>
                         <h3 class="case-title">Zezes — Android USB OTG ISO Deployment Core</h3>
@@ -379,8 +462,8 @@
                                 <span>VIEW CASE STUDY</span>
                             </button>
                             <a href="https://github.com/killindodo/Zezes" target="_blank" class="btn-ext-link">
-                                <span>GitHub Repo</span>
                                 <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
@@ -389,14 +472,14 @@
                     </div>
                 </article>
 
-                <!-- Case Study 5: NitroSense Linux -->
+                <!-- 7. NitroSense Linux (OPEN SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_05]</span>
+                            <span class="case-num-tag">[PRJ_07]</span>
                             <span class="case-domain-tag">ACPI EC DRIVER</span>
                         </div>
-                        <span class="case-status-chip">● STABLE RELEASE</span>
+                        <span class="case-status-chip">● OPEN SOURCE // STABLE</span>
                     </div>
                     <div>
                         <h3 class="case-title">NitroSense Linux — Acer EC Thermal &amp; Fan Governor</h3>
@@ -417,8 +500,8 @@
                                 <span>VIEW CASE STUDY</span>
                             </button>
                             <a href="https://github.com/killindodo/nitrosense-linux" target="_blank" class="btn-ext-link">
-                                <span>GitHub Repo</span>
                                 <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
@@ -427,14 +510,14 @@
                     </div>
                 </article>
 
-                <!-- Case Study 6: Dodo-RF -->
+                <!-- 8. Dodo-RF (OPEN SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_06]</span>
+                            <span class="case-num-tag">[PRJ_08]</span>
                             <span class="case-domain-tag">WIRELESS RF HARDWARE</span>
                         </div>
-                        <span class="case-status-chip">● HARDWARE TESTED</span>
+                        <span class="case-status-chip">● OPEN SOURCE // HARDWARE TESTED</span>
                     </div>
                     <div>
                         <h3 class="case-title">Dodo-RF — Sub-GHz Wireless Protocol Analyzer</h3>
@@ -455,8 +538,8 @@
                                 <span>VIEW CASE STUDY</span>
                             </button>
                             <a href="https://github.com/killindodo/Dodo-RF" target="_blank" class="btn-ext-link">
-                                <span>GitHub Repo</span>
                                 <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
@@ -465,14 +548,14 @@
                     </div>
                 </article>
 
-                <!-- Case Study 7: Databricks Medallion Pipelines -->
+                <!-- 9. Databricks Pipelines (OPEN SOURCE) -->
                 <article class="case-study-card">
                     <div class="case-study-head">
                         <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_07]</span>
+                            <span class="case-num-tag">[PRJ_09]</span>
                             <span class="case-domain-tag">DATA LAKEHOUSE ARCHITECTURE</span>
                         </div>
-                        <span class="case-status-chip">● PRODUCTION PATTERN</span>
+                        <span class="case-status-chip">● OPEN SOURCE // PATTERN</span>
                     </div>
                     <div>
                         <h3 class="case-title">Databricks Medallion Data Lakehouse Architecture</h3>
@@ -493,8 +576,8 @@
                                 <span>VIEW CASE STUDY</span>
                             </button>
                             <a href="https://github.com/killindodo/databricks_pipelines" target="_blank" class="btn-ext-link">
-                                <span>GitHub Repo</span>
                                 <i class="fab fa-github"></i>
+                                <span>VIEW GITHUB REPO ↗</span>
                             </a>
                         </div>
                         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
@@ -503,44 +586,80 @@
                     </div>
                 </article>
 
-                <!-- Case Study 8: Chandrawati Enterprises -->
-                <article class="case-study-card">
-                    <div class="case-study-head">
-                        <div class="case-badge-group">
-                            <span class="case-num-tag">[PRJ_08]</span>
-                            <span class="case-domain-tag">CORPORATE CLIENT PORTAL</span>
-                        </div>
-                        <span class="case-status-chip">● LIVE PRODUCTION</span>
-                    </div>
-                    <div>
-                        <h3 class="case-title">Chandrawati Enterprises — Workforce Outsourcing Portal</h3>
-                        <p class="case-desc">
-                            Production web platform for a major manpower and industrial workforce outsourcing corporation in Gaya, Bihar. Engineered for high performance, local asset bundling, and interactive quote dispatch.
-                        </p>
-                    </div>
-                    <div class="case-specs-table">
-                        <div class="spec-cell"><span class="spec-key">CLIENT</span><span class="spec-val">Chandrawati Enterprises</span></div>
-                        <div class="spec-cell"><span class="spec-key">DEPLOYMENT</span><span class="spec-val">Vercel Global Edge Production</span></div>
-                        <div class="spec-cell"><span class="spec-key">STACK</span><span class="spec-val">Semantic HTML5, CSS3, Vanilla JS</span></div>
-                        <div class="spec-cell"><span class="spec-key">INTEGRATION</span><span class="spec-val">Direct Business WhatsApp Lead Engine</span></div>
-                    </div>
-                    <div class="case-actions-row">
-                        <div class="case-links-left">
-                            <button class="btn-open-case" onclick="openCaseStudy('chandrawati-enterprises')">
-                                <i class="fas fa-layer-group"></i>
-                                <span>VIEW CASE STUDY</span>
-                            </button>
-                            <a href="https://chandrawati-enterprises.vercel.app/" target="_blank" class="btn-ext-link">
-                                <span>Live Demo</span>
-                                <i class="fas fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);">
-                            Vercel Edge • Vanilla JS
-                        </div>
-                    </div>
-                </article>
+            </div>
+        </section>
 
+        <!-- ─── THE FULL ENGINEERING EVOLUTION TIMELINE (2012 → 2026) ─── -->
+        <section class="section-wrapper" id="timeline">
+            <div class="section-head">
+                <span class="section-kicker">CHRONOLOGY // 2012 → 2026</span>
+                <h2 class="section-title">Engineering Evolution</h2>
+                <p class="section-subtitle">A fourteen-year journey: from writing first HTML lines in 7th grade and modding community phones to government contract logistics, embedded RF, and distributed cloud systems.</p>
+            </div>
+
+            <div class="timeline-track">
+                <!-- 2012 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2012 (CLASS 7)</span>
+                    <h3 class="timeline-title">The First Spark — Discovering HTML</h3>
+                    <p class="timeline-desc">First learned about HTML in Class 7. Realizing that digital experiences could be handcrafted directly from raw markup code ignited an intense, obsessive curiosity for computer programming and software development that changed everything.</p>
+                </div>
+
+                <!-- 2014 - 2015 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2014 — 2015</span>
+                    <h3 class="timeline-title">School Projects, Academic Rank 1 &amp; The 3-Year CS Deep Dive</h3>
+                    <p class="timeline-desc">Engineered interactive school science and technology projects, achieving <strong>Class Topper (Rank 1)</strong> in the 2014–2015 academic year. The immense motivation from this victory fueled a relentless drive: for the next three straight years, studied <strong>C, C++, Java, Arduino, Ruby, and Python</strong> under a dedicated teacher who understood his curiosity and helped him achieve fundamental mastery.</p>
+                </div>
+
+                <!-- 2016 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2016</span>
+                    <h3 class="timeline-title">The Android Awakening — Meeting Shyam Kr Pandey &amp; Kernel Modding</h3>
+                    <p class="timeline-desc">Purchased a used Samsung Galaxy Ace Duos and attempted rooting and flashing, failing countless times. In 2016, met <strong>Shyam Kr Pandey</strong>, who unlocked the deeper universe of Android low-level development. Successfully modded his first personally owned phone—the <strong>Panasonic Eluga I2</strong>. Went on to compile custom TWRP recovery trees for the Eluga I2 and Karbonn devices, and rooted/unbricked community smartphones.</p>
+                </div>
+
+                <!-- 2018 - 2020 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2018 — 2020</span>
+                    <h3 class="timeline-title">SPPU (Pune University) — Systems, Kernels &amp; Hardware Hacking</h3>
+                    <p class="timeline-desc">Completed 12th grade in 2018 and moved to Pune for higher studies at <strong>Savitribai Phule Pune University (SPPU)</strong>. Immersed deeply in Database Management Systems (DBMS/RDBMS), Operating Systems architecture, Linux kernels, hardware programming, ethical hacking, and music production.</p>
+                </div>
+
+                <!-- 2020 - 2021 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2020 — 2021</span>
+                    <h3 class="timeline-title">Graduation (BBA-CA) &amp; Pandemic Pivot</h3>
+                    <p class="timeline-desc">Returned home in 2020 due to the COVID-19 pandemic. Successfully earned his degree: <strong>Bachelor of Business Administration in Computer Applications (BBA-CA)</strong>, intentionally connecting technical systems architecture with business administration principles.</p>
+                </div>
+
+                <!-- 2021 - 2023 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2021 — 2023</span>
+                    <h3 class="timeline-title">Surya Jyoti Enterprises — High-Security Government Supply Chains</h3>
+                    <p class="timeline-desc">Founded <strong>Surya Jyoti Enterprises</strong> to put business administration and logistics to the test in high-stakes environments. Expanded into state and central government supply operations, managing critical, smooth supply chain logistics for prestigious high-security institutions, including the <strong>Officers Training Academy (OTA)</strong>, <strong>Central Jails</strong>, and <strong>Sub-Jails</strong> with zero discrepancies.</p>
+                </div>
+
+                <!-- 2024 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2024</span>
+                    <h3 class="timeline-title">Founding SJ Digitals Co. — Edge Platforms &amp; Client Systems</h3>
+                    <p class="timeline-desc">Channeling over a decade of systems engineering, business operations, and web optimization into founding <strong>SJ Digitals Co.</strong> Delivered bespoke client web platforms (Chandrawati Enterprises, Indian Central School), NFC smart business card ecosystems, and high-performance digital branding.</p>
+                </div>
+
+                <!-- 2025 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2025</span>
+                    <h3 class="timeline-title">The Sleeping Monster Awakens — Dodo-RF &amp; ESP32 Hardware</h3>
+                    <p class="timeline-desc">Longtime mentor and friend <strong>Shyam Kr Pandey</strong> gifted him <strong>2 ESP32 microcontrollers</strong>, re-awakening the low-level embedded hardware hacker inside. Engineered <strong>Dodo-RF</strong>: a handheld Sub-GHz radio analysis, capture, and packet synthesis suite pairing ESP32 and RP2040 with TI CC1101 transceivers across 315/433/868/915 MHz.</p>
+                </div>
+
+                <!-- 2026 -->
+                <div class="timeline-node">
+                    <span class="timeline-year">2026 — PRESENT</span>
+                    <h3 class="timeline-title">Unified Architecture, Linux Continuity &amp; Data Lakehouses</h3>
+                    <p class="timeline-desc">Architecting Medallion-architecture PySpark pipelines on Databricks Delta Lake, authoring the Linux Continuity desktop bridge daemon, and engineering unified systems across cloud, OS, and silicon.</p>
+                </div>
             </div>
         </section>
 
@@ -549,7 +668,7 @@
             <div class="section-head">
                 <span class="section-kicker">LIVING DATA LAYER</span>
                 <h2 class="section-title">Open Source &amp; Project Archive</h2>
-                <p class="section-subtitle">A live index automatically synchronized with my GitHub profile. Instant search and filter across all public repositories.</p>
+                <p class="section-subtitle">A live index synchronized with GitHub. Search, filter, and inspect open-source repositories alongside proprietary client case studies.</p>
             </div>
 
             <div class="github-archive-container">
@@ -560,7 +679,7 @@
                         <span id="syncStatusText">Synchronized via Local Cache</span>
                     </div>
                     <div class="ribbon-stats">
-                        <span>REPOSITORIES: <span class="stat-token" id="totalRepoCount">11</span></span>
+                        <span>MODULES: <span class="stat-token" id="totalRepoCount">12</span></span>
                         <span>STARS: <span class="stat-token" id="totalStarsCount">16+</span></span>
                         <span>PROFILE: <a href="https://github.com/killindodo" target="_blank" style="color: var(--cobalt-light); text-decoration: underline;">@killindodo ↗</a></span>
                     </div>
@@ -570,7 +689,7 @@
                 <div class="archive-controls">
                     <div class="search-input-box">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                        <input type="text" id="repoSearchInput" placeholder="Search projects (e.g. Android, Linux, ESP32, Python, RF)..." aria-label="Search repositories">
+                        <input type="text" id="repoSearchInput" placeholder="Search projects (e.g. Android, Linux, ESP32, Python, RF, CUPS)..." aria-label="Search repositories">
                     </div>
                     <div class="sort-select-box">
                         <select id="repoSortSelect" aria-label="Sort repositories">
@@ -584,7 +703,8 @@
 
                 <!-- Filter Pills -->
                 <div class="filter-pills-row" id="filterPills">
-                    <button class="filter-pill active" data-filter="all">ALL MODULES</button>
+                    <button class="filter-pill active" data-filter="all">ALL WORK</button>
+                    <button class="filter-pill" data-filter="opensource">OPEN SOURCE ONLY</button>
                     <button class="filter-pill" data-filter="web">WEB &amp; PLATFORMS</button>
                     <button class="filter-pill" data-filter="linux">LINUX &amp; KERNEL</button>
                     <button class="filter-pill" data-filter="android">ANDROID SYSTEMS</button>
@@ -600,8 +720,8 @@
                 <!-- GitHub Profile CTA -->
                 <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-hairline); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
                     <div>
-                        <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Want to inspect the entire raw source code?</div>
-                        <div style="font-size: 13px; color: var(--text-secondary);">Browse all commit histories, branches, and issues directly on GitHub.</div>
+                        <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Want to inspect the open-source code?</div>
+                        <div style="font-size: 13px; color: var(--text-secondary);">Browse all public repositories, commits, branches, and kernel drivers on GitHub.</div>
                     </div>
                     <a href="https://github.com/killindodo" target="_blank" class="btn-primary">
                         <span>EXPLORE GITHUB (@killindodo)</span>
@@ -645,41 +765,6 @@
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                         <span><strong>Local Search &amp; SEO:</strong> Google Business Profile rank optimization &amp; catalogue systems.</span>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── ENGINEERING TIMELINE ─── -->
-        <section class="section-wrapper" id="timeline">
-            <div class="section-head">
-                <span class="section-kicker">CHRONOLOGY</span>
-                <h2 class="section-title">Engineering Evolution</h2>
-                <p class="section-subtitle">The trajectory from hardware reverse engineering and kernel debugging to founding a technology studio and managing cloud data pipelines.</p>
-            </div>
-
-            <div class="timeline-track">
-                <div class="timeline-node">
-                    <span class="timeline-year">2021 — 2022</span>
-                    <h3 class="timeline-title">Hardware Reverse Engineering &amp; Android Device Subsystems</h3>
-                    <p class="timeline-desc">Extensive research into MediaTek MT6769 partitions, baseband NVRAM reconstruction, building custom TWRP recoveries, and compiling custom NetHunter kernels with external Wi-Fi driver support.</p>
-                </div>
-
-                <div class="timeline-node">
-                    <span class="timeline-year">2023 — 2024</span>
-                    <h3 class="timeline-title">Linux Device Drivers &amp; OS Continuity Bridges</h3>
-                    <p class="timeline-desc">Engineered NitroSense Linux fan governor by reverse-engineering proprietary ACPI EC registers. Developed Linux Continuity daemon bridging Linux desktop D-Bus with Android over local sockets.</p>
-                </div>
-
-                <div class="timeline-node">
-                    <span class="timeline-year">2024 — 2025</span>
-                    <h3 class="timeline-title">Founding SJ Digitals Co. &amp; Sub-GHz Wireless Systems</h3>
-                    <p class="timeline-desc">Founded SJ Digitals Co. to engineer fast, resilient digital platforms for regional and corporate clients. Developed Dodo-RF transceiver suite for TI CC1101 on ESP32/RP2040 and Pinion wireless print engine.</p>
-                </div>
-
-                <div class="timeline-node">
-                    <span class="timeline-year">2026 — PRESENT</span>
-                    <h3 class="timeline-title">Distributed Data Lakehouses &amp; Enterprise Architecture</h3>
-                    <p class="timeline-desc">Architecting Medallion-architecture PySpark pipelines on Databricks Delta Lake, integrating high-throughput enterprise systems across cloud, OS, and hardware endpoints.</p>
                 </div>
             </div>
         </section>
@@ -791,15 +876,19 @@
             <div class="drawer-section-num">05 — RESULT &amp; IMPACT</div>
             <div class="drawer-section-body" id="modalResult">Result text here...</div>
 
-            <div style="display: flex; align-items: center; gap: 12px; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-hairline);">
-                <a href="#" id="modalGithubBtn" target="_blank" class="btn-primary">
-                    <i class="fab fa-github"></i>
-                    <span>VIEW ON GITHUB</span>
-                </a>
-                <a href="#" id="modalDemoBtn" target="_blank" class="btn-amber-outline">
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                    <span>LIVE DEMO</span>
-                </a>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-hairline);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <a href="#" id="modalGithubBtn" target="_blank" class="btn-primary">
+                        <i class="fab fa-github"></i>
+                        <span>VIEW ON GITHUB ↗</span>
+                    </a>
+                    <a href="#" id="modalDemoBtn" target="_blank" class="btn-amber-outline">
+                        <span>VISIT LIVE PLATFORM ↗</span>
+                    </a>
+                </div>
+                <span id="modalClosedNotice" style="display: none; font-family: var(--font-mono); font-size: 11px; color: var(--amber-light);">
+                    🔒 Proprietary Client Platform (Source Closed)
+                </span>
             </div>
         </div>
     </div>
@@ -809,10 +898,11 @@
         <span class="hud-close-x" onclick="closeDiagnosticHud()">✕</span>
         <div style="font-weight: 700; color: #ffffff; border-bottom: 1px solid var(--border-hairline); padding-bottom: 4px;">KILLINDODO_DIAGNOSTICS // v2026</div>
         <div>OPERATOR: SURYA PRATAP</div>
+        <div>JOURNEY: 2012 (CLASS 7) ➔ 2026</div>
+        <div>MENTOR: SHYAM KR PANDEY (ANDROID &amp; ESP32)</div>
+        <div>ENTERPRISE: SURYA JYOTI ENTERPRISES ➔ SJ DIGITALS CO.</div>
         <div>KERNEL: GKI v4/6.1 • EROFS ROOTFS</div>
-        <div>HARDWARE: TI CC1101 @ 433.92MHz</div>
-        <div>CONTINUITY DAEMON: RUNNING (LOCAL PORT 8901)</div>
-        <div>ACPI EC: 0x00-0xFF MAPPED</div>
+        <div>HARDWARE: TI CC1101 @ 433.92MHz • ESP32</div>
         <div style="color: var(--amber-light); margin-top: 4px;">“Engineered, not decorated.”</div>
     </div>
 
